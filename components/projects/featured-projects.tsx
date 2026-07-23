@@ -1,5 +1,6 @@
 import { Section } from "@/components/layout";
 import { homepageContent } from "@/content/homepage";
+import Link from "next/link";
 
 const previewOrder = [0, 2, 1, 3] as const;
 
@@ -11,9 +12,9 @@ export function FeaturedProjects() {
           <p>FEATURED PROJECTS</p>
           <h2 id="featured-preview-title">Latest Work</h2>
         </div>
-        <a href="/projects">
+        <Link href={{ pathname: "/projects" }}>
           VIEW ALL PROJECTS <span aria-hidden>→</span>
-        </a>
+        </Link>
       </div>
       <div className="featured-preview-grid">
         {previewOrder.map((projectIndex) => {

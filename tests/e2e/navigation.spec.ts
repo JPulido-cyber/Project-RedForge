@@ -8,7 +8,7 @@ test("desktop navigation exposes the approved destinations", async ({ page }, te
   await expect(navigation.getByRole("link", { name: "HOME", exact: true })).toBeVisible();
   await expect(navigation.getByRole("link", { name: "PROJECTS" })).toHaveAttribute(
     "href",
-    "#projects",
+    "/projects",
   );
 });
 

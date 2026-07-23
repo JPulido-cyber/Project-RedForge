@@ -8,6 +8,9 @@ const meta = {
   component: ProjectExperience,
   args: { project: projects[0] },
   parameters: { layout: "fullscreen" },
+  decorators: [
+    (Story) => <div className="platform-page"><Story /></div>,
+  ],
 } satisfies Meta<typeof ProjectExperience>;
 
 export default meta;
