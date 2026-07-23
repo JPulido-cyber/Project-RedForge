@@ -18,3 +18,10 @@ test("operational fallback routes are available", async ({ page }) => {
     page.getByRole("heading", { name: "This system is still being forged" }),
   ).toBeVisible();
 });
+
+test("homepage section routes resolve without leaving the page", async ({ page }) => {
+  await page.goto("/");
+  await page.getByRole("link", { name: "PROJECTS" }).first().click();
+  await expect(page).toHaveURL(/#projects$/);
+  await expect(page.getByRole("heading", { name: "Featured Projects" })).toBeVisible();
+});
