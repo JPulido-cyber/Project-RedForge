@@ -45,7 +45,7 @@ export const homepageContent = {
         "Designing a realistic virtual environment for networking, Windows, Linux, identity, monitoring, and security testing.",
       tags: ["Networking", "Virtualization", "Security"],
       status: "active",
-      href: "/coming-soon",
+      href: "/projects/enterprise-home-lab",
     },
     {
       number: "02",
@@ -55,7 +55,7 @@ export const homepageContent = {
         "Building practical Python tools while developing programming, troubleshooting, and automation fundamentals.",
       tags: ["Python", "Automation", "Git"],
       status: "active",
-      href: "/coming-soon",
+      href: "/projects/python-automation",
     },
     {
       number: "03",
@@ -65,7 +65,7 @@ export const homepageContent = {
         "Deploying and securing a Windows domain with users, groups, policies, authentication, and administrative controls.",
       tags: ["Windows Server", "Identity", "GPO"],
       status: "planned",
-      href: "/coming-soon",
+      href: "/projects/active-directory-lab",
     },
     {
       number: "04",
@@ -75,7 +75,7 @@ export const homepageContent = {
         "Ingesting security data, building dashboards, investigating events, and developing detection and threat-hunting workflows.",
       tags: ["Splunk", "SIEM", "Detection"],
       status: "planned",
-      href: "/coming-soon",
+      href: "/projects/splunk-detection-lab",
     },
     {
       number: "05",
@@ -85,7 +85,7 @@ export const homepageContent = {
         "Building and securing cloud infrastructure using identity, logging, monitoring, networking, and least-privilege principles.",
       tags: ["AWS", "Cloud", "IAM"],
       status: "planned",
-      href: "/coming-soon",
+      href: "/projects/aws-security",
     },
     {
       number: "06",
@@ -95,7 +95,7 @@ export const homepageContent = {
         "Developing investigative workflows to identify suspicious activity, analyze evidence, and document defensible conclusions.",
       tags: ["Analysis", "Telemetry", "Defense"],
       status: "planned",
-      href: "/coming-soon",
+      href: "/projects/threat-hunting",
     },
   ] satisfies readonly ProjectItem[],
 } as const;
