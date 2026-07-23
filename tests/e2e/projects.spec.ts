@@ -23,7 +23,7 @@ test("planned projects use the shared experience", async ({ page }) => {
 test("flagship report exposes qualified inventories and editable architecture", async ({ page, request }) => {
   await page.goto("/projects/enterprise-home-lab");
 
-  await expect(page.getByText(/server inventory — planned/i)).toBeVisible();
+  await expect(page.getByText(/server inventory — implemented \/ planned/i)).toBeVisible();
   await expect(page.getByText(/no ingestion rate, retention, detection, or coverage metrics are asserted/i)).toBeVisible();
   await expect(page.getByRole("heading", { name: "Screenshot Gallery" })).toBeVisible();
   await expect(page.getByAltText(/enterprise home lab network topology/i)).toBeVisible();
