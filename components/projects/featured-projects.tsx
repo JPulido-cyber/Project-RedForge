@@ -11,7 +11,7 @@ export function FeaturedProjects() {
           <p>FEATURED PROJECTS</p>
           <h2 id="featured-preview-title">Latest Work</h2>
         </div>
-        <a href="#projects">
+        <a href="/projects">
           VIEW ALL PROJECTS <span aria-hidden>→</span>
         </a>
       </div>

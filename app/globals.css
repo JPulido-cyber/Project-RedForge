@@ -2,6 +2,7 @@
 @import "../styles/tokens.css";
 @import "../styles/motion.css";
 @import "../styles/home.css";
+@import "../styles/platform.css";
 
 :root {
   --background: var(--rf-color-surface);
@@ -31,8 +32,8 @@
   --color-forge-panel: var(--rf-color-forge-panel);
   --color-forge-text: var(--rf-color-forge-text);
   --color-forge-muted: var(--rf-color-forge-muted);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-redforge-body);
+  --font-mono: var(--font-redforge-display);
   --radius-sm: var(--rf-radius-sm);
   --radius-md: var(--rf-radius-md);
   --radius-lg: var(--rf-radius-lg);
@@ -60,5 +61,5 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-redforge-body), Arial, Helvetica, sans-serif;
 }

@@ -3,13 +3,13 @@ import Link from "next/link";
 export function HeroActions() {
   return (
     <div className="hero-actions">
-      <Link className="primary-button" href="/coming-soon">
-        <span aria-hidden>⌁</span>
+      <Link className="primary-button" href={{ pathname: "/lab" }}>
+        <span aria-hidden>↗</span>
         EXPLORE THE LAB
       </Link>
-      <a className="secondary-button" href="#projects">
+      <Link className="secondary-button" href={{ pathname: "/projects" }}>
         VIEW PROJECTS <span aria-hidden>→</span>
-      </a>
+      </Link>
     </div>
   );
 }

@@ -21,13 +21,13 @@ export interface ProjectItem {
 
 export const homepageContent = {
   navigation: [
-    { label: "HOME", href: "#home" },
-    { label: "ABOUT", href: "/coming-soon" },
-    { label: "LAB ENVIRONMENT", href: "/coming-soon" },
-    { label: "PROJECTS", href: "#projects" },
-    { label: "DOCUMENTATION", href: "#operations" },
-    { label: "BLOG", href: "/coming-soon" },
-    { label: "CONTACT", href: "mailto:j.pulido.cyber@outlook.com" },
+    { label: "HOME", href: "/" },
+    { label: "ABOUT", href: "/about" },
+    { label: "LAB ENVIRONMENT", href: "/lab" },
+    { label: "PROJECTS", href: "/projects" },
+    { label: "DOCUMENTATION", href: "/documentation" },
+    { label: "BLOG", href: "/blog" },
+    { label: "CONTACT", href: "/contact" },
   ] satisfies readonly NavigationItem[],
   metrics: [
     { icon: "server", value: "1", label: "SYSTEM DEPLOYED" },
@@ -39,7 +39,7 @@ export const homepageContent = {
   projects: [
     {
       number: "01",
-      icon: "⌘",
+      icon: "GRID",
       title: "Enterprise Home Lab",
       description:
         "Designing a realistic virtual environment for networking, Windows, Linux, identity, monitoring, and security testing.",
@@ -49,7 +49,7 @@ export const homepageContent = {
     },
     {
       number: "02",
-      icon: "</>",
+      icon: "CLI",
       title: "Python Automation",
       description:
         "Building practical Python tools while developing programming, troubleshooting, and automation fundamentals.",

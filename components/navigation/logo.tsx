@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export function Logo() {
   return (
-    <Link className="brand" href="#home" aria-label="Project RedForge home">
+    <Link className="brand" href="/" aria-label="Project RedForge home">
       <span className="brand-mark" aria-hidden>
         <svg viewBox="0 0 48 56">
           <path className="brand-shield" d="M24 2 43 12v19c0 11-7.5 18-19 23C12.5 49 5 42 5 31V12L24 2Z" />

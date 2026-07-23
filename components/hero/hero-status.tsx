@@ -1,19 +1,19 @@
 export function HeroStatus() {
   return (
-    <aside className="network-status-panel" aria-label="Network status">
+    <aside className="network-status-panel" aria-label="Engineering status">
       <div className="status-row">
-        <span>NETWORK STATUS</span>
+        <span>ENGINEERING STATUS</span>
         <strong className="live-status">
-          <span /> LIVE
+          <span /> IN PROGRESS
         </strong>
       </div>
       <div className="status-row">
-        <span>DOMAIN CONTROLLERS</span>
-        <strong>1</strong>
+        <span>DOCUMENTATION BASELINE</span>
+        <strong>IMPLEMENTED</strong>
       </div>
       <div className="status-row">
-        <span>SYSTEMS ONLINE</span>
-        <strong>1</strong>
+        <span>LAB ARCHITECTURE</span>
+        <strong>TARGET STATE</strong>
       </div>
     </aside>
   );

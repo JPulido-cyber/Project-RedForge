@@ -7,7 +7,7 @@ interface FooterProps {
   hidden?: boolean;
 }
 
-export function Footer({ hidden = true }: FooterProps) {
+export function Footer({ hidden = false }: FooterProps) {
   return (
     <footer className="site-footer" hidden={hidden}>
       <Logo />
