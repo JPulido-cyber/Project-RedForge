@@ -18,7 +18,7 @@ export function ProjectExperience({ project }: { project: Project }) {
     <div className="project-experience">
       <ProjectHero project={project} />
       <ProjectNavigation />
-      <main className="project-experience-main">
+      <div className="project-experience-main">
         <ProjectOverview project={project} />
         <ProjectObjectives objectives={project.objectives} />
         <ProjectArchitecture architecture={project.architecture} />
@@ -29,7 +29,7 @@ export function ProjectExperience({ project }: { project: Project }) {
         <ProjectEvidence project={project} />
         <FutureRoadmap items={project.futureRoadmap} />
         <RelatedProjects slugs={project.relatedProjectSlugs} />
-      </main>
+      </div>
       <ProjectFooter />
     </div>
   );

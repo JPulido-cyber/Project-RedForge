@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { ComingSoonState } from "@/components/feedback";
+import { PlatformShell } from "@/components/layout";
 
 export const metadata: Metadata = {
   title: "Coming Soon",
@@ -11,5 +12,5 @@ export const metadata: Metadata = {
 };
 
 export default function ComingSoonPage() {
-  return <ComingSoonState />;
+  return <PlatformShell><ComingSoonState /></PlatformShell>;
 }

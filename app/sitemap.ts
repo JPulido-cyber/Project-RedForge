@@ -10,6 +10,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 1,
     },
+    ...["about", "lab", "projects", "documentation", "contact", "blog"].map((route) => ({
+      url: `${applicationMetadata.siteUrl}/${route}`,
+      changeFrequency: "monthly" as const,
+      priority: route === "projects" ? 0.9 : 0.7,
+    })),
     ...projects.map((project) => ({
       url: `${applicationMetadata.siteUrl}/projects/${project.slug}`,
       lastModified: project.updatedAt,

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { MaintenanceState } from "@/components/feedback";
+import { PlatformShell } from "@/components/layout";
 
 export const metadata: Metadata = {
   title: "Maintenance",
@@ -11,5 +12,5 @@ export const metadata: Metadata = {
 };
 
 export default function MaintenancePage() {
-  return <MaintenanceState />;
+  return <PlatformShell><MaintenanceState /></PlatformShell>;
 }

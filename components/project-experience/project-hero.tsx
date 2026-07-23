@@ -4,7 +4,7 @@ import Link from "next/link";
 export function ProjectHero({ project }: { project: Project }) {
   return (
     <header className="project-hero">
-      <Link className="project-back-link" href="/#projects">&larr; PROJECT INDEX</Link>
+      <Link className="project-back-link" href={{ pathname: "/projects" }}>&larr; PROJECT INDEX</Link>
       <div className="project-hero-grid">
         <div>
           <p className="project-kicker">ENGINEERING PROJECT / {project.phase}</p>
