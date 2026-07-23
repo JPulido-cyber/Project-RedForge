@@ -22,6 +22,10 @@
   --rf-color-forge-panel: #111111;
   --rf-color-forge-text: #f0f2f2;
   --rf-color-forge-muted: #92999c;
+  --rf-color-forge-line: rgb(255 255 255 / 8%);
+  --rf-color-forge-line-strong: rgb(255 255 255 / 14%);
+  --rf-color-ember-soft: rgb(255 91 19 / 12%);
+  --rf-color-ember-medium: rgb(255 91 19 / 28%);
 
   /* Typography */
   --rf-font-size-xs: 0.75rem;
@@ -60,6 +64,10 @@
   --rf-shadow-sm: 0 1px 2px rgb(0 0 0 / 0.06);
   --rf-shadow-md: 0 8px 24px rgb(0 0 0 / 0.1);
   --rf-shadow-lg: 0 20px 48px rgb(0 0 0 / 0.16);
+  --rf-shadow-surface: 0 24px 80px rgb(0 0 0 / 0.35);
+  --rf-shadow-elevated: 0 32px 100px rgb(0 0 0 / 0.52);
+  --rf-shadow-ember: 0 18px 55px rgb(255 69 10 / 0.14);
+  --rf-glow-ember: 0 0 42px rgb(255 80 13 / 0.18);
 
   /* Motion */
   --rf-duration-fast: 150ms;
@@ -90,5 +98,9 @@
     --rf-color-forge-panel: #111111;
     --rf-color-forge-text: #f0f2f2;
     --rf-color-forge-muted: #92999c;
+    --rf-color-forge-line: rgb(255 255 255 / 8%);
+    --rf-color-forge-line-strong: rgb(255 255 255 / 14%);
+    --rf-color-ember-soft: rgb(255 91 19 / 12%);
+    --rf-color-ember-medium: rgb(255 91 19 / 28%);
   }
 }
