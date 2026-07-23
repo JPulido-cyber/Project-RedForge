@@ -1,0 +1,75 @@
+@keyframes rf-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(0.75rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rf-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes rf-map-pulse {
+  0%,
+  100% {
+    opacity: 0.65;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.motion-page-enter,
+.motion-hero-enter,
+.motion-card-enter,
+.motion-timeline-enter,
+.motion-command-center-enter {
+  animation: rf-fade-up var(--rf-duration-normal) var(--rf-ease-standard) both;
+}
+
+.motion-page-enter,
+.motion-hero-enter {
+  animation-duration: 600ms;
+}
+
+.motion-hover-lift {
+  transition:
+    transform var(--rf-duration-fast) var(--rf-ease-standard),
+    box-shadow var(--rf-duration-fast) var(--rf-ease-standard);
+}
+
+.motion-hover-lift:hover {
+  transform: translateY(-2px);
+}
+
+.motion-map-pulse {
+  animation: rf-map-pulse 600ms var(--rf-ease-standard) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-page-enter,
+  .motion-hero-enter,
+  .motion-card-enter,
+  .motion-timeline-enter,
+  .motion-command-center-enter,
+  .motion-map-pulse {
+    animation: none;
+  }
+
+  .motion-hover-lift {
+    transition: none;
+  }
+
+  .motion-hover-lift:hover {
+    transform: none;
+  }
+}
