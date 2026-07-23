@@ -11,3 +11,5 @@ export interface ProjectContent extends ContentRecord {
   status: "planned" | "active" | "complete" | "archived";
   technologies: readonly string[];
 }
+
+export type { MetricItem, NavigationItem, ProjectItem } from "./homepage";

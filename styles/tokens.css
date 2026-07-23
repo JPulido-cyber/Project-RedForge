@@ -15,6 +15,13 @@
   --rf-color-success: #15803d;
   --rf-color-warning: #b45309;
   --rf-color-danger: #b91c1c;
+  --rf-color-ember: #ff6b00;
+  --rf-color-ember-bright: #ff812c;
+  --rf-color-forge-black: #060809;
+  --rf-color-forge-surface: #0d0f10;
+  --rf-color-forge-panel: #111111;
+  --rf-color-forge-text: #f0f2f2;
+  --rf-color-forge-muted: #92999c;
 
   /* Typography */
   --rf-font-size-xs: 0.75rem;
@@ -76,5 +83,12 @@
     --rf-color-success: #4ade80;
     --rf-color-warning: #fbbf24;
     --rf-color-danger: #f87171;
+    --rf-color-ember: #ff6b00;
+    --rf-color-ember-bright: #ff812c;
+    --rf-color-forge-black: #060809;
+    --rf-color-forge-surface: #0d0f10;
+    --rf-color-forge-panel: #111111;
+    --rf-color-forge-text: #f0f2f2;
+    --rf-color-forge-muted: #92999c;
   }
 }

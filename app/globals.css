@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "../styles/tokens.css";
 @import "../styles/motion.css";
+@import "../styles/home.css";
 
 :root {
   --background: var(--rf-color-surface);
@@ -23,6 +24,13 @@
   --color-success: var(--rf-color-success);
   --color-warning: var(--rf-color-warning);
   --color-danger: var(--rf-color-danger);
+  --color-ember: var(--rf-color-ember);
+  --color-ember-bright: var(--rf-color-ember-bright);
+  --color-forge-black: var(--rf-color-forge-black);
+  --color-forge-surface: var(--rf-color-forge-surface);
+  --color-forge-panel: var(--rf-color-forge-panel);
+  --color-forge-text: var(--rf-color-forge-text);
+  --color-forge-muted: var(--rf-color-forge-muted);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --radius-sm: var(--rf-radius-sm);
