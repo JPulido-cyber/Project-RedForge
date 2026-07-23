@@ -1,0 +1,11 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "redforge",
+  "compatibility_date": "2026-07-23",
+  "compatibility_flags": ["nodejs_compat"],
+  // Set the adapter-generated entrypoint and assets directory after adapter review.
+  "main": "<adapter-output>/worker.js",
+  "assets": {
+    "directory": "<adapter-output>/assets"
+  }
+}
