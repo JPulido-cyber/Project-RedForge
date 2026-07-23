@@ -14,4 +14,8 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const ActiveEngineeringReport: Story = {};
+export const EnterpriseHomeLabFlagship: Story = {
+  name: "Enterprise Home Lab — Flagship report",
+  args: { project: projects[0] },
+};
 export const PlannedProject: Story = { args: { project: projects[1] } };

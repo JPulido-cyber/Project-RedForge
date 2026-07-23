@@ -19,3 +19,16 @@ test("planned projects use the shared experience", async ({ page }) => {
   await expect(page.getByRole("heading", { level: 1, name: "Active Directory Lab" })).toBeVisible();
   await expect(page.getByText("Architecture nodes will be published after discovery.")).toBeVisible();
 });
+
+test("flagship report exposes qualified inventories and editable architecture", async ({ page, request }) => {
+  await page.goto("/projects/enterprise-home-lab");
+
+  await expect(page.getByText(/server inventory — planned/i)).toBeVisible();
+  await expect(page.getByText(/no ingestion rate, retention, detection, or coverage metrics are asserted/i)).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Screenshot Gallery" })).toBeVisible();
+  await expect(page.getByAltText(/enterprise home lab network topology/i)).toBeVisible();
+
+  const diagramResponse = await request.get("/projects/enterprise-home-lab/diagrams/network-topology.svg");
+  expect(diagramResponse.ok()).toBeTruthy();
+  expect(diagramResponse.headers()["content-type"]).toContain("image/svg+xml");
+});
