@@ -1,26 +1,55 @@
 @import "tailwindcss";
+@import "../styles/tokens.css";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: var(--rf-color-surface);
+  --foreground: var(--rf-color-text);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-surface: var(--rf-color-surface);
+  --color-surface-raised: var(--rf-color-surface-raised);
+  --color-surface-subtle: var(--rf-color-surface-subtle);
+  --color-border: var(--rf-color-border);
+  --color-border-strong: var(--rf-color-border-strong);
+  --color-text: var(--rf-color-text);
+  --color-text-muted: var(--rf-color-text-muted);
+  --color-brand: var(--rf-color-brand);
+  --color-brand-strong: var(--rf-color-brand-strong);
+  --color-brand-contrast: var(--rf-color-brand-contrast);
+  --color-success: var(--rf-color-success);
+  --color-warning: var(--rf-color-warning);
+  --color-danger: var(--rf-color-danger);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --radius-sm: var(--rf-radius-sm);
+  --radius-md: var(--rf-radius-md);
+  --radius-lg: var(--rf-radius-lg);
+  --radius-xl: var(--rf-radius-xl);
+  --shadow-sm: var(--rf-shadow-sm);
+  --shadow-md: var(--rf-shadow-md);
+  --shadow-lg: var(--rf-shadow-lg);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: var(--rf-color-surface);
+    --foreground: var(--rf-color-text);
   }
+}
+
+* {
+  border-color: var(--rf-color-border);
+}
+
+html {
+  background: var(--background);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }

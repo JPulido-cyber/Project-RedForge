@@ -1,0 +1,80 @@
+:root {
+  color-scheme: light;
+
+  /* Color */
+  --rf-color-surface: #ffffff;
+  --rf-color-surface-raised: #ffffff;
+  --rf-color-surface-subtle: #f4f4f5;
+  --rf-color-border: #e4e4e7;
+  --rf-color-border-strong: #a1a1aa;
+  --rf-color-text: #171717;
+  --rf-color-text-muted: #52525b;
+  --rf-color-brand: #dc2626;
+  --rf-color-brand-strong: #991b1b;
+  --rf-color-brand-contrast: #ffffff;
+  --rf-color-success: #15803d;
+  --rf-color-warning: #b45309;
+  --rf-color-danger: #b91c1c;
+
+  /* Typography */
+  --rf-font-size-xs: 0.75rem;
+  --rf-font-size-sm: 0.875rem;
+  --rf-font-size-md: 1rem;
+  --rf-font-size-lg: 1.125rem;
+  --rf-font-size-xl: 1.25rem;
+  --rf-font-size-2xl: 1.5rem;
+  --rf-font-size-3xl: 1.875rem;
+  --rf-line-height-tight: 1.2;
+  --rf-line-height-normal: 1.5;
+  --rf-line-height-relaxed: 1.7;
+  --rf-letter-spacing-tight: -0.025em;
+  --rf-letter-spacing-wide: 0.08em;
+
+  /* Spacing */
+  --rf-space-1: 0.25rem;
+  --rf-space-2: 0.5rem;
+  --rf-space-3: 0.75rem;
+  --rf-space-4: 1rem;
+  --rf-space-5: 1.25rem;
+  --rf-space-6: 1.5rem;
+  --rf-space-8: 2rem;
+  --rf-space-10: 2.5rem;
+  --rf-space-12: 3rem;
+  --rf-space-16: 4rem;
+  --rf-space-20: 5rem;
+  --rf-space-24: 6rem;
+
+  /* Shape and depth */
+  --rf-radius-sm: 0.375rem;
+  --rf-radius-md: 0.625rem;
+  --rf-radius-lg: 0.875rem;
+  --rf-radius-xl: 1.25rem;
+  --rf-radius-full: 9999px;
+  --rf-shadow-sm: 0 1px 2px rgb(0 0 0 / 0.06);
+  --rf-shadow-md: 0 8px 24px rgb(0 0 0 / 0.1);
+  --rf-shadow-lg: 0 20px 48px rgb(0 0 0 / 0.16);
+
+  /* Motion */
+  --rf-duration-fast: 150ms;
+  --rf-duration-normal: 250ms;
+  --rf-ease-standard: cubic-bezier(0.2, 0, 0, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --rf-color-surface: #0a0a0a;
+    --rf-color-surface-raised: #18181b;
+    --rf-color-surface-subtle: #27272a;
+    --rf-color-border: #3f3f46;
+    --rf-color-border-strong: #71717a;
+    --rf-color-text: #ededed;
+    --rf-color-text-muted: #a1a1aa;
+    --rf-color-brand: #ef4444;
+    --rf-color-brand-strong: #f87171;
+    --rf-color-brand-contrast: #18181b;
+    --rf-color-success: #4ade80;
+    --rf-color-warning: #fbbf24;
+    --rf-color-danger: #f87171;
+  }
+}

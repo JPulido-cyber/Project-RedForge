@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# RedForge
 
-## Getting Started
+RedForge is built with the Next.js App Router, React, TypeScript, and Tailwind CSS.
 
-First, run the development server:
+## Architecture
+
+```text
+app/                 Routes, layouts, and global application entry points
+components/
+  ui/                Reusable, product-agnostic primitives
+  <feature>/         Domain-oriented composed interface sections
+config/              Typed application configuration and design tokens
+content/             Authored presentation copy
+data/                Typed datasets and data-access adapters
+hooks/               Shared client-side React hooks
+lib/                 Framework-agnostic utilities
+styles/              Global design tokens and shared styles
+types/               Shared TypeScript contracts
+public/              Static assets
+```
+
+Keep route-specific implementation close to its route. Promote code into the
+top-level folders only when it is shared. Components are Server Components by
+default; add `"use client"` at the smallest boundary that needs interactivity.
+
+## Getting started
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Quality checks
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run check
+npm run build
+```
 
-## Learn More
+`check` runs ESLint with zero warnings allowed and verifies TypeScript without
+emitting files.
 
-To learn more about Next.js, take a look at the following resources:
+## Design system
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+CSS custom properties in `styles/tokens.css` are the source of truth for color,
+type, spacing, radius, shadow, and motion values. Tailwind theme aliases expose
+the semantic color and shape tokens to components. `config/design-tokens.ts`
+provides typed references for code-driven use cases.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Import reusable primitives from `@/components/ui`.
