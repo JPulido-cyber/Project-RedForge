@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { PlatformShell, Section } from "@/components/layout";
-import { documentationEntries } from "@/content/documentation";
+import { documentationCategories, documentationEntries } from "@/content/documentation";
 
 export const metadata: Metadata = {
   title: "Engineering Documentation",
@@ -19,8 +19,8 @@ export default function DocumentationPage() {
       </Section>
       <Section className="documentation-layout">
         <aside className="documentation-rail forged-panel">
-          <p className="rail-label">Publishing states</p>
-          <span>Review ready</span><span>Redaction pending</span><span>Planned</span>
+          <p className="rail-label">Documentation categories</p>
+          {documentationCategories.map((category) => <span key={category}>{category} <small>{documentationEntries.filter((entry) => entry.category === category).length}</small></span>)}
           <div className="rail-divider" />
           <p className="rail-label">Workflow</p>
           <span>Obsidian draft</span><span>Review & redaction</span><span>Repository validation</span><span>Deployment</span>
@@ -28,9 +28,9 @@ export default function DocumentationPage() {
         <div className="documentation-list">
           {documentationEntries.map((entry) => (
             <article className="documentation-card forged-panel" key={entry.slug}>
-              <div><span className="evidence-chip">{entry.state.replaceAll("-", " ")}</span><p className="technical-eyebrow">{entry.category}</p><h2>{entry.title}</h2><p>{entry.summary}</p></div>
+              <div><span className="evidence-chip">{entry.status}</span><p className="technical-eyebrow">{entry.category}</p><h2>{entry.title}</h2><p>{entry.summary}</p></div>
               <div className="documentation-tags">{entry.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
-              {entry.projectSlug ? <Link href={`/projects/${entry.projectSlug}`}>Open related project <span aria-hidden>→</span></Link> : null}
+              <Link href={{ pathname: `/documentation/${entry.slug}` }}>Read engineering report <span aria-hidden>→</span></Link>
             </article>
           ))}
         </div>
