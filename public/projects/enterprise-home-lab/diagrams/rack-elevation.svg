@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Enterprise Home Lab conceptual rack elevation</title><desc id="desc">Planned rack positions for firewall, switching, virtualization, backup, power, and reserved equipment.</desc>
+  <defs><style>.bg{fill:#080a0b}.rack{fill:#0c0e0f;stroke:#646c6f;stroke-width:3}.unit{fill:#151819;stroke:#3c4244}.accent{stroke:#ff6b18}.h{fill:#eef1f2;font:700 16px Arial}.s{fill:#899295;font:12px Arial}.k{fill:#ff812c;font:700 11px Arial;letter-spacing:1.4px}</style></defs>
+  <rect class="bg" width="1200" height="675"/><text class="k" x="55" y="48">PLANNED / CONCEPTUAL RACK ELEVATION — HARDWARE TBD</text>
+  <rect class="rack" x="315" y="85" width="570" height="535" rx="6"/>
+  <g transform="translate(345 115)"><rect class="unit" width="510" height="50"/><text class="s" x="20" y="31">U12</text><text class="h" x="255" y="31" text-anchor="middle">RESERVED / FUTURE</text></g>
+  <g transform="translate(345 175)"><rect class="unit" width="510" height="50"/><text class="s" x="20" y="31">U11</text><text class="h" x="255" y="31" text-anchor="middle">BACKUP STORAGE — PLANNED</text></g>
+  <g transform="translate(345 235)"><rect class="unit accent" width="510" height="105"/><text class="s" x="20" y="31">U09–U10</text><text class="h" x="255" y="62" text-anchor="middle">VIRTUALIZATION HOST — PLANNED</text></g>
+  <g transform="translate(345 350)"><rect class="unit" width="510" height="50"/><text class="s" x="20" y="31">U08</text><text class="h" x="255" y="31" text-anchor="middle">MANAGED SWITCH — PLANNED</text></g>
+  <g transform="translate(345 410)"><rect class="unit accent" width="510" height="50"/><text class="s" x="20" y="31">U07</text><text class="h" x="255" y="31" text-anchor="middle">FIREWALL — PLANNED</text></g>
+  <g transform="translate(345 470)"><rect class="unit" width="510" height="105"/><text class="s" x="20" y="31">U05–U06</text><text class="h" x="255" y="62" text-anchor="middle">POWER / UPS — PLANNED</text></g>
+  <text class="s" x="55" y="645">RACK UNITS, DEVICES, AND CAPACITY ARE DESIGN PLACEHOLDERS</text>
+</svg>

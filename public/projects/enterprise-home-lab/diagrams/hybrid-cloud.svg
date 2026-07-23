@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Future Enterprise Home Lab hybrid cloud layout</title><desc id="desc">Future conceptual connection between the home lab and cloud identity, networking, logging, and workload services.</desc>
+  <defs><style>.bg{fill:#080a0b}.zone{fill:#101314;stroke:#3b4143}.future{stroke:#ff6b18;stroke-dasharray:9 8}.line{fill:none;stroke:#ff6b18;stroke-width:2}.h{fill:#eef1f2;font:700 18px Arial}.s{fill:#899295;font:12px Arial}.k{fill:#ff812c;font:700 11px Arial;letter-spacing:1.4px}</style><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path fill="#ff6b18" d="M0 0l8 4-8 4z"/></marker></defs>
+  <rect class="bg" width="1200" height="675"/><text class="k" x="55" y="48">FUTURE / CONCEPT ONLY — NO CLOUD CONNECTION IMPLEMENTED</text>
+  <rect class="zone" x="70" y="120" width="430" height="430" rx="10"/><text class="h" x="100" y="165">REDFORGE LAB</text>
+  <g transform="translate(115 220)"><rect class="zone" width="150" height="80"/><text class="h" x="75" y="35" text-anchor="middle">FIREWALL</text><text class="s" x="75" y="58" text-anchor="middle">Planned</text></g>
+  <g transform="translate(305 220)"><rect class="zone" width="150" height="80"/><text class="h" x="75" y="35" text-anchor="middle">SERVERS</text><text class="s" x="75" y="58" text-anchor="middle">Planned</text></g>
+  <g transform="translate(210 390)"><rect class="zone" width="150" height="80"/><text class="h" x="75" y="35" text-anchor="middle">SPLUNK</text><text class="s" x="75" y="58" text-anchor="middle">Planned</text></g>
+  <rect class="zone future" x="700" y="120" width="430" height="430" rx="10"/><text class="h" x="730" y="165">FUTURE CLOUD</text>
+  <g transform="translate(750 220)"><rect class="zone" width="150" height="80"/><text class="h" x="75" y="35" text-anchor="middle">IDENTITY</text><text class="s" x="75" y="58" text-anchor="middle">Future</text></g>
+  <g transform="translate(940 220)"><rect class="zone" width="150" height="80"/><text class="h" x="75" y="35" text-anchor="middle">WORKLOADS</text><text class="s" x="75" y="58" text-anchor="middle">Future</text></g>
+  <g transform="translate(845 390)"><rect class="zone" width="150" height="80"/><text class="h" x="75" y="35" text-anchor="middle">LOGGING</text><text class="s" x="75" y="58" text-anchor="middle">Future</text></g>
+  <path class="line future" marker-end="url(#a)" d="M500 335h200"/><text class="s" x="600" y="315" text-anchor="middle">CONTROLLED TUNNEL / TBD</text>
+  <text class="s" x="55" y="640">PROVIDER, CONNECTIVITY, IDENTITY MODEL, AND SECURITY CONTROLS REQUIRE FUTURE APPROVAL</text>
+</svg>

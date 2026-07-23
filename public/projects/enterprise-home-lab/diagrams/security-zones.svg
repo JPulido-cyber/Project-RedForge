@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Enterprise Home Lab security zones</title><desc id="desc">Concentric planned security zones from untrusted Internet to restricted management services.</desc>
+  <defs><style>.bg{fill:#080a0b}.z1{fill:#151819;stroke:#404648}.z2{fill:#121516;stroke:#ff6b18;stroke-opacity:.3}.z3{fill:#0e1112;stroke:#ff6b18;stroke-opacity:.55}.z4{fill:#0a0c0d;stroke:#ff812c}.h{fill:#eef1f2;font:700 20px Arial}.s{fill:#8e9799;font:12px Arial}.k{fill:#ff812c;font:700 11px Arial;letter-spacing:1.4px}.arrow{fill:none;stroke:#ff6b18;stroke-width:2;stroke-dasharray:8 7}</style></defs>
+  <rect class="bg" width="1200" height="675"/><text class="k" x="55" y="48">IN PROGRESS / SECURITY ZONE MODEL</text>
+  <rect class="z1" x="60" y="90" width="1080" height="520" rx="12"/><text class="h" x="90" y="130">ZONE 0 — INTERNET / UNTRUSTED</text>
+  <rect class="z2" x="135" y="165" width="930" height="380" rx="10"/><text class="h" x="165" y="205">ZONE 1 — DMZ + LAB / RESTRICTED</text><text class="s" x="165" y="229">Published services and authorized security testing</text>
+  <rect class="z3" x="270" y="260" width="660" height="230" rx="8"/><text class="h" x="300" y="300">ZONE 2 — CLIENT + SERVER / ENTERPRISE</text><text class="s" x="300" y="324">Managed endpoints and approved infrastructure services</text>
+  <rect class="z4" x="430" y="350" width="340" height="90" rx="6"/><text class="h" x="600" y="387" text-anchor="middle">MANAGEMENT</text><text class="k" x="600" y="414" text-anchor="middle">PRIVILEGED / IN PROGRESS</text>
+  <path class="arrow" d="M1120 145C1000 180 990 240 930 270M930 320C840 340 820 360 770 380"/>
+  <text class="s" x="55" y="645">DEFAULT-DENY POLICY AND EXCEPTIONS ARE PLANNED — RULE EVIDENCE PENDING</text>
+</svg>

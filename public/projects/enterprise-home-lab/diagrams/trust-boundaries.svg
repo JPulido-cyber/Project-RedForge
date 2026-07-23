@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Enterprise Home Lab trust boundaries</title><desc id="desc">In-progress trust model separating external, enterprise, privileged, and security testing boundaries.</desc>
+  <defs><style>.bg{fill:#080a0b}.b{fill:none;stroke:#ff6b18;stroke-dasharray:8 7}.zone{fill:#101314;stroke:#3a4042}.h{fill:#eef1f2;font:700 18px Arial}.s{fill:#899295;font:12px Arial}.k{fill:#ff812c;font:700 11px Arial;letter-spacing:1.4px}.line{fill:none;stroke:#ff6b18;stroke-width:2}</style></defs>
+  <rect class="bg" width="1200" height="675"/><text class="k" x="55" y="48">IN PROGRESS / TRUST BOUNDARY MODEL</text>
+  <rect class="b" x="45" y="75" width="1110" height="545" rx="10"/><text class="s" x="70" y="105">BOUNDARY A — LAB ENVIRONMENT</text>
+  <rect class="zone" x="85" y="150" width="220" height="120"/><text class="h" x="195" y="198" text-anchor="middle">EXTERNAL</text><text class="s" x="195" y="226" text-anchor="middle">Internet / Untrusted</text>
+  <rect class="zone" x="405" y="150" width="380" height="120"/><text class="h" x="595" y="198" text-anchor="middle">ENTERPRISE SERVICES</text><text class="s" x="595" y="226" text-anchor="middle">Server + Client VLANs</text>
+  <rect class="zone" x="885" y="150" width="220" height="120"/><text class="h" x="995" y="198" text-anchor="middle">FUTURE CLOUD</text><text class="s" x="995" y="226" text-anchor="middle">No connection</text>
+  <rect class="b" x="365" y="325" width="460" height="220" rx="8"/><text class="s" x="390" y="355">BOUNDARY B — PRIVILEGED ADMINISTRATION</text>
+  <rect class="zone" x="405" y="390" width="170" height="100"/><text class="h" x="490" y="430" text-anchor="middle">OPERATOR</text><text class="k" x="490" y="458" text-anchor="middle">CONTROLLED</text>
+  <rect class="zone" x="615" y="390" width="170" height="100"/><text class="h" x="700" y="430" text-anchor="middle">MANAGEMENT</text><text class="k" x="700" y="458" text-anchor="middle">IN PROGRESS</text>
+  <rect class="zone" x="85" y="390" width="220" height="100"/><text class="h" x="195" y="430" text-anchor="middle">LAB TESTING</text><text class="k" x="195" y="458" text-anchor="middle">ISOLATED</text>
+  <path class="line" d="M305 210h100M785 210h100M305 440h60M575 440h40"/>
+  <text class="s" x="55" y="650">ACCESS POLICY AND VALIDATION EVIDENCE ARE PENDING</text>
+</svg>

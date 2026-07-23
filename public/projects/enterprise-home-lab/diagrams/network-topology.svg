@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Enterprise Home Lab target network topology</title>
+  <desc id="desc">In-progress design showing Internet, firewall, DMZ, management, server, client, and lab zones.</desc>
+  <defs>
+    <style>
+      .bg{fill:#080a0b}.grid{stroke:#fff;stroke-opacity:.035}.line{fill:none;stroke:#ff6b18;stroke-width:2}.future{stroke-dasharray:8 8}.zone{fill:#101314;stroke:#3a3f41}.edge{stroke:#ff7a2d}.t{fill:#eef1f2;font:600 17px Arial}.s{fill:#899194;font:12px Arial;letter-spacing:1px}.status{fill:#ff812c;font:700 11px Arial;letter-spacing:1.5px}.trust{fill:none;stroke:#ff6b18;stroke-opacity:.3;stroke-dasharray:5 7}
+    </style>
+    <pattern id="g" width="50" height="50" patternUnits="userSpaceOnUse"><path class="grid" d="M50 0H0V50"/></pattern>
+    <marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path fill="#ff6b18" d="M0 0l8 4-8 4z"/></marker>
+  </defs>
+  <rect class="bg" width="1200" height="675"/><rect width="1200" height="675" fill="url(#g)"/>
+  <text class="status" x="55" y="48">IN PROGRESS / TARGET STATE</text>
+  <rect class="zone" x="70" y="110" width="170" height="88"/><text class="t" x="155" y="145" text-anchor="middle">INTERNET</text><text class="s" x="155" y="169" text-anchor="middle">UNTRUSTED</text>
+  <rect class="zone edge" x="310" y="110" width="190" height="88"/><text class="t" x="405" y="145" text-anchor="middle">FIREWALL</text><text class="s" x="405" y="169" text-anchor="middle">PLANNED</text>
+  <path class="line" marker-end="url(#a)" d="M240 154h70"/>
+  <rect class="trust" x="560" y="72" width="570" height="535" rx="8"/><text class="s" x="580" y="99">INTERNAL TRUST BOUNDARY</text>
+  <path class="line" d="M500 154h50v390"/>
+  <g transform="translate(600 120)"><rect class="zone" width="210" height="90"/><text class="t" x="105" y="38" text-anchor="middle">DMZ</text><text class="s" x="105" y="62" text-anchor="middle">PLANNED</text></g>
+  <g transform="translate(860 120)"><rect class="zone edge" width="210" height="90"/><text class="t" x="105" y="38" text-anchor="middle">MANAGEMENT</text><text class="s" x="105" y="62" text-anchor="middle">IN PROGRESS</text></g>
+  <g transform="translate(600 280)"><rect class="zone edge" width="210" height="90"/><text class="t" x="105" y="38" text-anchor="middle">SERVER VLAN</text><text class="s" x="105" y="62" text-anchor="middle">IN PROGRESS</text></g>
+  <g transform="translate(860 280)"><rect class="zone edge" width="210" height="90"/><text class="t" x="105" y="38" text-anchor="middle">CLIENT VLAN</text><text class="s" x="105" y="62" text-anchor="middle">IN PROGRESS</text></g>
+  <g transform="translate(600 440)"><rect class="zone edge" width="210" height="90"/><text class="t" x="105" y="38" text-anchor="middle">LAB VLAN</text><text class="s" x="105" y="62" text-anchor="middle">IN PROGRESS</text></g>
+  <g transform="translate(860 440)"><rect class="zone" width="210" height="90"/><text class="t" x="105" y="38" text-anchor="middle">CLOUD</text><text class="s" x="105" y="62" text-anchor="middle">FUTURE</text></g>
+  <path class="line" marker-end="url(#a)" d="M550 165h50M550 325h50M550 325h310M550 485h50"/><path class="line future" marker-end="url(#a)" d="M810 485h50"/>
+  <text class="s" x="55" y="635">DESIGN ARTIFACT — NOT IMPLEMENTATION EVIDENCE</text>
+</svg>
