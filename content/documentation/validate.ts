@@ -9,10 +9,15 @@ const unsafeContentPatterns = [
 
 export function assertValidDocumentationEntries(entries: readonly DocumentationEntry[]) {
   const slugs = new Set<string>();
+  const sourceLabels = new Set<string>();
 
   for (const entry of entries) {
     if (slugs.has(entry.slug)) throw new Error(`Duplicate documentation slug: ${entry.slug}`);
     slugs.add(entry.slug);
+    if (sourceLabels.has(entry.source.label)) {
+      throw new Error(`Duplicate documentation source: ${entry.source.label}`);
+    }
+    sourceLabels.add(entry.source.label);
 
     if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(entry.slug)) {
       throw new Error(`Invalid documentation slug: ${entry.slug}`);
@@ -29,15 +34,16 @@ export function assertValidDocumentationEntries(entries: readonly DocumentationE
       }
     }
 
+    const publishableText = JSON.stringify(entry);
+    for (const unsafe of unsafeContentPatterns) {
+      if (unsafe.pattern.test(publishableText)) {
+        throw new Error(`Potential ${unsafe.label} found in publishable documentation: ${entry.slug}`);
+      }
+    }
+
     for (const evidence of entry.evidence) {
       if (evidence.src && !evidence.alt) {
         throw new Error(`Evidence with an asset requires alt text: ${entry.slug}/${evidence.id}`);
-      }
-      const reviewText = [evidence.description, evidence.content ?? ""].join("\n");
-      for (const unsafe of unsafeContentPatterns) {
-        if (unsafe.pattern.test(reviewText)) {
-          throw new Error(`Potential ${unsafe.label} found in publishable evidence: ${entry.slug}/${evidence.id}`);
-        }
       }
     }
   }

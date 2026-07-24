@@ -20,6 +20,27 @@ test("server establishment report exposes the required engineering sections", as
   await expect(page.getByText("Evidence pending", { exact: true })).toBeVisible();
 });
 
+test("synchronized ADR records appear and preserve reviewed punctuation", async ({ page }) => {
+  const records = [
+    ["adr-001-it-department-organizational-structure", "ADR-001 — IT Department Organizational Structure"],
+    ["adr-002-adoption-of-git-based-version-control", "ADR-002 — Adoption of Git-Based Version Control"],
+    ["adr-003-selection-of-next-js-as-the-application-framework", "ADR-003 — Selection of Next.js as the Application Framework"],
+    ["adr-004-adoption-of-cloud-deployment-through-vercel", "ADR-004 — Adoption of Cloud Deployment Through Vercel"],
+    ["adr-005-adoption-of-a-modular-component-architecture", "ADR-005 — Adoption of a Modular Component Architecture"],
+  ] as const;
+
+  await page.goto("/documentation");
+  await expect(page.getByRole("heading", { name: /ADR-001.*IT Department Organizational Structure/i })).toBeVisible();
+  await expect(page.getByRole("heading", { name: /ADR-005.*Modular Component Architecture/i })).toBeVisible();
+
+  for (const [slug, title] of records) {
+    await page.goto(`/documentation/${slug}`);
+    await expect(page.getByRole("heading", { level: 1, name: title })).toBeVisible();
+    await expect(page.getByText(/reviewed documentation evidence/i)).toBeVisible();
+    await expect(page.getByText(/does not claim deployment or technical validation evidence/i)).toBeVisible();
+  }
+});
+
 test("published report redacts internal network and account values", async ({ page }) => {
   await page.goto("/documentation/server-establishment-log");
   const body = await page.locator("body").innerText();
@@ -32,8 +53,8 @@ test("homepage activity feed links to published reports", async ({ page }) => {
   await page.goto("/");
   const feed = page.getByRole("region", { name: "Evidence-backed updates" });
   await expect(feed.getByRole("heading", { name: "Evidence-backed updates" })).toBeVisible();
-  await feed.getByRole("link", { name: /RF-DC01 Server Establishment Log/i }).click();
-  await expect(page).toHaveURL(/\/documentation\/server-establishment-log$/);
+  await feed.getByRole("link", { name: /ADR-002.*Adoption of Git-Based Version Control/i }).click();
+  await expect(page).toHaveURL(/\/documentation\/adr-002-adoption-of-git-based-version-control$/);
 });
 
 test("lab reflects verified identity progress without exposing addressing", async ({ page }) => {

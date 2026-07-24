@@ -12,7 +12,7 @@ export function EvidenceRenderer({ items }: { items: readonly EvidenceItem[] }) 
     <div className="engineering-evidence-grid">
       {items.map((item) => {
         if (item.kind === "configuration" && item.content && item.language) {
-          return <ConfigurationSnippet content={item.content} key={item.id} language={item.language} title={item.title} />;
+          return <ConfigurationSnippet content={item.content} description={item.description} key={item.id} language={item.language} title={item.title} />;
         }
         if (item.kind === "terminal" && item.content) {
           return <TerminalOutput content={item.content} key={item.id} title={item.title} />;

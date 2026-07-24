@@ -233,6 +233,13 @@
   font-size: 0.66rem;
 }
 
+.evidence-description {
+  padding: 14px 16px 0;
+  color: var(--rf-color-forge-steel);
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+
 .configuration-evidence pre,
 .terminal-evidence pre {
   overflow-x: auto;

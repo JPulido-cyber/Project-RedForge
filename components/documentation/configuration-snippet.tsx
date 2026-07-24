@@ -4,9 +4,10 @@ interface ConfigurationSnippetProps {
   title: string;
   language: string;
   content: string;
+  description?: string;
 }
 
-export function ConfigurationSnippet({ title, language, content }: ConfigurationSnippetProps) {
+export function ConfigurationSnippet({ title, language, content, description }: ConfigurationSnippetProps) {
   return (
     <figure className="configuration-evidence">
       <figcaption>
@@ -14,6 +15,7 @@ export function ConfigurationSnippet({ title, language, content }: Configuration
         <span>{language}</span>
         <EvidenceStatusBadge status="reviewed" />
       </figcaption>
+      {description ? <p className="evidence-description">{description}</p> : null}
       <pre><code>{content}</code></pre>
     </figure>
   );

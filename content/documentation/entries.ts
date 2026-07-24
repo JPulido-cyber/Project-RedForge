@@ -1,4 +1,5 @@
 import type { DocumentationCategory, DocumentationEntry } from "./types";
+import { generatedDocumentationEntries } from "./generated";
 import { assertValidDocumentationEntries } from "./validate";
 
 export const documentationCategories = [
@@ -12,7 +13,7 @@ export const documentationCategories = [
   "Troubleshooting Note",
 ] as const satisfies readonly DocumentationCategory[];
 
-export const documentationEntries = [
+export const manualDocumentationEntries = [
   {
     slug: "server-establishment-log",
     title: "RF-DC01 Server Establishment Log",
@@ -157,6 +158,11 @@ export const documentationEntries = [
       redactions: [],
     },
   },
+] as const satisfies readonly DocumentationEntry[];
+
+export const documentationEntries = [
+  ...manualDocumentationEntries,
+  ...generatedDocumentationEntries,
 ] as const satisfies readonly DocumentationEntry[];
 
 export function getDocumentationEntry(slug: string) {
