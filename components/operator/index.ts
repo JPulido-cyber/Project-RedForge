@@ -1,3 +1,4 @@
+export { AboutNarrative } from "./about-narrative";
 export { OperatorActions } from "./operator-actions";
 export { OperatorCard } from "./operator-card";
 export { OperatorSection } from "./operator-section";

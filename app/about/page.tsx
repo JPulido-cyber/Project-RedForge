@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 
 import { PlatformShell, Section } from "@/components/layout";
-import { OperatorActions, OperatorCard, OperatorStats } from "@/components/operator";
+import { AboutNarrative, OperatorCard } from "@/components/operator";
+import { aboutContent } from "@/content/about";
 
 export const metadata: Metadata = {
-  title: "Operator Profile",
-  description: "The professional engineering profile behind Project RedForge.",
+  title: "Engineer Profile",
+  description: "The leadership background, engineering purpose, and offensive cybersecurity direction behind Project RedForge.",
 };
 
 export default function AboutPage() {
@@ -13,27 +14,15 @@ export default function AboutPage() {
     <PlatformShell>
       <Section className="platform-hero dossier-hero">
         <div>
-          <p className="technical-eyebrow">Operator profile</p>
-          <h1>The Engineer Behind RedForge</h1>
-          <p>Military leadership, technical development, and a disciplined transition into cybersecurity engineering.</p>
+          <p className="technical-eyebrow">{aboutContent.hero.eyebrow}</p>
+          <h1>{aboutContent.hero.title}</h1>
+          <p>{aboutContent.hero.description}</p>
         </div>
         <div className="platform-hero-grid" aria-hidden />
       </Section>
-      <Section className="dossier-layout">
+      <Section className="about-layout">
         <OperatorCard />
-        <div className="forged-panel dossier-main">
-          <div className="panel-heading"><span>Personnel dossier</span><span>RF-001</span></div>
-          <OperatorStats />
-          <div className="skills-rail" aria-label="Core skills">
-            {["Python", "Networking", "Windows", "Linux", "Active Directory", "Splunk", "Cloud Security"].map((skill) => <span key={skill}>{skill}</span>)}
-          </div>
-          <OperatorActions />
-        </div>
-      </Section>
-      <Section className="principle-rail">
-        <div><p className="technical-eyebrow">Engineering philosophy</p><p>Cybersecurity is about understanding systems, thinking critically, and building solutions that stand under pressure.</p></div>
-        <div><p className="technical-eyebrow">Current objective</p><p>Build enterprise-grade environments, automate operations, hunt threats, and continuously improve.</p></div>
-        <strong>Build. Secure. Defend.</strong>
+        <AboutNarrative />
       </Section>
     </PlatformShell>
   );

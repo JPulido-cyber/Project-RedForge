@@ -1,3 +1,5 @@
+@import "./about.css";
+
 .platform-page {
   --font-redforge-body: "RedForge Inter";
   --font-redforge-display: "RedForge Orbitron";
