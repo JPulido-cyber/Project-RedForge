@@ -6,15 +6,14 @@ test("about page explains the engineer, RedForge purpose, and specialization", a
   await expect(page.getByRole("heading", { level: 1, name: "The Engineer Behind RedForge" })).toBeVisible();
   for (const heading of [
     "From leadership to engineering",
-    "Why RedForge exists",
+    "Why this path",
     "Engineering philosophy",
-    "Current mission",
     "Core technical focus",
   ]) {
     await expect(page.getByRole("heading", { name: heading })).toBeVisible();
   }
-  await expect(page.getByText(/transitioning into offensive cybersecurity/i)).toBeVisible();
-  await expect(page.getByText(/not a collection of isolated IT exercises/i)).toBeVisible();
+  await expect(page.getByText(/deliberate transition toward offensive cybersecurity/i)).toBeVisible();
+  await expect(page.getByText(/offensive security is most effective when it begins with operational understanding/i)).toBeVisible();
   await expect(page.getByText(/evidence-based and repeatable/i)).toBeVisible();
 });
 
@@ -22,24 +21,27 @@ test("technical focus is organized by supporting discipline", async ({ page }) =
   await page.goto("/about");
 
   for (const category of [
-    "Enterprise infrastructure",
-    "Identity",
-    "Security operations",
-    "Programming & automation",
-    "Cloud",
+    "Enterprise foundations",
+    "Visibility & detection",
+    "Automation & tooling",
+    "Modern enterprise",
   ]) {
     await expect(page.getByRole("heading", { name: category })).toBeVisible();
   }
   await expect(page.locator(".skills-rail")).toHaveCount(0);
 });
 
-test("professional profile provides accessible actions without low-value status UI", async ({ page }) => {
+test("professional profile consolidates identity without duplicate actions or status UI", async ({ page }) => {
   await page.goto("/about");
 
-  const profileActions = page.getByRole("navigation", { name: "Professional profile actions" });
-  await expect(profileActions.getByRole("link", { name: "Resume" })).toHaveAttribute("href", "/contact#resume");
-  await expect(profileActions.getByRole("link", { name: "GitHub" })).toHaveAttribute("rel", "noopener noreferrer");
-  await expect(profileActions.getByRole("link", { name: "LinkedIn" })).toHaveAttribute("rel", "noopener noreferrer");
+  const profile = page.getByRole("complementary", { name: "Jose Pulido" });
+  await expect(profile.getByRole("heading", { name: "Jose Pulido" })).toBeVisible();
+  await expect(profile.getByText("Offensive Security Engineering", { exact: true })).toBeVisible();
+  await expect(profile.getByText("13 years U.S. Army leadership", { exact: true })).toBeVisible();
+  await expect(profile.getByLabel("Engineering statement")).toContainText("Build.Understand.Secure.Assess.");
+  await expect(profile.getByRole("link")).toHaveCount(0);
+  await expect(page.locator(".about-snapshot")).toHaveCount(0);
+  await expect(page.getByRole("heading", { name: "Current mission" })).toHaveCount(0);
   await expect(page.getByText("SYSTEM STATUS", { exact: true })).toHaveCount(0);
   await expect(page.locator(".system-status-track")).toHaveCount(0);
 });
@@ -58,16 +60,16 @@ test("about page remains overflow-free across desktop, tablet, and mobile", asyn
     }));
     expect(widths.scroll).toBeLessThanOrEqual(widths.client);
     await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
-    await expect(page.getByRole("link", { name: "Resume", exact: true })).toBeVisible();
+    await expect(page.getByRole("link", { name: "View engineering records" })).toBeVisible();
   }
 });
 
 test("about actions retain keyboard-visible focus and destination routes", async ({ page, request }) => {
   await page.goto("/about");
-  const resume = page.getByRole("navigation", { name: "Professional profile actions" }).getByRole("link", { name: "Resume" });
-  await resume.focus();
-  await expect(resume).toBeFocused();
-  expect(await resume.evaluate((element) => getComputedStyle(element).outlineStyle)).not.toBe("none");
+  const records = page.getByRole("link", { name: "View engineering records" });
+  await records.focus();
+  await expect(records).toBeFocused();
+  expect(await records.evaluate((element) => getComputedStyle(element).outlineStyle)).not.toBe("none");
 
   for (const route of ["/", "/about", "/documentation", "/contact"]) {
     expect((await request.get(route)).ok(), `${route} should resolve`).toBeTruthy();
