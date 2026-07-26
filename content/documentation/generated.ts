@@ -333,6 +333,1183 @@ export const generatedDocumentationEntries = [
     }
   },
   {
+    "slug": "eng-001-project-redforge-charter",
+    "title": "ENG-001 — Project RedForge Charter",
+    "summary": "Established the mission, scope, operating principles, and long-term direction for Project RedForge.",
+    "category": "Engineering Log",
+    "status": "Implemented",
+    "publishingState": "published",
+    "date": "2026-07-19",
+    "updatedAt": "2026-07-19",
+    "objective": "Define the purpose, identity, scope, and operating principles of Project RedForge before beginning substantial implementation work. The objective was not simply to create another personal portfolio. The goal was to establish a structured engineering platform capable of documenting: Cybersecurity labs Infrastructure deployments Architecture decisions Engineering logs Milestones Troubleshooting records Security validation Automation projects Lessons learned Professional development",
+    "engineeringSummary": [
+      "Project RedForge was created during my transition from 13 years of U.S. Army Infantry leadership into cybersecurity engineering.",
+      "My military experience established a foundation in:",
+      "Leadership Mission planning Risk management Accountability Documentation Team development Operational discipline Performance under pressure",
+      "The project was designed to demonstrate how those skills translate into technical engineering work.",
+      "Rather than presenting certifications and résumé statements without supporting evidence, RedForge would document the actual process of learning, building, securing, validating, and improving technical systems.",
+      "Project RedForge was formally established as an evidence-first cybersecurity engineering initiative.",
+      "The charter created the foundation for all subsequent work, including:",
+      "The website platform The enterprise home lab The engineering documentation system The public deployment pipeline The RedForge visual identity The project lifecycle model The Obsidian publishing workflow"
+    ],
+    "technicalDecisions": [
+      {
+        "title": "Project RedForge Charter",
+        "rationale": "Define the purpose, identity, scope, and operating principles of Project RedForge before beginning substantial implementation work. The objective was not simply to create another personal portfolio. The goal was to establish a structured engineering platform capable of documenting: Cybersecurity labs Infrastructure deployments Architecture decisions Engineering logs Milestones Troubleshooting records Security validation Automation projects Lessons learned Professional development Build Design and implement functional systems, laboratories, automation, and infrastructure. Secure Apply security controls, segmentation, monitoring, identity management, validation, and defensive engineering. Defend Use telemetry, detection engineering, threat hunting, incident analysis, and continuous improvement to protect the environment."
+      }
+    ],
+    "lessonsLearned": [
+      "A clear mission prevents uncontrolled feature development.",
+      "Documentation standards should be established before the project becomes complex.",
+      "A portfolio becomes more credible when claims are connected to evidence.",
+      "Planned architecture can be valuable when it is clearly distinguished from implemented infrastructure.",
+      "Military planning and accountability principles translate effectively into engineering workflows.",
+      "The project should evolve through real engineering requirements rather than visual features alone."
+    ],
+    "evidence": [
+      {
+        "id": "eng-001-validation",
+        "title": "ENG-001 validation record",
+        "description": "Reviewed validation statements from the verified engineering log. Sensitive operational values and unreviewed assets are not published.",
+        "kind": "validation",
+        "status": "verified",
+        "checklist": [
+          {
+            "label": "Website architecture",
+            "state": "passed"
+          },
+          {
+            "label": "Branding",
+            "state": "passed"
+          },
+          {
+            "label": "Project organization",
+            "state": "passed"
+          },
+          {
+            "label": "Documentation standards",
+            "state": "passed"
+          },
+          {
+            "label": "Evidence handling",
+            "state": "passed"
+          },
+          {
+            "label": "Lab planning",
+            "state": "passed"
+          },
+          {
+            "label": "Public deployment",
+            "state": "passed"
+          },
+          {
+            "label": "Engineering reporting",
+            "state": "passed"
+          }
+        ]
+      },
+      {
+        "id": "eng-001-source-record",
+        "title": "Sanitized engineering record",
+        "description": "Documentation evidence identifying the reviewed source record. Sensitive configuration values and personal metadata are intentionally excluded.",
+        "kind": "configuration",
+        "status": "reviewed",
+        "language": "yaml",
+        "content": "record: ENG-001\ntitle: Project RedForge Charter\nstatus: verified\nproject: Project RedForge\nevidenceStatus: documented"
+      },
+      {
+        "id": "eng-001-screenshots",
+        "title": "Supporting engineering evidence",
+        "description": "Supporting source evidence is referenced by the engineering log but remains outside the public asset pipeline until security, privacy, and provenance review is complete.",
+        "kind": "screenshot",
+        "status": "pending"
+      }
+    ],
+    "nextSteps": [
+      "Establish the dedicated development environment.",
+      "Install and validate required development tools.",
+      "Initialize source control.",
+      "Create the first RedForge repository.",
+      "Begin documenting the platform build.",
+      "Develop the brand and website architecture."
+    ],
+    "tags": [
+      "Engineering",
+      "project-charter",
+      "cybersecurity",
+      "portfolio",
+      "career-transition"
+    ],
+    "source": {
+      "label": "ENG-001 — Project RedForge Charter",
+      "reviewed": true,
+      "redactions": [
+        "Author identity",
+        "Internal domain and IPv4 addressing",
+        "Unreviewed screenshots and private configuration values"
+      ]
+    }
+  },
+  {
+    "slug": "eng-002-project-redforge-brand-identity",
+    "title": "ENG-002 — Project RedForge Brand Identity",
+    "summary": "Established the official visual identity, brand principles, and public-facing design standards for Project RedForge.",
+    "category": "Engineering Log",
+    "status": "Implemented",
+    "publishingState": "published",
+    "date": "2026-07-19",
+    "updatedAt": "2026-07-19",
+    "objective": "Create a professional and recognizable identity for Project RedForge before beginning substantial website and documentation development. The identity needed to communicate: Engineering discipline Cybersecurity capability Enterprise maturity Technical precision Operational purpose Continuous development The objective was not simply to create an attractive logo or color palette. The brand needed to support a long-term cybersecurity engineering platform containing infrastructure documentation, project reports, architecture diagrams, engineering evidence, and professional development records.",
+    "engineeringSummary": [
+      "Project RedForge was established as an evidence-first cybersecurity engineering initiative rather than a traditional personal portfolio.",
+      "A consistent identity was required before implementing the website because visual decisions would affect:",
+      "Website structure Navigation Project presentation Engineering reports Documentation templates Architecture diagrams GitHub presentation Social previews Future media assets",
+      "Without an approved identity, individual pages and documents could develop inconsistent typography, colors, spacing, imagery, and tone.",
+      "The branding phase therefore established a shared visual and communication standard that could govern the entire platform.",
+      "Project RedForge established a distinctive and scalable engineering identity.",
+      "The resulting brand system now governs:",
+      "Website presentation Engineering documentation Project reports Architecture diagrams Public communication Lifecycle status Future design decisions",
+      "The identity successfully differentiates RedForge from traditional cybersecurity portfolios while supporting its growth into a living engineering platform."
+    ],
+    "technicalDecisions": [
+      {
+        "title": "Use an Industrial Engineering Identity",
+        "rationale": "An industrial forged-metal identity was selected because it aligned with the RedForge name and communicated construction, discipline, and durability."
+      },
+      {
+        "title": "Use Forge Orange as the Primary Accent",
+        "rationale": "Forge Orange was selected instead of green or blue to provide a recognizable identity connected to heat, forging, and active engineering."
+      },
+      {
+        "title": "Separate Display and Body Typography",
+        "rationale": "Orbitron was selected for technical display use, while Inter was selected for documentation and interface readability."
+      },
+      {
+        "title": "Retain the Hidden Sword",
+        "rationale": "The hidden sword remained a required element because it reinforced readiness and precision without dominating the defensive shield identity."
+      },
+      {
+        "title": "Reject Hacker Clichés",
+        "rationale": "Hacker clichés were deliberately excluded to support a more credible, enterprise-focused public presence."
+      },
+      {
+        "title": "Treat Truthfulness as a Design Requirement",
+        "rationale": "Lifecycle states, evidence status, and target-state architecture labels were made part of the visual system so design could not imply unsupported progress."
+      }
+    ],
+    "lessonsLearned": [
+      "Brand decisions should be established before large-scale interface development.",
+      "A limited color palette creates stronger recognition than numerous competing accents.",
+      "Technical typography should be balanced with readable body text.",
+      "Professional restraint improves credibility.",
+      "Visual identity and documentation standards should reinforce one another.",
+      "Truthful lifecycle communication is part of design, not merely content.",
+      "A scalable brand must support future projects that do not yet exist."
+    ],
+    "evidence": [
+      {
+        "id": "eng-002-validation",
+        "title": "ENG-002 validation record",
+        "description": "Reviewed validation statements from the verified engineering log. Sensitive operational values and unreviewed assets are not published.",
+        "kind": "validation",
+        "status": "verified",
+        "checklist": [
+          {
+            "label": "Website navigation",
+            "state": "passed"
+          },
+          {
+            "label": "Homepage",
+            "state": "passed"
+          },
+          {
+            "label": "Operator profile",
+            "state": "passed"
+          },
+          {
+            "label": "Lab environment",
+            "state": "passed"
+          },
+          {
+            "label": "Project overview",
+            "state": "passed"
+          },
+          {
+            "label": "Project reports",
+            "state": "passed"
+          },
+          {
+            "label": "Documentation pages",
+            "state": "passed"
+          },
+          {
+            "label": "Contact experience",
+            "state": "passed"
+          },
+          {
+            "label": "Coming-soon pages",
+            "state": "passed"
+          },
+          {
+            "label": "Architecture diagrams",
+            "state": "passed"
+          },
+          {
+            "label": "GitHub presentation",
+            "state": "passed"
+          },
+          {
+            "label": "Vercel production deployment",
+            "state": "passed"
+          }
+        ]
+      },
+      {
+        "id": "eng-002-source-record",
+        "title": "Sanitized engineering record",
+        "description": "Documentation evidence identifying the reviewed source record. Sensitive configuration values and personal metadata are intentionally excluded.",
+        "kind": "configuration",
+        "status": "reviewed",
+        "language": "yaml",
+        "content": "record: ENG-002\ntitle: Project RedForge Brand Identity\nstatus: verified\nproject: Project RedForge\nevidenceStatus: documented"
+      },
+      {
+        "id": "eng-002-screenshots",
+        "title": "Supporting engineering evidence",
+        "description": "Supporting source evidence is referenced by the engineering log but remains outside the public asset pipeline until security, privacy, and provenance review is complete.",
+        "kind": "screenshot",
+        "status": "pending"
+      }
+    ],
+    "nextSteps": [
+      "Establish the dedicated development environment.",
+      "Install and validate required development tools.",
+      "Configure Git and source control.",
+      "Initialize the website repository.",
+      "Convert the brand identity into reusable design tokens.",
+      "Begin implementing the RedForge platform."
+    ],
+    "tags": [
+      "Engineering",
+      "branding",
+      "visual-identity",
+      "design-standards",
+      "website"
+    ],
+    "source": {
+      "label": "ENG-002 — Project RedForge Brand Identity",
+      "reviewed": true,
+      "redactions": [
+        "Author identity",
+        "Internal domain and IPv4 addressing",
+        "Unreviewed screenshots and private configuration values"
+      ]
+    }
+  },
+  {
+    "slug": "eng-003-development-environment-establishment",
+    "title": "ENG-003 — Development Environment Establishment",
+    "summary": "Established a dedicated engineering workstation to support the development, documentation, and long-term growth of Project RedForge.",
+    "category": "Engineering Log",
+    "status": "Implemented",
+    "publishingState": "published",
+    "date": "2026-07-19",
+    "updatedAt": "2026-07-19",
+    "objective": "Create a clean, reliable, and purpose-built development environment capable of supporting the full lifecycle of Project RedForge. The workstation needed to provide a stable foundation for: Website development Cybersecurity engineering Documentation Source control Automation Virtual laboratories College coursework Long-term professional growth Rather than modifying an existing personal computer, the objective was to begin with a clean operating system and intentionally build the environment from the ground up.",
+    "engineeringSummary": [
+      "Prior to beginning active development, it became clear that maintaining separate environments for gaming, personal use, and engineering would introduce unnecessary complexity and reduce long-term consistency.",
+      "A decision was made to dedicate a single machine exclusively to engineering-related work.",
+      "The selected platform would become the primary workstation used throughout the development of Project RedForge and would remain dedicated to professional development, cybersecurity, and academic coursework.",
+      "This decision established a controlled and repeatable development environment from the beginning of the project.",
+      "A dedicated engineering workstation was successfully established to serve as the primary platform for Project RedForge.",
+      "The workstation now provides a stable, organized, and reproducible development environment supporting software engineering, cybersecurity, documentation, automation, and future project expansion.",
+      "This environment became the foundation upon which all subsequent Project RedForge development was performed."
+    ],
+    "technicalDecisions": [
+      {
+        "title": "Factory Reset the System",
+        "rationale": "Rather than attempting to clean an existing installation, the workstation was completely reset using Windows' built-in Reset this PC feature. Beginning with a fresh operating system reduced accumulated software, removed unnecessary applications, and created a consistent baseline for future development."
+      },
+      {
+        "title": "Dedicate the System to Engineering",
+        "rationale": "The workstation was intentionally reserved for: Cybersecurity Software development Technical documentation School Professional projects Personal applications, entertainment software, and gaming platforms were intentionally omitted to maintain a focused engineering environment."
+      },
+      {
+        "title": "Build the Environment Incrementally",
+        "rationale": "Instead of installing numerous applications simultaneously, development tools were installed only when required by the project. This approach reduced unnecessary software, simplified troubleshooting, and made the environment easier to document and reproduce."
+      },
+      {
+        "title": "Integrate AI into the Engineering Workflow",
+        "rationale": "Artificial intelligence was adopted as an engineering productivity tool rather than a replacement for engineering judgment. AI-assisted workflows were incorporated to support: Technical research Documentation drafting Architecture discussions Code explanation Troubleshooting Brainstorming Knowledge acceleration Final engineering decisions, implementation, testing, validation, and acceptance remained under direct human oversight. This approach aligns with the growing adoption of AI-assisted engineering practices throughout the cybersecurity industry."
+      }
+    ],
+    "lessonsLearned": [
+      "Beginning with a clean operating system simplifies long-term maintenance.",
+      "Separating engineering work from personal use reduces unnecessary complexity.",
+      "Installing only required software improves system organization.",
+      "A documented development environment is easier to maintain and reproduce.",
+      "AI can accelerate engineering workflows while preserving human ownership of technical decisions.",
+      "Small engineering decisions made early significantly improve long-term project consistency."
+    ],
+    "evidence": [
+      {
+        "id": "eng-003-validation",
+        "title": "ENG-003 validation record",
+        "description": "Reviewed validation statements from the verified engineering log. Sensitive operational values and unreviewed assets are not published.",
+        "kind": "validation",
+        "status": "verified",
+        "checklist": [
+          {
+            "label": "Windows installation completed successfully.",
+            "state": "passed"
+          },
+          {
+            "label": "Operating system fully updated.",
+            "state": "passed"
+          },
+          {
+            "label": "Development tools installed successfully.",
+            "state": "passed"
+          },
+          {
+            "label": "Source control utilities operational.",
+            "state": "passed"
+          },
+          {
+            "label": "Development environment functional.",
+            "state": "passed"
+          },
+          {
+            "label": "Documentation platform operational.",
+            "state": "passed"
+          },
+          {
+            "label": "AI-assisted engineering workflow available.",
+            "state": "passed"
+          },
+          {
+            "label": "Workstation prepared for active Project RedForge development.",
+            "state": "passed"
+          }
+        ]
+      },
+      {
+        "id": "eng-003-source-record",
+        "title": "Sanitized engineering record",
+        "description": "Documentation evidence identifying the reviewed source record. Sensitive configuration values and personal metadata are intentionally excluded.",
+        "kind": "configuration",
+        "status": "reviewed",
+        "language": "yaml",
+        "content": "record: ENG-003\ntitle: Development Environment Establishment\nstatus: verified\nproject: Project RedForge\nevidenceStatus: documented"
+      }
+    ],
+    "nextSteps": [
+      "Initialize source control.",
+      "Create the Project RedForge GitHub repository.",
+      "Establish repository standards.",
+      "Begin website platform initialization.",
+      "Start implementation of the first production-ready application."
+    ],
+    "tags": [
+      "Engineering",
+      "workstation",
+      "windows",
+      "development",
+      "setup"
+    ],
+    "source": {
+      "label": "ENG-003 — Development Environment Establishment",
+      "reviewed": true,
+      "redactions": [
+        "Author identity",
+        "Internal domain and IPv4 addressing",
+        "Unreviewed screenshots and private configuration values"
+      ]
+    }
+  },
+  {
+    "slug": "eng-004-source-control-repository-initialization",
+    "title": "ENG-004 — Source Control & Repository Initialization",
+    "summary": "Established Git-based version control and initialized the Project RedForge repository to create a reliable engineering foundation for software development, documentation, and future collaboration.",
+    "category": "Engineering Log",
+    "status": "Implemented",
+    "publishingState": "published",
+    "date": "2026-07-19",
+    "updatedAt": "2026-07-19",
+    "objective": "Establish a professional source control strategy before significant software development began. The repository was intended to provide far more than remote storage. It would become the permanent engineering history of Project RedForge by preserving every meaningful change made throughout the project's lifecycle. Primary objectives included: Establish centralized version control. Preserve engineering history. Enable safe iterative development. Support future collaboration. Protect project assets through remote backups. Create a reproducible development workflow. Align Project RedForge with professional software engineering practices.",
+    "engineeringSummary": [
+      "Following completion of the dedicated engineering workstation documented in ENG-003, the next logical milestone was establishing source control.",
+      "Developing software without version control introduces unnecessary operational risk. File corruption, accidental deletions, failed experiments, and undocumented changes become significantly more difficult to recover from when no historical record exists.",
+      "Project RedForge was intended to become a long-term engineering platform rather than a short-lived personal project.",
+      "Because of this, preserving engineering history from the very beginning became a core design requirement rather than an optional enhancement.",
+      "Git was selected as the project's distributed version control system, while GitHub was selected as the centralized remote platform responsible for maintaining authoritative copies of the repository and preserving long-term development history.",
+      "Project RedForge successfully established a professional source control workflow based on Git and GitHub.",
+      "Every engineering activity performed after this milestone became traceable, recoverable, and historically documented through structured version control.",
+      "The repository now serves as the authoritative source for:",
+      "Website development Engineering documentation Configuration management Architecture evolution Future cybersecurity tooling Project history",
+      "This milestone represents the official beginning of Project RedForge as a professionally managed software engineering project."
+    ],
+    "technicalDecisions": [
+      {
+        "title": "Adopt Git as the Official Version Control System",
+        "rationale": "Git was selected because it represents the industry standard for distributed source control across software engineering, cybersecurity, DevOps, cloud engineering, and open-source development. Its distributed architecture, reliability, branching capabilities, and mature ecosystem make it well suited for projects expected to evolve over many years. Adopting Git from the beginning ensured that Project RedForge followed established engineering practices rather than introducing source control later in development."
+      },
+      {
+        "title": "Use GitHub as the Primary Remote Repository",
+        "rationale": "GitHub was selected to serve as the centralized repository hosting platform. In addition to preserving project history, GitHub provides: Remote repository storage Branch management Pull request workflows Issue tracking Continuous Integration support Collaboration capabilities Public portfolio visibility Hosting the project publicly also demonstrates engineering maturity by exposing both successful implementations and the evolution of technical decision-making."
+      },
+      {
+        "title": "Establish Source Control Before Writing Significant Code",
+        "rationale": "Rather than creating the repository after development had already begun, source control was established immediately following workstation preparation. This ensured that the complete lifecycle of Project RedForge—including configuration, documentation, architectural evolution, and implementation—would be preserved from its earliest stages."
+      },
+      {
+        "title": "Version More Than Source Code",
+        "rationale": "Project RedForge extends version control beyond software implementation. The repository is intended to preserve: Engineering documentation Architecture Decision Records (ADRs) Engineering logs Website source code Configuration files Deployment assets Infrastructure definitions Documentation templates Supporting project resources This approach creates a complete engineering history instead of a simple collection of application files."
+      },
+      {
+        "title": "Prioritize Readable Commit History",
+        "rationale": "Commit history should communicate engineering intent rather than merely recording file modifications. Meaningful commit messages improve maintainability by allowing future reviewers to understand why a change occurred rather than only observing what changed. A disciplined commit history also simplifies troubleshooting, regression analysis, and long-term project maintenance."
+      }
+    ],
+    "lessonsLearned": [
+      "Source control should be established before significant implementation begins.",
+      "Engineering history is as valuable as finished code.",
+      "Small, descriptive commits improve long-term maintainability.",
+      "Repository organization established early reduces future technical debt.",
+      "Version control provides confidence when experimenting with new features.",
+      "Documentation belongs under version control alongside software.",
+      "Professional engineering projects benefit from treating Git as part of the engineering process rather than merely a backup solution."
+    ],
+    "evidence": [
+      {
+        "id": "eng-004-validation",
+        "title": "ENG-004 validation record",
+        "description": "Reviewed validation statements from the verified engineering log. Sensitive operational values and unreviewed assets are not published.",
+        "kind": "validation",
+        "status": "verified",
+        "checklist": [
+          {
+            "label": "Git initialized successfully.",
+            "state": "passed"
+          },
+          {
+            "label": "Local repository functioning correctly.",
+            "state": "passed"
+          },
+          {
+            "label": "Remote GitHub repository created.",
+            "state": "passed"
+          },
+          {
+            "label": "Repository connection verified.",
+            "state": "passed"
+          },
+          {
+            "label": "Initial commit successfully recorded.",
+            "state": "passed"
+          },
+          {
+            "label": "Local and remote repositories synchronized.",
+            "state": "passed"
+          },
+          {
+            "label": "Source control workflow operational.",
+            "state": "passed"
+          },
+          {
+            "label": "Repository prepared for continued development.",
+            "state": "passed"
+          }
+        ]
+      },
+      {
+        "id": "eng-004-source-record",
+        "title": "Sanitized engineering record",
+        "description": "Documentation evidence identifying the reviewed source record. Sensitive configuration values and personal metadata are intentionally excluded.",
+        "kind": "configuration",
+        "status": "reviewed",
+        "language": "yaml",
+        "content": "record: ENG-004\ntitle: Source Control & Repository Initialization\nstatus: verified\nproject: Project RedForge\nevidenceStatus: documented"
+      }
+    ],
+    "nextSteps": [
+      "Initialize the Project RedForge web application.",
+      "Create the Next.js project.",
+      "Establish the project directory structure.",
+      "Install required framework dependencies.",
+      "Configure the initial development environment.",
+      "Begin implementation of the Project RedForge platform."
+    ],
+    "tags": [
+      "Engineering",
+      "git",
+      "github",
+      "version-control",
+      "source-control"
+    ],
+    "source": {
+      "label": "ENG-004 — Source Control & Repository Initialization",
+      "reviewed": true,
+      "redactions": [
+        "Author identity",
+        "Internal domain and IPv4 addressing",
+        "Unreviewed screenshots and private configuration values"
+      ]
+    }
+  },
+  {
+    "slug": "eng-005-website-platform-foundation",
+    "title": "ENG-005 — Website Platform Foundation",
+    "summary": "Established the foundational web application platform for Project RedForge by initializing a modern Next.js application using React, TypeScript, Tailwind CSS, and the App Router architecture.",
+    "category": "Engineering Log",
+    "status": "Implemented",
+    "publishingState": "published",
+    "date": "2026-07-19",
+    "updatedAt": "2026-07-19",
+    "objective": "Create the foundational web application that would serve as the primary platform for Project RedForge. The objective was not simply to generate a website template, but to establish an engineering-grade application architecture capable of supporting future expansion while remaining maintainable throughout the project's lifecycle. Primary objectives included: Initialize the Project RedForge application. Establish a modern web development framework. Adopt strongly typed development practices. Implement a scalable application structure. Configure an efficient development workflow. Prepare the platform for future feature development. Build upon the engineering standards established in previous milestones.",
+    "engineeringSummary": [
+      "With the engineering workstation operational (ENG-003) and source control successfully established (ENG-004), the next phase of Project RedForge focused on creating the software platform itself.",
+      "Rather than building a traditional static website, the project required a modern application framework capable of supporting dynamic content, reusable components, responsive layouts, and future integrations.",
+      "The selected framework needed to support long-term engineering growth without requiring major architectural changes as the project matured.",
+      "Next.js was selected because it provides a mature ecosystem built upon React while offering modern routing, optimized performance, server-side rendering capabilities, static site generation, and a development experience consistent with current industry standards.",
+      "The website platform would ultimately become the public face of Project RedForge while simultaneously serving as a practical engineering project demonstrating professional software development practices.",
+      "Project RedForge successfully transitioned from an engineering concept into a functioning web application.",
+      "A modern software foundation was established using Next.js, React, TypeScript, Tailwind CSS, and the App Router architecture.",
+      "The resulting platform provides a scalable and maintainable foundation capable of supporting continued feature development while adhering to current industry standards and engineering best practices.",
+      "This milestone represents the official beginning of software implementation within Project RedForge."
+    ],
+    "technicalDecisions": [
+      {
+        "title": "Adopt Next.js as the Primary Framework",
+        "rationale": "Next.js was selected as the foundation of Project RedForge due to its maturity, performance, extensive community support, and close integration with React. The framework provides a scalable architecture suitable for both small and enterprise-level applications while supporting modern rendering strategies and efficient production deployment. Selecting Next.js also aligned the project with technologies commonly used throughout the cybersecurity and software engineering industries."
+      },
+      {
+        "title": "Utilize TypeScript",
+        "rationale": "TypeScript was selected to provide static type checking throughout development. Strong typing improves code quality by identifying errors during development rather than at runtime while also improving readability, maintainability, and developer productivity. As Project RedForge continues to grow, TypeScript will help ensure that application complexity remains manageable."
+      },
+      {
+        "title": "Implement Tailwind CSS",
+        "rationale": "Tailwind CSS was selected as the primary styling framework. Its utility-first approach allows rapid interface development while maintaining consistency across the application. The framework reduces unnecessary CSS duplication and encourages reusable design patterns that support long-term maintainability."
+      },
+      {
+        "title": "Utilize the App Router Architecture",
+        "rationale": "Project RedForge adopted the App Router architecture provided by modern versions of Next.js. The App Router offers improved organization, simplified routing, server component support, and a scalable directory structure better suited for future application growth than legacy routing approaches. Beginning with the current architecture eliminated the need for future migrations."
+      },
+      {
+        "title": "Retain the Default Project Structure",
+        "rationale": "During project initialization, the optional src/ directory was intentionally not used. Modern versions of Next.js already provide a clean and organized project structure centered around the root-level app/ directory. Introducing an additional src/ layer would have created unnecessary directory nesting without providing meaningful organizational benefits for Project RedForge. Maintaining the default structure also aligned the project with the current recommendations of the framework, improving clarity for future development."
+      }
+    ],
+    "lessonsLearned": [
+      "Framework selection significantly influences long-term maintainability.",
+      "Modern frameworks provide sensible defaults that should only be changed when a clear engineering benefit exists.",
+      "Simplicity often produces a more maintainable architecture than unnecessary customization.",
+      "Strong typing improves software quality as projects increase in complexity.",
+      "Establishing the application foundation before implementing features creates a more stable development process.",
+      "Building upon current framework recommendations minimizes future migration effort.",
+      "Engineering decisions made early in development often have lasting impact throughout the project lifecycle."
+    ],
+    "evidence": [
+      {
+        "id": "eng-005-validation",
+        "title": "ENG-005 validation record",
+        "description": "Reviewed validation statements from the verified engineering log. Sensitive operational values and unreviewed assets are not published.",
+        "kind": "validation",
+        "status": "verified",
+        "checklist": [
+          {
+            "label": "Next.js initialized successfully.",
+            "state": "passed"
+          },
+          {
+            "label": "Project dependencies installed without errors.",
+            "state": "passed"
+          },
+          {
+            "label": "TypeScript configuration functioning correctly.",
+            "state": "passed"
+          },
+          {
+            "label": "Tailwind CSS integrated successfully.",
+            "state": "passed"
+          },
+          {
+            "label": "ESLint configuration generated successfully.",
+            "state": "passed"
+          },
+          {
+            "label": "App Router configured as expected.",
+            "state": "passed"
+          },
+          {
+            "label": "Project directory structure created successfully.",
+            "state": "passed"
+          },
+          {
+            "label": "Local development server launched successfully.",
+            "state": "passed"
+          },
+          {
+            "label": "Browser successfully rendered the default application.",
+            "state": "passed"
+          },
+          {
+            "label": "Development environment prepared for continued engineering work.",
+            "state": "passed"
+          }
+        ]
+      },
+      {
+        "id": "eng-005-source-record",
+        "title": "Sanitized engineering record",
+        "description": "Documentation evidence identifying the reviewed source record. Sensitive configuration values and personal metadata are intentionally excluded.",
+        "kind": "configuration",
+        "status": "reviewed",
+        "language": "yaml",
+        "content": "record: ENG-005\ntitle: Website Platform Foundation\nstatus: verified\nproject: Project RedForge\nevidenceStatus: documented"
+      }
+    ],
+    "nextSteps": [
+      "Configure cloud hosting infrastructure.",
+      "Establish production deployment through Vercel.",
+      "Configure domain management and DNS services.",
+      "Implement secure HTTPS connectivity.",
+      "Publish the initial Project RedForge website.",
+      "Verify automated deployment through GitHub integration."
+    ],
+    "tags": [
+      "Engineering",
+      "nextjs",
+      "react",
+      "typescript",
+      "tailwindcss",
+      "website"
+    ],
+    "source": {
+      "label": "ENG-005 — Website Platform Foundation",
+      "reviewed": true,
+      "redactions": [
+        "Author identity",
+        "Internal domain and IPv4 addressing",
+        "Unreviewed screenshots and private configuration values"
+      ]
+    }
+  },
+  {
+    "slug": "eng-006-cloud-infrastructure-production-deployment",
+    "title": "ENG-006 — Cloud Infrastructure & Production Deployment",
+    "summary": "Established the cloud infrastructure for Project RedForge by configuring production hosting, domain management, DNS, HTTPS, and automated deployments, making the platform publicly accessible on the Internet.",
+    "category": "Engineering Log",
+    "status": "Implemented",
+    "publishingState": "published",
+    "date": "2026-07-20",
+    "updatedAt": "2026-07-20",
+    "objective": "Establish reliable cloud infrastructure capable of hosting Project RedForge in a secure, scalable, and production-ready environment. Primary objectives included: Deploy the application to production. Establish reliable cloud hosting. Configure custom domain support. Implement secure HTTPS encryption. Configure DNS routing. Enable automated deployments. Create a repeatable deployment workflow. Build a scalable infrastructure capable of supporting future application growth.",
+    "engineeringSummary": [
+      "With the website platform successfully established during ENG-005, the next engineering objective focused on making Project RedForge publicly accessible.",
+      "Running the application exclusively within the local development environment limited testing, collaboration, and portfolio visibility.",
+      "A cloud-hosted deployment would allow the application to operate continuously while demonstrating professional deployment practices commonly used throughout modern software engineering.",
+      "Cloud infrastructure was therefore designed to minimize operational complexity while providing scalability, security, reliability, and automated deployment capabilities.",
+      "The deployment architecture selected for Project RedForge emphasized simplicity without sacrificing professional engineering standards.",
+      "Project RedForge successfully established a production-ready cloud infrastructure capable of hosting the application in a secure, reliable, and scalable environment.",
+      "The implementation of automated deployments, domain management, DNS services, and HTTPS encryption transformed Project RedForge into a publicly accessible engineering platform while significantly improving future development efficiency.",
+      "This milestone represents the successful transition from local software development to Internet-accessible production deployment."
+    ],
+    "technicalDecisions": [
+      {
+        "title": "Utilize Vercel for Application Hosting",
+        "rationale": "Vercel was selected as the primary hosting platform due to its native integration with Next.js, automated deployment capabilities, excellent developer experience, and global content delivery infrastructure. Its seamless integration with GitHub significantly reduced deployment complexity while allowing engineering effort to remain focused on application development rather than infrastructure management."
+      },
+      {
+        "title": "Utilize Cloudflare for DNS Management",
+        "rationale": "Cloudflare was selected to manage Project RedForge's domain and DNS infrastructure. In addition to reliable DNS services, Cloudflare provides security enhancements, HTTPS support, performance optimization, and future scalability options as the project evolves. Separating DNS management from application hosting also provides greater operational flexibility."
+      },
+      {
+        "title": "Automate Production Deployments",
+        "rationale": "Rather than manually deploying application updates, Project RedForge adopted automated deployment workflows integrated directly with the GitHub repository. Every approved change committed to the primary branch could automatically trigger a production deployment. This approach improves deployment consistency while reducing the likelihood of human error."
+      },
+      {
+        "title": "Secure All Public Traffic",
+        "rationale": "Project RedForge requires encrypted communication between visitors and the application. HTTPS was therefore established as a standard component of the deployment architecture rather than an optional enhancement. Protecting user traffic reflects professional engineering practices and prepares the platform for future interactive functionality."
+      },
+      {
+        "title": "Separate Development from Production",
+        "rationale": "Local development remains isolated from the publicly deployed application. Engineering work continues within the local development environment before being committed to source control and deployed through the established production workflow. This separation provides greater stability while reducing operational risk during active development."
+      }
+    ],
+    "lessonsLearned": [
+      "Cloud infrastructure should be planned with long-term scalability in mind.",
+      "Automated deployments reduce operational complexity and improve consistency.",
+      "Separating source control, hosting, and DNS management provides greater flexibility.",
+      "Infrastructure configuration is an essential component of software engineering rather than a post-development task.",
+      "Modern deployment platforms significantly simplify production operations while maintaining professional engineering standards.",
+      "Validating deployment workflows early establishes confidence for future releases.",
+      "Reliable infrastructure enables engineers to focus on application development rather than repetitive deployment tasks."
+    ],
+    "evidence": [
+      {
+        "id": "eng-006-validation",
+        "title": "ENG-006 validation record",
+        "description": "Reviewed validation statements from the verified engineering log. Sensitive operational values and unreviewed assets are not published.",
+        "kind": "validation",
+        "status": "verified",
+        "checklist": [
+          {
+            "label": "Production hosting environment operational.",
+            "state": "passed"
+          },
+          {
+            "label": "GitHub repository connected successfully.",
+            "state": "passed"
+          },
+          {
+            "label": "Automated deployment pipeline functioning correctly.",
+            "state": "passed"
+          },
+          {
+            "label": "DNS records resolving successfully.",
+            "state": "passed"
+          },
+          {
+            "label": "HTTPS encryption active.",
+            "state": "passed"
+          },
+          {
+            "label": "Public website accessible from external networks.",
+            "state": "passed"
+          },
+          {
+            "label": "Production environment serving the latest application build.",
+            "state": "passed"
+          },
+          {
+            "label": "Deployment workflow repeatable and reliable.",
+            "state": "passed"
+          },
+          {
+            "label": "Cloud infrastructure prepared to support continued application development.",
+            "state": "passed"
+          }
+        ]
+      },
+      {
+        "id": "eng-006-source-record",
+        "title": "Sanitized engineering record",
+        "description": "Documentation evidence identifying the reviewed source record. Sensitive configuration values and personal metadata are intentionally excluded.",
+        "kind": "configuration",
+        "status": "reviewed",
+        "language": "yaml",
+        "content": "record: ENG-006\ntitle: Cloud Infrastructure & Production Deployment\nstatus: verified\nproject: Project RedForge\nevidenceStatus: documented"
+      }
+    ],
+    "nextSteps": [
+      "Begin implementation of the website user interface.",
+      "Develop the initial landing page.",
+      "Establish reusable application components.",
+      "Implement responsive layouts.",
+      "Continue expanding the Project RedForge platform through iterative feature development.",
+      "Maintain automated deployment practices throughout continued engineering efforts."
+    ],
+    "tags": [
+      "Engineering",
+      "vercel",
+      "cloudflare",
+      "deployment",
+      "dns",
+      "hosting",
+      "cloud"
+    ],
+    "source": {
+      "label": "ENG-006 — Cloud Infrastructure & Production Deployment",
+      "reviewed": true,
+      "redactions": [
+        "Author identity",
+        "Internal domain and IPv4 addressing",
+        "Unreviewed screenshots and private configuration values"
+      ]
+    }
+  },
+  {
+    "slug": "eng-007-website-architecture-initial-user-experience",
+    "title": "ENG-007 — Website Architecture & Initial User Experience",
+    "summary": "Established the architectural foundation and initial user experience for the Project RedForge website through the implementation of a modular component structure, responsive design principles, and a distinctive interactive landing page centered around a global operations map.",
+    "category": "Engineering Log",
+    "status": "Implemented",
+    "publishingState": "published",
+    "date": "2026-07-20",
+    "updatedAt": "2026-07-20",
+    "objective": "Design and implement the foundational architecture of the Project RedForge website while creating an engaging first user experience that reflects the project's engineering philosophy and cybersecurity focus. Primary objectives included: Establish a scalable website architecture. Develop reusable interface components. Create a memorable landing page. Reinforce the Project RedForge brand identity. Support responsive layouts across devices. Separate presentation logic into maintainable components. Create a user experience that encourages exploration rather than passive viewing.",
+    "engineeringSummary": [
+      "Following successful deployment of the Project RedForge platform to a production environment, engineering efforts shifted toward building the public-facing website.",
+      "Although the application was technically operational, it lacked a visual identity capable of communicating the project's purpose and engineering philosophy.",
+      "Rather than adopting a conventional portfolio layout consisting primarily of static text and navigation menus, Project RedForge sought to create an experience that immediately communicated technical sophistication while encouraging visitors to continue exploring the platform.",
+      "The architecture established during this milestone therefore focused equally on maintainability and user engagement.",
+      "Project RedForge successfully established both its website architecture and its initial user experience.",
+      "The implementation of a modular React architecture combined with a distinctive homepage centered around an interactive world map created a recognizable identity while providing a scalable engineering foundation for continued platform development.",
+      "This milestone transformed Project RedForge from a deployed web application into a platform with a clear visual identity and a structured user experience aligned with its long-term engineering vision."
+    ],
+    "technicalDecisions": [
+      {
+        "title": "Prioritize User Curiosity",
+        "rationale": "Rather than immediately explaining every aspect of Project RedForge, the landing page was intentionally designed to create curiosity. Visitors should naturally ask questions about the platform and continue exploring instead of consuming all available information immediately. Encouraging discovery creates a more memorable experience while increasing engagement with the application."
+      },
+      {
+        "title": "Establish the Interactive World Map as the Primary Visual Element",
+        "rationale": "The interactive world map was selected as the centerpiece of the landing page. The map reinforces the themes of global operations, cybersecurity, intelligence gathering, and network visibility while immediately distinguishing Project RedForge from conventional portfolio websites. Once implemented and reviewed, the world map was adopted as the defining visual identity of the homepage and established as the baseline experience for future interface development."
+      },
+      {
+        "title": "Adopt a Cyber Operations Aesthetic",
+        "rationale": "Project RedForge intentionally utilizes a dark visual theme inspired by cybersecurity operations centers, command environments, and modern engineering dashboards. This design direction reinforces the project's technical focus while maintaining a clean and professional presentation. Visual effects, typography, and interface elements are intended to support the overall experience rather than overwhelm the user."
+      },
+      {
+        "title": "Utilize Component-Based Architecture",
+        "rationale": "The website architecture emphasizes reusable React components instead of monolithic page implementations. Separating functionality into modular components improves maintainability, simplifies testing, encourages code reuse, and allows future features to be developed independently without disrupting existing functionality."
+      },
+      {
+        "title": "Design for Future Expansion",
+        "rationale": "The initial architecture was intentionally developed with future growth in mind. Although the early implementation focused primarily on the landing experience, the underlying structure was designed to support additional pages, engineering documentation, cybersecurity demonstrations, interactive tools, and future platform enhancements without requiring significant architectural changes."
+      }
+    ],
+    "lessonsLearned": [
+      "First impressions significantly influence how users perceive technical platforms.",
+      "A unique interface can effectively communicate project identity before visitors read any content.",
+      "Modular architectures simplify future feature development.",
+      "Strong visual consistency reinforces overall brand recognition.",
+      "User curiosity can be intentionally encouraged through thoughtful interface design.",
+      "Establishing reusable components early reduces future development effort.",
+      "Engineering architecture and user experience should evolve together rather than independently."
+    ],
+    "evidence": [
+      {
+        "id": "eng-007-validation",
+        "title": "ENG-007 validation record",
+        "description": "Reviewed validation statements from the verified engineering log. Sensitive operational values and unreviewed assets are not published.",
+        "kind": "validation",
+        "status": "verified",
+        "checklist": [
+          {
+            "label": "Homepage rendered successfully.",
+            "state": "passed"
+          },
+          {
+            "label": "Interactive world map displayed correctly.",
+            "state": "passed"
+          },
+          {
+            "label": "Component architecture functioned as expected.",
+            "state": "passed"
+          },
+          {
+            "label": "Responsive layout adapted appropriately across supported screen sizes.",
+            "state": "passed"
+          },
+          {
+            "label": "Navigation structure prepared for future expansion.",
+            "state": "passed"
+          },
+          {
+            "label": "Branding remained consistent throughout the interface.",
+            "state": "passed"
+          },
+          {
+            "label": "User interface aligned with the intended cybersecurity-focused design philosophy.",
+            "state": "passed"
+          },
+          {
+            "label": "Production deployment successfully reflected implemented changes.",
+            "state": "passed"
+          }
+        ]
+      },
+      {
+        "id": "eng-007-source-record",
+        "title": "Sanitized engineering record",
+        "description": "Documentation evidence identifying the reviewed source record. Sensitive configuration values and personal metadata are intentionally excluded.",
+        "kind": "configuration",
+        "status": "reviewed",
+        "language": "yaml",
+        "content": "record: ENG-007\ntitle: Website Architecture & Initial User Experience\nstatus: verified\nproject: Project RedForge\nevidenceStatus: documented"
+      }
+    ],
+    "nextSteps": [
+      "Expand reusable interface components.",
+      "Continue development of the Project RedForge homepage.",
+      "Introduce interactive interface elements.",
+      "Implement additional platform pages.",
+      "Continue refining the visual identity.",
+      "Build additional engineering features supporting the long-term Project RedForge roadmap."
+    ],
+    "tags": [
+      "Engineering",
+      "website",
+      "architecture",
+      "ui",
+      "ux",
+      "react",
+      "nextjs"
+    ],
+    "source": {
+      "label": "ENG-007 — Website Architecture & Initial User Experience",
+      "reviewed": true,
+      "redactions": [
+        "Author identity",
+        "Internal domain and IPv4 addressing",
+        "Unreviewed screenshots and private configuration values"
+      ]
+    }
+  },
+  {
+    "slug": "eng-008-platform-feature-expansion",
+    "title": "ENG-008 — Platform Feature Expansion",
+    "summary": "Expanded the Project RedForge platform through continued interface development, reusable component implementation, iterative user experience improvements, and refinement of the application's architectural foundation.",
+    "category": "Engineering Log",
+    "status": "Implemented",
+    "publishingState": "published",
+    "date": "2026-07-21",
+    "updatedAt": "2026-07-21",
+    "objective": "Expand the capabilities of the Project RedForge platform while preserving the architectural standards established during previous engineering milestones. Primary objectives included: Continue development of reusable application components. Expand the user interface. Improve application organization. Refine the overall user experience. Increase interface consistency. Improve maintainability through component reuse. Prepare the application for future feature integration.",
+    "engineeringSummary": [
+      "With the website successfully deployed and the initial user experience established, Project RedForge transitioned into active platform development.",
+      "The engineering focus shifted from creating foundational infrastructure toward expanding the functionality and usability of the application itself.",
+      "Development during this phase emphasized incremental improvements rather than large architectural changes.",
+      "Maintaining a stable foundation while continuously improving the application reduced engineering risk and allowed the platform to evolve through controlled, well-defined iterations.",
+      "Project RedForge successfully completed its first phase of iterative platform expansion.",
+      "The application evolved beyond its initial implementation through continued refinement of the user interface, component architecture, and overall user experience while maintaining the engineering standards established throughout previous milestones.",
+      "This milestone demonstrates the transition from foundational platform construction to sustained engineering development, establishing a repeatable process for future application growth."
+    ],
+    "technicalDecisions": [
+      {
+        "title": "Continue Building Through Iterative Development",
+        "rationale": "Rather than attempting to implement every planned feature simultaneously, Project RedForge adopted an incremental development strategy. Each iteration delivers measurable improvements while maintaining a stable application suitable for continued development."
+      },
+      {
+        "title": "Expand Reusable Components",
+        "rationale": "Additional functionality should be implemented through reusable React components whenever practical. Component reuse improves maintainability, encourages consistency, simplifies future development, and reduces unnecessary duplication throughout the application."
+      },
+      {
+        "title": "Preserve Architectural Consistency",
+        "rationale": "New features should integrate naturally with the architectural standards established during earlier milestones. Avoiding inconsistent implementation patterns reduces technical debt and simplifies future maintenance."
+      },
+      {
+        "title": "Refine User Experience Through Continuous Improvement",
+        "rationale": "User experience should improve gradually through repeated evaluation and refinement. Small improvements to layout, interaction, responsiveness, and presentation collectively produce a significantly stronger overall experience than isolated large redesigns."
+      },
+      {
+        "title": "Build With Future Features in Mind",
+        "rationale": "Each enhancement should contribute toward the long-term vision of Project RedForge. Engineering decisions should continue supporting future documentation systems, cybersecurity demonstrations, laboratory integration, automation capabilities, and additional platform functionality."
+      }
+    ],
+    "lessonsLearned": [
+      "Iterative development produces more maintainable software than large, infrequent redesigns.",
+      "Reusable components simplify long-term application growth.",
+      "Consistent engineering practices reduce future technical debt.",
+      "User experience improves through continuous refinement rather than isolated changes.",
+      "Maintaining architectural discipline becomes increasingly important as application complexity grows.",
+      "Small engineering improvements accumulate into significant platform maturity over time.",
+      "Stable foundations enable confident feature expansion."
+    ],
+    "evidence": [
+      {
+        "id": "eng-008-validation",
+        "title": "ENG-008 validation record",
+        "description": "Reviewed validation statements from the verified engineering log. Sensitive operational values and unreviewed assets are not published.",
+        "kind": "validation",
+        "status": "verified",
+        "checklist": [
+          {
+            "label": "Existing functionality remained operational.",
+            "state": "passed"
+          },
+          {
+            "label": "Newly implemented components integrated successfully.",
+            "state": "passed"
+          },
+          {
+            "label": "Homepage improvements rendered correctly.",
+            "state": "passed"
+          },
+          {
+            "label": "Component hierarchy remained organized and maintainable.",
+            "state": "passed"
+          },
+          {
+            "label": "Responsive layouts continued functioning as expected.",
+            "state": "passed"
+          },
+          {
+            "label": "Branding remained consistent throughout the platform.",
+            "state": "passed"
+          },
+          {
+            "label": "Production deployment successfully reflected engineering changes.",
+            "state": "passed"
+          },
+          {
+            "label": "Application stability remained unchanged following feature expansion.",
+            "state": "passed"
+          }
+        ]
+      },
+      {
+        "id": "eng-008-source-record",
+        "title": "Sanitized engineering record",
+        "description": "Documentation evidence identifying the reviewed source record. Sensitive configuration values and personal metadata are intentionally excluded.",
+        "kind": "configuration",
+        "status": "reviewed",
+        "language": "yaml",
+        "content": "record: ENG-008\ntitle: Platform Feature Expansion\nstatus: verified\nproject: Project RedForge\nevidenceStatus: documented"
+      }
+    ],
+    "nextSteps": [
+      "Continue expanding the website through additional interface features.",
+      "Implement new reusable application components.",
+      "Develop additional platform pages and functionality.",
+      "Continue refining the cybersecurity-focused user experience.",
+      "Expand engineering documentation throughout the platform.",
+      "Maintain disciplined iterative development practices as Project RedForge continues to mature."
+    ],
+    "tags": [
+      "Engineering",
+      "react",
+      "nextjs",
+      "ui",
+      "components",
+      "website"
+    ],
+    "source": {
+      "label": "ENG-008 — Platform Feature Expansion",
+      "reviewed": true,
+      "redactions": [
+        "Author identity",
+        "Internal domain and IPv4 addressing",
+        "Unreviewed screenshots and private configuration values"
+      ]
+    }
+  },
+  {
+    "slug": "eng-009-redforge-platform-foundation",
+    "title": "ENG-009 — RedForge Platform Foundation",
+    "summary": "Established the foundational application architecture for Project RedForge through the introduction of a modular component hierarchy, creating the structural framework that would support future platform development.",
+    "category": "Engineering Log",
+    "status": "Implemented",
+    "publishingState": "published",
+    "date": "2026-07-23",
+    "updatedAt": "2026-07-23",
+    "objective": "Establish the foundational architecture of Project RedForge by organizing the application into reusable, feature-based components capable of supporting continued platform expansion. Primary objectives included: Define the application's structural organization. Establish reusable component boundaries. Improve maintainability. Support scalable feature development. Reduce future technical debt. Align the application with modern React engineering practices. Create a foundation for future engineering modules.",
+    "engineeringSummary": [
+      "Following initialization of the website platform, Project RedForge required an architectural framework capable of supporting continued feature development.",
+      "The initial scaffold generated by Next.js provided a functional starting point but did not reflect the long-term organizational needs of the project.",
+      "As additional features were planned—including engineering documentation, operational dashboards, laboratory content, navigation systems, and cybersecurity experiences—a modular architecture became necessary to prevent unnecessary complexity and maintain clear separation of responsibilities.",
+      "The resulting component hierarchy established the engineering foundation upon which future application development would be built.",
+      "Project RedForge successfully established its first purpose-built application architecture.",
+      "The implementation of a modular, feature-oriented component hierarchy transformed the application from a framework-generated scaffold into an organized engineering platform designed for long-term growth.",
+      "This architectural foundation improved maintainability, established consistent engineering practices, and created a scalable structure capable of supporting future platform development without requiring significant organizational redesign."
+    ],
+    "technicalDecisions": [
+      {
+        "title": "Adopt Feature-Oriented Component Organization",
+        "rationale": "Rather than grouping files by technical type alone, Project RedForge organized components according to their functional responsibilities. This approach improves discoverability, simplifies navigation within the codebase, and better reflects how users experience the platform."
+      },
+      {
+        "title": "Separate Major Platform Experiences",
+        "rationale": "Distinct platform experiences—including navigation, operations, documentation, laboratory content, metrics, hero content, and the command center—were established as independent component areas. Maintaining clear boundaries between these features supports future expansion while reducing unnecessary dependencies."
+      },
+      {
+        "title": "Design for Long-Term Scalability",
+        "rationale": "The architecture was intentionally designed to accommodate continued platform growth without requiring significant restructuring. Future engineering work could therefore build upon an established foundation rather than repeatedly reorganizing the application."
+      },
+      {
+        "title": "Prioritize Maintainability",
+        "rationale": "A modular component hierarchy improves readability, simplifies testing, and encourages reuse throughout the application. Reducing duplication and maintaining clear responsibilities improves long-term engineering efficiency."
+      }
+    ],
+    "lessonsLearned": [
+      "Early architectural decisions significantly influence long-term maintainability.",
+      "Organizing components by feature improves readability and navigation within the codebase.",
+      "Establishing consistent project organization reduces future technical debt.",
+      "Modular architectures simplify future platform expansion.",
+      "Clear separation of responsibilities encourages reusable engineering practices.",
+      "Investing time in architecture before rapid feature development improves long-term engineering efficiency.",
+      "A well-organized codebase is easier to maintain, extend, and onboard future contributors."
+    ],
+    "evidence": [
+      {
+        "id": "eng-009-validation",
+        "title": "ENG-009 validation record",
+        "description": "Reviewed validation statements from the verified engineering log. Sensitive operational values and unreviewed assets are not published.",
+        "kind": "validation",
+        "status": "verified",
+        "checklist": [
+          {
+            "label": "Component directory structure generated successfully.",
+            "state": "passed"
+          },
+          {
+            "label": "Application compiled successfully following architectural changes.",
+            "state": "passed"
+          },
+          {
+            "label": "Component imports resolved correctly.",
+            "state": "passed"
+          },
+          {
+            "label": "Project organization improved without affecting application stability.",
+            "state": "passed"
+          },
+          {
+            "label": "Development environment remained operational.",
+            "state": "passed"
+          },
+          {
+            "label": "Existing functionality continued to operate as expected.",
+            "state": "passed"
+          },
+          {
+            "label": "New architectural layout supported continued feature development.",
+            "state": "passed"
+          },
+          {
+            "label": "Source control successfully captured the architectural milestone.",
+            "state": "passed"
+          }
+        ]
+      },
+      {
+        "id": "eng-009-source-record",
+        "title": "Sanitized engineering record",
+        "description": "Documentation evidence identifying the reviewed source record. Sensitive configuration values and personal metadata are intentionally excluded.",
+        "kind": "configuration",
+        "status": "reviewed",
+        "language": "yaml",
+        "content": "record: ENG-009\ntitle: RedForge Platform Foundation\nstatus: verified\nproject: Project RedForge\nevidenceStatus: documented"
+      }
+    ],
+    "nextSteps": [
+      "Continue expanding platform functionality through the established component architecture.",
+      "Develop the Current Operations experience.",
+      "Introduce additional reusable user interface components.",
+      "Continue refining the homepage and user experience.",
+      "Expand engineering documentation alongside application development.",
+      "Preserve architectural consistency throughout future implementation."
+    ],
+    "tags": [
+      "Engineering",
+      "architecture",
+      "react",
+      "components",
+      "platform"
+    ],
+    "source": {
+      "label": "ENG-009 — RedForge Platform Foundation",
+      "reviewed": true,
+      "redactions": [
+        "Author identity",
+        "Internal domain and IPv4 addressing",
+        "Unreviewed screenshots and private configuration values"
+      ]
+    }
+  },
+  {
     "slug": "eng-010-centralized-telemetry-pipeline-deployment",
     "title": "ENG-010 — Centralized Telemetry Pipeline Deployment",
     "summary": "Successfully deployed and validated a centralized telemetry pipeline using Sysmon, Splunk Enterprise, and the Splunk Universal Forwarder, establishing centralized endpoint visibility across the RedForge laboratory environment.",
@@ -381,8 +1558,8 @@ export const generatedDocumentationEntries = [
     "evidence": [
       {
         "id": "eng-010-validation",
-        "title": "Centralized telemetry validation record",
-        "description": "Reviewed engineering-log evidence records end-to-end collection and retrieval from both managed Windows systems. No event counts, internal addressing, or screenshots are published.",
+        "title": "ENG-010 validation record",
+        "description": "Reviewed validation statements from the verified engineering log. Sensitive operational values and unreviewed assets are not published.",
         "kind": "validation",
         "status": "verified",
         "checklist": [
@@ -429,18 +1606,18 @@ export const generatedDocumentationEntries = [
         ]
       },
       {
-        "id": "eng-010-pipeline-configuration",
-        "title": "Sanitized telemetry pipeline record",
-        "description": "Documentation evidence of the implemented telemetry path. Sensitive configuration values are intentionally excluded.",
+        "id": "eng-010-source-record",
+        "title": "Sanitized engineering record",
+        "description": "Documentation evidence identifying the reviewed source record. Sensitive configuration values and personal metadata are intentionally excluded.",
         "kind": "configuration",
         "status": "reviewed",
         "language": "yaml",
-        "content": "record: ENG-010\nendpointInstrumentation: Microsoft Sysmon\nforwarder: Splunk Universal Forwarder\nanalysisPlatform: Splunk Enterprise\nmanagedSources:\n  - RF-DC01\n  - RF-WIN11-01\nvalidation: Controlled endpoint activity retrieved with SPL"
+        "content": "record: ENG-010\ntitle: Centralized Telemetry Pipeline Deployment\nstatus: verified\nproject: Project RedForge\nevidenceStatus: documented"
       },
       {
         "id": "eng-010-screenshots",
-        "title": "Telemetry validation screenshots",
-        "description": "Supporting screenshots are documented in the private engineering record but are not published until asset-level security and privacy review is complete.",
+        "title": "Supporting engineering evidence",
+        "description": "Supporting source evidence is referenced by the engineering log but remains outside the public asset pipeline until security, privacy, and provenance review is complete.",
         "kind": "screenshot",
         "status": "pending"
       }
@@ -455,10 +1632,11 @@ export const generatedDocumentationEntries = [
     ],
     "projectSlug": "enterprise-home-lab",
     "tags": [
-      "Telemetry",
-      "Splunk",
-      "Sysmon",
-      "Windows",
+      "Engineering",
+      "telemetry",
+      "splunk",
+      "sysmon",
+      "windows",
       "active-directory"
     ],
     "source": {

@@ -1,12 +1,18 @@
-export type DocumentationCategory =
+export type CoreDocumentationCategory =
   | "Engineering Log"
   | "Milestone Log"
-  | "Architecture Decision Record"
+  | "Architecture Decision Record";
+
+export type DeferredDocumentationCategory =
   | "Build Guide"
   | "Standard Operating Procedure"
   | "Troubleshooting Note"
   | "Lesson Learned"
   | "Validation Record";
+
+export type DocumentationCategory =
+  | CoreDocumentationCategory
+  | DeferredDocumentationCategory;
 
 export type DocumentationStatus =
   | "Implemented"

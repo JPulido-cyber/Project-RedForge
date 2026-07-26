@@ -41,10 +41,10 @@ The synchronization allowlist currently processes:
 
 ```text
 Enterprise Home Lab/Architecture Decisions/ADR-*.md*
-Enterprise Home Lab/Engineering Logs/ENG-010*.md*
+Enterprise Home Lab/Engineering Logs/ENG-NNN*.md*
 ```
 
-ADR records use the reusable ADR adapter. ENG-010 uses the verified Engineering Log adapter and is the first operational record approved from the Engineering Logs directory. Other ENG records are not imported implicitly. The command does not recursively scan the vault. Daily logs, personal notes, career material, credentials, and unrelated folders are outside the approved discovery boundary.
+ADR records use the reusable ADR adapter. Verified `ENG-NNN` records use the Engineering Log adapter and form the primary public engineering history. Files that do not declare `status: verified` fail synchronization rather than being published. The command does not recursively scan the vault. Daily logs, personal notes, career material, credentials, and unrelated folders are outside the approved discovery boundary.
 
 ## Generated-file policy
 
@@ -55,7 +55,7 @@ ADR records use the reusable ADR adapter. ENG-010 uses the verified Engineering 
 - Generated source labels contain record identifiers and titles, never absolute paths.
 - Decider names are omitted from generated public content.
 - Evidence represents the reviewed decision record only. It does not claim deployment or technical validation.
-- ENG-010 validation evidence represents assertions in the verified engineering record; its private screenshots remain unpublished pending asset review.
+- ENG validation evidence represents assertions in each verified engineering record; private screenshots remain unpublished pending asset review.
 - Existing manual entries remain in `content/documentation/entries.ts` and are merged with generated entries.
 - Duplicate slugs are rejected when the combined registry initializes.
 - Duplicate source IDs are rejected during synchronization.
@@ -107,7 +107,7 @@ To add Engineering Logs, Milestones, Build Guides, SOPs, Lessons Learned, Valida
 5. Add fixtures and tests for missing fields, unsafe content, duplicate identifiers, and deterministic output.
 6. Do not broaden discovery to the entire vault.
 
-Engineering Logs now has a dedicated adapter. Additional ENG identifiers must be explicitly approved in the filename allowlist before synchronization. The adapter remains independent of the directory name if the knowledge-base structure changes.
+Engineering Logs now has a dedicated adapter for the verified `ENG-NNN` convention. The adapter remains independent of the directory name if the knowledge-base structure changes.
 
 ## Publishing checklist
 

@@ -22,6 +22,15 @@ function stringList(value) {
   return [];
 }
 
+function slugify(value) {
+  return value
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
 function mapDecisions(value) {
   const paragraphs = markdownToParagraphs(value);
   const decisions = [];
@@ -66,7 +75,7 @@ export function mapEngineeringLogDocument(document) {
   const tags = stringList(document.frontmatter.tags);
 
   if (!/^ENG-\d{3}$/.test(id)) throw new Error(`${document.sourceName}: engineering log id must use ENG-NNN.`);
-  if (!title || !summary || !objective.length || !background.length || !decisions.length || !lessons.length || !validation.length || !nextSteps.length) {
+  if (!title || !summary || !objective.length || !background.length || !lessons.length || !validation.length || !nextSteps.length) {
     throw new Error(`${document.sourceName}: verified engineering log is missing required publishable sections.`);
   }
   if (String(document.frontmatter.status ?? "").toLowerCase() !== "verified") {
@@ -76,7 +85,7 @@ export function mapEngineeringLogDocument(document) {
   return {
     sourceId: id,
     entry: {
-      slug: `${id.toLowerCase()}-centralized-telemetry-pipeline-deployment`,
+      slug: `${id.toLowerCase()}-${slugify(title)}`,
       title: `${id} — ${title}`,
       summary,
       category: "Engineering Log",
@@ -86,46 +95,50 @@ export function mapEngineeringLogDocument(document) {
       updatedAt: date,
       objective: objective.join(" "),
       engineeringSummary: [...background, ...result],
-      technicalDecisions: decisions,
+      technicalDecisions: decisions.length
+        ? decisions
+        : [{
+          title,
+          rationale: `${objective.join(" ")} ${markdownToParagraphs(section(document, "Engineering Philosophy")).join(" ")}`.trim(),
+        }],
       lessonsLearned: lessons,
       evidence: [
         {
           id: `${id.toLowerCase()}-validation`,
-          title: "Centralized telemetry validation record",
-          description: "Reviewed engineering-log evidence records end-to-end collection and retrieval from both managed Windows systems. No event counts, internal addressing, or screenshots are published.",
+          title: `${id} validation record`,
+          description: "Reviewed validation statements from the verified engineering log. Sensitive operational values and unreviewed assets are not published.",
           kind: "validation",
           status: "verified",
           checklist: validation.map((label) => ({ label, state: "passed" })),
         },
         {
-          id: `${id.toLowerCase()}-pipeline-configuration`,
-          title: "Sanitized telemetry pipeline record",
-          description: "Documentation evidence of the implemented telemetry path. Sensitive configuration values are intentionally excluded.",
+          id: `${id.toLowerCase()}-source-record`,
+          title: "Sanitized engineering record",
+          description: "Documentation evidence identifying the reviewed source record. Sensitive configuration values and personal metadata are intentionally excluded.",
           kind: "configuration",
           status: "reviewed",
           language: "yaml",
           content: [
-            "record: ENG-010",
-            "endpointInstrumentation: Microsoft Sysmon",
-            "forwarder: Splunk Universal Forwarder",
-            "analysisPlatform: Splunk Enterprise",
-            "managedSources:",
-            "  - RF-DC01",
-            "  - RF-WIN11-01",
-            "validation: Controlled endpoint activity retrieved with SPL",
+            `record: ${id}`,
+            `title: ${title}`,
+            `status: ${String(document.frontmatter.status)}`,
+            `project: ${String(document.frontmatter.project ?? "Project RedForge")}`,
+            `evidenceStatus: ${String(document.frontmatter.evidence_status ?? "documented")}`,
           ].join("\n"),
         },
-        {
+        ...(section(document, "Evidence").toLowerCase().includes("screenshot") ? [{
           id: `${id.toLowerCase()}-screenshots`,
-          title: "Telemetry validation screenshots",
-          description: "Supporting screenshots are documented in the private engineering record but are not published until asset-level security and privacy review is complete.",
+          title: "Supporting engineering evidence",
+          description: "Supporting source evidence is referenced by the engineering log but remains outside the public asset pipeline until security, privacy, and provenance review is complete.",
           kind: "screenshot",
           status: "pending",
-        },
+        }] : []),
       ],
       nextSteps,
-      projectSlug: "enterprise-home-lab",
-      tags: uniqueTags(["Telemetry", "Splunk", "Sysmon", "Windows", ...tags.filter((tag) => tag.toLowerCase() !== "redforge")]),
+      ...(tags.some((tag) => ["telemetry", "splunk", "sysmon", "active-directory"].includes(tag.toLowerCase()))
+        ? { projectSlug: "enterprise-home-lab" }
+        : {}),
+      tags: uniqueTags(["Engineering", ...tags.filter((tag) => tag.toLowerCase() !== "redforge")]),
       source: {
         label: `${id} — ${title}`,
         reviewed: true,

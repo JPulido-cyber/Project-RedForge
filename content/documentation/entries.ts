@@ -1,17 +1,9 @@
-import type { DocumentationCategory, DocumentationEntry } from "./types";
+import type { DocumentationEntry } from "./types";
 import { generatedDocumentationEntries } from "./generated";
+import { documentationTaxonomy } from "./taxonomy";
 import { assertValidDocumentationEntries } from "./validate";
 
-export const documentationCategories = [
-  "Engineering Log",
-  "Milestone Log",
-  "Architecture Decision Record",
-  "Build Guide",
-  "Standard Operating Procedure",
-  "Lesson Learned",
-  "Validation Record",
-  "Troubleshooting Note",
-] as const satisfies readonly DocumentationCategory[];
+export const documentationCategories = documentationTaxonomy.map(({ category }) => category);
 
 export const manualDocumentationEntries = [
   {

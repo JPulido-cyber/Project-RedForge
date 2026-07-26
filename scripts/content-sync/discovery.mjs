@@ -10,7 +10,7 @@ const supportedSources = [
   {
     type: "engineering-log",
     directory: path.join("Enterprise Home Lab", "Engineering Logs"),
-    pattern: /^ENG-010(?:\s|—|-).*\.md(?:\.md)?$/i,
+    pattern: /^ENG-\d{3}(?:\s|—|-).*\.md(?:\.md)?$/i,
   },
 ];
 

@@ -31,4 +31,4 @@ Allowed categories, lifecycle states, publishing states, and evidence states are
 
 ## Current synchronization boundary
 
-The website never watches or reads the vault at runtime. Local synchronization currently imports the allowlisted ADR collection and verified ENG-010 only. Generated TypeScript is committed so Vercel builds exclusively from repository content. All other notes remain private until their directories, filename patterns, adapters, and review requirements are explicitly approved.
+The website never watches or reads the vault at runtime. Local synchronization currently imports the allowlisted ADR collection and verified `ENG-NNN` records. Generated TypeScript is committed so Vercel builds exclusively from repository content. Milestones remain backward-compatible manual records until their source format and adapter receive a separate review. All other notes remain private until their directories, filename patterns, adapters, and review requirements are explicitly approved.
