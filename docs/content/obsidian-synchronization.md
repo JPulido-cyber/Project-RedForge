@@ -37,13 +37,14 @@ Run:
 npm run content:sync
 ```
 
-The first adapter processes only `ADR-*.md` and `ADR-*.md.md` files directly inside:
+The synchronization allowlist currently processes:
 
 ```text
-Enterprise Home Lab/Architecture Decisions/
+Enterprise Home Lab/Architecture Decisions/ADR-*.md*
+Enterprise Home Lab/Engineering Logs/ENG-010*.md*
 ```
 
-The command does not recursively scan the vault. Daily logs, personal notes, career material, credentials, and unrelated folders are outside the approved discovery boundary.
+ADR records use the reusable ADR adapter. ENG-010 uses the verified Engineering Log adapter and is the first operational record approved from the Engineering Logs directory. Other ENG records are not imported implicitly. The command does not recursively scan the vault. Daily logs, personal notes, career material, credentials, and unrelated folders are outside the approved discovery boundary.
 
 ## Generated-file policy
 
@@ -54,6 +55,7 @@ The command does not recursively scan the vault. Daily logs, personal notes, car
 - Generated source labels contain record identifiers and titles, never absolute paths.
 - Decider names are omitted from generated public content.
 - Evidence represents the reviewed decision record only. It does not claim deployment or technical validation.
+- ENG-010 validation evidence represents assertions in the verified engineering record; its private screenshots remain unpublished pending asset review.
 - Existing manual entries remain in `content/documentation/entries.ts` and are merged with generated entries.
 - Duplicate slugs are rejected when the combined registry initializes.
 - Duplicate source IDs are rejected during synchronization.
@@ -105,7 +107,7 @@ To add Engineering Logs, Milestones, Build Guides, SOPs, Lessons Learned, Valida
 5. Add fixtures and tests for missing fields, unsafe content, duplicate identifiers, and deterministic output.
 6. Do not broaden discovery to the entire vault.
 
-The Build Logs folder may later be renamed to Engineering Logs by changing only its allowlisted discovery configuration; the adapter should remain independent of the directory name.
+Engineering Logs now has a dedicated adapter. Additional ENG identifiers must be explicitly approved in the filename allowlist before synchronization. The adapter remains independent of the directory name if the knowledge-base structure changes.
 
 ## Publishing checklist
 
@@ -117,4 +119,3 @@ The Build Logs folder may later be renamed to Engineering Logs by changing only 
 6. Run lint, TypeScript, tests, and the production build.
 7. Commit the reviewed generated file with the source-compatible application changes.
 8. Push only after owner approval.
-

@@ -25,6 +25,8 @@ test("flagship report exposes qualified inventories and editable architecture", 
 
   await expect(page.getByText(/server inventory — implemented \/ planned/i)).toBeVisible();
   await expect(page.getByText(/no ingestion rate, retention, detection, or coverage metrics are asserted/i)).toBeVisible();
+  await expect(page.getByText(/logging pipeline — implemented \/ in progress/i)).toBeVisible();
+  await expect(page.getByText(/centralized telemetry pipeline operational/i)).toBeVisible();
   await expect(page.getByRole("heading", { name: "Screenshot Gallery" })).toBeVisible();
   await expect(page.getByAltText(/enterprise home lab network topology/i)).toBeVisible();
 

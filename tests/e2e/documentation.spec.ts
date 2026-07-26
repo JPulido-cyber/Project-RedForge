@@ -49,18 +49,32 @@ test("published report redacts internal network and account values", async ({ pa
   expect(body).not.toContain("j.pulido");
 });
 
+test("ENG-010 publishes verified telemetry without sensitive lab configuration", async ({ page }) => {
+  await page.goto("/documentation/eng-010-centralized-telemetry-pipeline-deployment");
+  await expect(page.getByRole("heading", { level: 1, name: "ENG-010 — Centralized Telemetry Pipeline Deployment" })).toBeVisible();
+  await expect(page.getByText("Centralized telemetry validation record")).toBeVisible();
+  await expect(page.getByText(/Process Creation events were searchable within Splunk/i)).toBeVisible();
+  await expect(page.getByText("Evidence pending", { exact: true })).toBeVisible();
+  const body = await page.locator("body").innerText();
+  expect(body).not.toMatch(/\b(?:\d{1,3}\.){3}\d{1,3}\b/);
+  expect(body).not.toContain("corp.redforge.test");
+  expect(body).not.toContain("Jose Pulido");
+});
+
 test("homepage activity feed links to published reports", async ({ page }) => {
   await page.goto("/");
   const feed = page.getByRole("region", { name: "Evidence-backed updates" });
   await expect(feed.getByRole("heading", { name: "Evidence-backed updates" })).toBeVisible();
-  await feed.getByRole("link", { name: /ADR-002.*Adoption of Git-Based Version Control/i }).click();
-  await expect(page).toHaveURL(/\/documentation\/adr-002-adoption-of-git-based-version-control$/);
+  await feed.getByRole("link", { name: /ENG-010.*Centralized Telemetry Pipeline Deployment/i }).click();
+  await expect(page).toHaveURL(/\/documentation\/eng-010-centralized-telemetry-pipeline-deployment$/);
 });
 
 test("lab reflects verified identity progress without exposing addressing", async ({ page }) => {
   await page.goto("/lab");
   await expect(page.getByText("Windows Server 2025 — Implemented", { exact: true })).toBeVisible();
   await expect(page.getByText("Active Directory Domain Services — Implemented", { exact: true })).toBeVisible();
+  await expect(page.getByText("Microsoft Sysmon — Implemented", { exact: true })).toBeVisible();
+  await expect(page.getByText("Splunk Enterprise — Implemented", { exact: true })).toBeVisible();
   const body = await page.locator("body").innerText();
   expect(body).not.toMatch(/\b(?:\d{1,3}\.){3}\d{1,3}\b/);
 });

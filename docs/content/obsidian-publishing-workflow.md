@@ -8,7 +8,7 @@ Project RedForge treats documentation as engineering evidence. Obsidian is an au
 2. **Technical review** — confirm the procedure, decision, status language, dependencies, and links against the work actually performed.
 3. **Security and privacy review** — remove credentials, tokens, private addresses, administrative URLs, device identifiers, personal data, sensitive military information, and unnecessary operational detail.
 4. **Evidence review** — ensure screenshots and measurements have provenance. Mark missing proof as `Evidence Pending`; never replace it with representative content.
-5. **Repository content** — create a complete typed `DocumentationEntry` in `content/documentation/entries.ts`, classify every evidence item, and record all public redactions.
+5. **Repository content** — run the allowlisted local synchronization command for supported records. It maps reviewed Markdown into `content/documentation/generated.ts`, classifies evidence, and records public redactions. Unsupported record types remain manually curated until an approved adapter exists.
 6. **Validation** — run ESLint, strict TypeScript, the production build, Storybook, Playwright, link checks, and a responsive visual review.
 7. **Deployment** — commit the reviewed record with a content-focused message and allow the existing deployment pipeline to publish it.
 
@@ -29,6 +29,6 @@ summary: One evidence-safe sentence.
 
 Allowed categories, lifecycle states, publishing states, and evidence states are defined in `content/documentation/types.ts`. Dates, metrics, completion claims, and validation results must come from reviewed evidence.
 
-## Current limitation
+## Current synchronization boundary
 
-Sprint 8 provides the typed production model, publishing validator, static report routes, category index, homepage activity feed, and evidence components. It intentionally does not copy or watch an Obsidian vault or deploy arbitrary Markdown. Curated records are rejected during development and production builds when required publishing fields are missing or evidence text contains common sensitive-data patterns.
+The website never watches or reads the vault at runtime. Local synchronization currently imports the allowlisted ADR collection and verified ENG-010 only. Generated TypeScript is committed so Vercel builds exclusively from repository content. All other notes remain private until their directories, filename patterns, adapters, and review requirements are explicitly approved.
