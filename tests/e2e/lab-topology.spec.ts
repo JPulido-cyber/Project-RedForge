@@ -1,19 +1,18 @@
 import { expect, test } from "@playwright/test";
 
-test("lab renders verified systems, containment, and relationships from structured data", async ({ page }) => {
+test("lab renders the approved enterprise architecture sequence from structured data", async ({ page }) => {
   await page.goto("/lab");
+  await expect(page.getByRole("heading", { level: 1, name: "Enterprise Environment" })).toBeVisible();
+  await expect(page.getByLabel("Environment purpose")).toBeVisible();
   const topology = page.getByLabel("Verified operational topology");
-  await expect(topology.getByRole("heading", { name: "VMware Workstation" })).toBeVisible();
   for (const system of ["rf-dc01", "rf-win11-01", "splunk-enterprise"]) {
     await expect(topology.locator(`[data-node-id="${system}"]`)).toBeVisible();
   }
-  const boundary = page.locator(".topology-boundary");
-  await expect(boundary.getByRole("button", { name: /RF-DC01/ })).toBeVisible();
-  await expect(boundary.getByRole("button", { name: /RF-WIN11-01/ })).toBeVisible();
-  const relationships = page.getByRole("region", { name: "Verified relationships" });
-  for (const relation of ["Domain identity", "Internal DNS", "Windows security telemetry", "Sysmon telemetry"]) {
-    await expect(relationships.getByText(relation, { exact: true })).toBeVisible();
-  }
+  await expect(topology.getByText("Windows security telemetry", { exact: true })).toHaveCount(1);
+  await expect(topology.getByText("Sysmon telemetry", { exact: true })).toHaveCount(1);
+  await expect(page.getByText("Enterprise capability groups", { exact: true })).toBeVisible();
+  await expect(page.getByText("Enterprise capability roadmap", { exact: true })).toBeVisible();
+  await expect(page.getByRole("link", { name: /view engineering records/i })).toHaveAttribute("href", "/documentation");
 });
 
 test("operational and planned lifecycle states remain separate", async ({ page }) => {
@@ -21,7 +20,7 @@ test("operational and planned lifecycle states remain separate", async ({ page }
   await expect(page.locator('[data-node-id="rf-dc01"]')).toHaveAttribute("data-status", "operational");
   const planned = page.getByRole("region", { name: "Planned capabilities" });
   await expect(planned.getByRole("button", { name: /Network Segmentation Layer/ })).toHaveAttribute("data-status", "planned");
-  await expect(planned.getByText(/not operational infrastructure or implementation evidence/i)).toBeVisible();
+  await expect(page.getByLabel("Topology status legend").getByText("Not yet implemented")).toBeVisible();
 });
 
 test("node details support pointer and keyboard interaction with visible focus", async ({ page }) => {

@@ -2,7 +2,7 @@ import { expect, test } from "@playwright/test";
 
 const transformedRoutes = [
   ["/about", "Jose Pulido"],
-  ["/lab", "Enterprise Home Lab"],
+  ["/lab", "Enterprise Environment"],
   ["/projects", "Engineering Portfolio"],
   ["/documentation", "Knowledge. Documented. Shared."],
   ["/contact", "Get in Touch"],
