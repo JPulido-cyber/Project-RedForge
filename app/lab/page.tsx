@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 
+import { EnterpriseLabTopology } from "@/components/lab";
 import { PlatformShell, Section } from "@/components/layout";
+import { enterpriseHomeLabTopology } from "@/content/lab";
 import { projects } from "@/content/projects";
 
 export const metadata: Metadata = {
   title: "Lab Environment",
-  description: "The status-governed target-state Enterprise Home Lab architecture.",
+  description: "The evidence-backed operational Enterprise Home Lab topology and status-governed roadmap.",
 };
 
 const lab = projects.find((project) => project.slug === "enterprise-home-lab")!;
@@ -19,13 +20,11 @@ export default function LabPage() {
     <PlatformShell>
       <Section className="lab-heading">
         <div><p className="technical-eyebrow">Lab environment</p><h1>Enterprise Home Lab</h1><p>{lab.subtitle}</p></div>
-        <span className="evidence-chip">Target-state architecture</span>
+        <span className="evidence-chip">Verified topology</span>
       </Section>
       <Section className="lab-workspace">
         <div className="architecture-canvas forged-panel">
-          <div className="panel-heading"><span>Network topology</span><span>Editable SVG</span></div>
-          <Image src="/projects/enterprise-home-lab/diagrams/network-topology.svg" alt="Target-state Enterprise Home Lab network topology" width={1200} height={675} priority />
-          <p className="architecture-disclaimer">Design artifact — not implementation evidence. Addresses and infrastructure health are intentionally omitted.</p>
+          <EnterpriseLabTopology topology={enterpriseHomeLabTopology} />
         </div>
         <aside className="lab-rail">
           <div className="forged-panel"><p className="technical-eyebrow">Engineering status</p><strong>{lab.phase}</strong><span>Lifecycle: {lab.status}</span><span>Latest verified update: {lab.updatedAt}</span></div>

@@ -1,1 +1,1 @@
-export {};
+export { EnterpriseLabTopology } from "./enterprise-lab-topology";
