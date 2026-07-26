@@ -3,18 +3,18 @@ import { expect, test } from "@playwright/test";
 test("about page explains the engineer, RedForge purpose, and specialization", async ({ page }) => {
   await page.goto("/about");
 
-  await expect(page.getByRole("heading", { level: 1, name: "The Engineer Behind RedForge" })).toBeVisible();
+  await expect(page.getByRole("heading", { level: 1, name: "Jose Pulido" })).toBeVisible();
   for (const heading of [
-    "From leadership to engineering",
-    "Why this path",
-    "Engineering philosophy",
-    "Core technical focus",
+    "How I got here",
+    "Why offensive security",
+    "How I approach the work",
+    "The knowledge I’m building intentionally",
   ]) {
     await expect(page.getByRole("heading", { name: heading })).toBeVisible();
   }
-  await expect(page.getByText(/deliberate transition toward offensive cybersecurity/i)).toBeVisible();
+  await expect(page.getByText(/my transition into cybersecurity was shaped by a career of accountability/i)).toBeVisible();
   await expect(page.getByText(/offensive security is most effective when it begins with operational understanding/i)).toBeVisible();
-  await expect(page.getByText(/evidence-based and repeatable/i)).toBeVisible();
+  await expect(page.getByText(/evidence-based, repeatable engineering/i)).toBeVisible();
 });
 
 test("technical focus is organized by supporting discipline", async ({ page }) => {
@@ -35,7 +35,7 @@ test("professional profile consolidates identity without duplicate actions or st
   await page.goto("/about");
 
   const profile = page.getByRole("complementary", { name: "Jose Pulido" });
-  await expect(profile.getByRole("heading", { name: "Jose Pulido" })).toBeVisible();
+  await expect(profile.getByRole("heading", { level: 1, name: "Jose Pulido" })).toBeVisible();
   await expect(profile.getByText("Offensive Security Engineering", { exact: true })).toBeVisible();
   await expect(profile.getByText("13 years U.S. Army leadership", { exact: true })).toBeVisible();
   await expect(profile.getByLabel("Engineering statement")).toContainText("Build.Understand.Secure.Assess.");
