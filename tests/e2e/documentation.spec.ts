@@ -7,6 +7,13 @@ test("documentation index publishes reviewed engineering records by category", a
   await expect(page.getByText("Milestone Log", { exact: true }).first()).toBeVisible();
   await expect(page.getByRole("heading", { name: "RF-DC01 Server Establishment Log" })).toBeVisible();
   await expect(page.getByRole("heading", { name: "Milestone 001 — Enterprise Blueprint Complete" })).toBeVisible();
+  const taxonomy = page.locator(".documentation-rail");
+  await expect(taxonomy.getByText(/^Engineering Logs\s*11$/)).toBeVisible();
+  await expect(taxonomy.getByText(/^Architecture Decisions\s*5$/)).toBeVisible();
+  await expect(taxonomy.getByText(/^Milestones\s*1$/)).toBeVisible();
+  for (const deferred of ["Build Guide", "Standard Operating Procedure", "Troubleshooting Note", "Lesson Learned", "Validation Record"]) {
+    await expect(taxonomy.getByText(deferred, { exact: true })).toHaveCount(0);
+  }
 });
 
 test("server establishment report exposes the required engineering sections", async ({ page }) => {
@@ -52,13 +59,22 @@ test("published report redacts internal network and account values", async ({ pa
 test("ENG-010 publishes verified telemetry without sensitive lab configuration", async ({ page }) => {
   await page.goto("/documentation/eng-010-centralized-telemetry-pipeline-deployment");
   await expect(page.getByRole("heading", { level: 1, name: "ENG-010 — Centralized Telemetry Pipeline Deployment" })).toBeVisible();
-  await expect(page.getByText("Centralized telemetry validation record")).toBeVisible();
+  await expect(page.getByText("ENG-010 validation record")).toBeVisible();
   await expect(page.getByText(/Process Creation events were searchable within Splunk/i)).toBeVisible();
   await expect(page.getByText("Evidence pending", { exact: true })).toBeVisible();
   const body = await page.locator("body").innerText();
   expect(body).not.toMatch(/\b(?:\d{1,3}\.){3}\d{1,3}\b/);
   expect(body).not.toContain("corp.redforge.test");
   expect(body).not.toContain("Jose Pulido");
+});
+
+test("verified Engineering Logs scale through stable synchronized routes", async ({ page }) => {
+  await page.goto("/documentation/eng-001-project-redforge-charter");
+  await expect(page.getByRole("heading", { level: 1, name: "ENG-001 — Project RedForge Charter" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Reviewed engineering evidence" })).toBeVisible();
+
+  await page.goto("/documentation/server-establishment-log");
+  await expect(page.getByRole("heading", { level: 1, name: "RF-DC01 Server Establishment Log" })).toBeVisible();
 });
 
 test("homepage activity feed links to published reports", async ({ page }) => {
