@@ -8,7 +8,7 @@ test("documentation index publishes reviewed engineering records by category", a
   await expect(page.getByRole("heading", { name: "RF-DC01 Server Establishment Log" })).toBeVisible();
   await expect(page.getByRole("heading", { name: "Milestone 001 — Enterprise Blueprint Complete" })).toBeVisible();
   const taxonomy = page.locator(".documentation-rail");
-  await expect(taxonomy.getByText(/^Engineering Logs\s*11$/)).toBeVisible();
+  await expect(taxonomy.getByText(/^Engineering Logs\s*12$/)).toBeVisible();
   await expect(taxonomy.getByText(/^Architecture Decision Records\s*5$/)).toBeVisible();
   await expect(taxonomy.getByText(/^Milestones\s*1$/)).toBeVisible();
   for (const deferred of ["Build Guide", "Standard Operating Procedure", "Troubleshooting Note", "Lesson Learned", "Validation Record"]) {
@@ -24,9 +24,9 @@ test("record-type controls expose purpose and linkable filtered views", async ({
   await expect(filters.getByText(/which alternatives were considered/i)).toBeVisible();
   await expect(filters.getByText(/major achievements spanning multiple Engineering Logs/i)).toBeVisible();
 
-  await filters.getByRole("link", { name: /Engineering Logs 11/i }).click();
+  await filters.getByRole("link", { name: /Engineering Logs 12/i }).click();
   await expect(page).toHaveURL(/\/documentation\?type=engineering-logs$/);
-  await expect(page.locator(".documentation-card")).toHaveCount(11);
+  await expect(page.locator(".documentation-card")).toHaveCount(12);
   await expect(page.locator(".documentation-card .technical-eyebrow").first()).toHaveText("Engineering Log");
 
   await page.goto("/documentation?type=architecture-decisions");
@@ -39,14 +39,14 @@ test("record-type controls expose purpose and linkable filtered views", async ({
   await expect(page.locator(".documentation-card")).toHaveCount(1);
   await expect(page.locator(".documentation-card .technical-eyebrow")).toHaveText("Milestone Log");
 
-  await filters.getByRole("link", { name: /All records 17/i }).click();
+  await filters.getByRole("link", { name: /All records 18/i }).click();
   await expect(page).toHaveURL(/\/documentation$/);
-  await expect(page.locator(".documentation-card")).toHaveCount(17);
+  await expect(page.locator(".documentation-card")).toHaveCount(18);
 });
 
 test("record-type filters retain keyboard focus visibility", async ({ page }) => {
   await page.goto("/documentation");
-  const filter = page.getByRole("link", { name: /Engineering Logs 11/i });
+  const filter = page.getByRole("link", { name: /Engineering Logs 12/i });
   await filter.focus();
   await expect(filter).toBeFocused();
   const outline = await filter.evaluate((element) => getComputedStyle(element).outlineStyle);

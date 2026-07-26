@@ -17,10 +17,10 @@ for (const [route, heading] of transformedRoutes) {
   });
 }
 
-test("lab presentation remains explicit target-state documentation", async ({ page }) => {
+test("lab presentation separates verified topology from planned capabilities", async ({ page }) => {
   await page.goto("/lab");
-  await expect(page.getByText("Design artifact — not implementation evidence. Addresses and infrastructure health are intentionally omitted.")).toBeVisible();
-  await expect(page.getByAltText("Target-state Enterprise Home Lab network topology")).toBeVisible();
+  await expect(page.getByLabel("Verified operational topology")).toBeVisible();
+  await expect(page.getByRole("region", { name: "Planned capabilities" })).toBeVisible();
 });
 
 test("mobile platform routes do not overflow horizontally", async ({ page }) => {
