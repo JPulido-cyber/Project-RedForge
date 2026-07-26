@@ -15,18 +15,23 @@ function nodeIcon(node: LabTopologyNode): LabIconName {
   return "network";
 }
 
-function NodeButton({ node, selected, onSelect }: { node: LabTopologyNode; selected: boolean; onSelect: (id: string) => void }) {
+function NodeButton({ node, selected, inactive, onSelect }: { node: LabTopologyNode; selected: boolean; inactive: boolean; onSelect: (id: string) => void }) {
   return (
-    <button className="topology-node" type="button" aria-pressed={selected} aria-controls="topology-node-details" data-node-id={node.id} data-status={node.status} onClick={() => onSelect(node.id)}>
+    <button className="topology-node" type="button" aria-pressed={selected} aria-controls="topology-node-details" data-node-id={node.id} data-status={node.status} data-inactive={inactive || undefined} onClick={() => onSelect(node.id)}>
       <LabIcon name={nodeIcon(node)} />
-      <span><strong>{node.name}</strong><small>{node.platform}</small></span>
+      <span><strong>{node.hostname}</strong><small>{node.platform}</small></span>
       <i className={`topology-state ${node.status}`} aria-label={statusLabels[node.status]} />
     </button>
   );
 }
 
-function DetailList({ title, values, fallback = "None recorded" }: { title: string; values: readonly string[]; fallback?: string }) {
-  return <div><dt>{title}</dt><dd>{values.length ? <ul>{values.map((value) => <li key={value}>{value}</li>)}</ul> : fallback}</dd></div>;
+function DetailList({ title, values }: { title: string; values: readonly string[] }) {
+  return <div><dt>{title}</dt><dd><ul>{values.map((value) => <li key={value}>{value}</li>)}</ul></dd></div>;
+}
+
+function ServiceTile({ id, label, description, onSelect }: { id: string; label: string; description: string; onSelect?: (id: string) => void }) {
+  if (onSelect) return <button type="button" onClick={() => onSelect(id)}><span>{label}</span><small>{description}</small></button>;
+  return <span data-service-id={id}><span>{label}</span><small>{description}</small></span>;
 }
 
 export function EnterpriseLabTopology({ topology }: { topology: LabTopology }) {
@@ -37,6 +42,11 @@ export function EnterpriseLabTopology({ topology }: { topology: LabTopology }) {
   const endpoint = topology.nodes.find((node) => node.id === "rf-win11-01");
   const telemetry = topology.nodes.find((node) => node.type === "telemetry-platform");
   const planned = topology.nodes.filter((node) => node.status === "planned");
+  const isInactive = (node: LabTopologyNode) => node.id !== selected.id;
+  const isRelated = (...connectionIds: string[]) => topology.connections.some((connection) =>
+    connectionIds.includes(connection.id) &&
+    (connection.source === selected.id || connection.target === selected.id),
+  );
 
   if (!selected || !boundary || !dc || !endpoint || !telemetry) return null;
 
@@ -50,25 +60,25 @@ export function EnterpriseLabTopology({ topology }: { topology: LabTopology }) {
       <div className="topology-stage" aria-label="Verified operational topology">
         <section className="topology-boundary virtualization-boundary" aria-label="Virtualization boundary">
           <p>▣ Virtualization boundary</p>
-          <NodeButton node={boundary} selected={selected.id === boundary.id} onSelect={setSelectedId} />
+          <NodeButton node={boundary} selected={selected.id === boundary.id} inactive={isInactive(boundary)} onSelect={setSelectedId} />
         </section>
-        <div className="topology-connector host-connector" aria-hidden />
+        <div key={`${selectedId}-host`} className="topology-connector host-connector" data-active={isRelated("vmware-hosts-dc", "vmware-hosts-win11") || undefined} aria-hidden />
         <div className="topology-node-row">
-          <NodeButton node={dc} selected={selected.id === dc.id} onSelect={setSelectedId} />
-          <span className="route identity-route" aria-label="Domain identity connection">→</span>
-          <NodeButton node={endpoint} selected={selected.id === endpoint.id} onSelect={setSelectedId} />
-          <span className="route telemetry-route"><small>Sysmon telemetry</small>→</span>
-          <NodeButton node={telemetry} selected={selected.id === telemetry.id} onSelect={setSelectedId} />
+          <NodeButton node={dc} selected={selected.id === dc.id} inactive={isInactive(dc)} onSelect={setSelectedId} />
+          <span key={`${selectedId}-identity`} className="route identity-route" data-active={isRelated("dc-identity-win11", "dc-dns-win11") || undefined} aria-label="Domain identity connection">→</span>
+          <NodeButton node={endpoint} selected={selected.id === endpoint.id} inactive={isInactive(endpoint)} onSelect={setSelectedId} />
+          <span key={`${selectedId}-sysmon`} className="route telemetry-route" data-active={isRelated("win11-telemetry-splunk") || undefined}><small>Sysmon telemetry</small>→</span>
+          <NodeButton node={telemetry} selected={selected.id === telemetry.id} inactive={isInactive(telemetry)} onSelect={setSelectedId} />
         </div>
-        <span className="route security-route"><small>Windows security telemetry</small>→</span>
+        <span key={`${selectedId}-security`} className="route security-route" data-active={isRelated("dc-telemetry-splunk") || undefined}><small>Windows security telemetry</small>→</span>
         <div className="topology-service-row">
-          <span>Active Directory DS<small>Identity service</small></span>
-          <span>DNS<small>Name resolution</small></span>
-          <span>Sysmon<small>Telemetry source</small></span>
+          <ServiceTile id="active-directory-domain-services" label="Active Directory DS" description="Identity service" />
+          <ServiceTile id="dns" label="DNS" description="Name resolution" />
+          <ServiceTile id="sysmon" label="Sysmon" description="Telemetry source" />
         </div>
         <section className="topology-planned" aria-label="Planned capabilities">
           <p>▣ Network boundary — planned</p>
-          {planned.map((node) => <NodeButton key={node.id} node={node} selected={selected.id === node.id} onSelect={setSelectedId} />)}
+          {planned.map((node) => <NodeButton key={node.id} node={node} selected={selected.id === node.id} inactive={isInactive(node)} onSelect={setSelectedId} />)}
         </section>
       </div>
 
@@ -79,16 +89,16 @@ export function EnterpriseLabTopology({ topology }: { topology: LabTopology }) {
         <span><i className="connection-key planned" /> <strong>Planned connection</strong><small>Future implementation</small></span>
       </div>
 
-      <section id="topology-node-details" className="topology-node-details" aria-live="polite" aria-label="Selected topology node details">
+      <section key={selected.id} id="topology-node-details" className="topology-node-details" aria-live="polite" aria-label="Selected topology node details">
         <div className="selected-system-summary">
           <p className="technical-eyebrow">Selected system</p>
-          <div><LabIcon name={nodeIcon(selected)} /><span><h2>{selected.name}</h2><small>{selected.platform}</small><strong className={`topology-status ${selected.status}`}>{statusLabels[selected.status]}</strong></span></div>
+          <div><LabIcon name={nodeIcon(selected)} /><span><h2>{selected.hostname}</h2><small>{selected.platform}</small><strong className={`topology-status ${selected.status}`}>{statusLabels[selected.status]}</strong></span></div>
         </div>
         <dl>
           <div><dt>Purpose</dt><dd>{selected.purpose}</dd></div>
           <DetailList title="Roles" values={selected.roles} />
           <DetailList title="Services" values={selected.services} />
-          <div><dt>Telemetry</dt><dd>{selected.telemetryState ?? "No telemetry claim recorded"}</dd></div>
+          <div><dt>Telemetry</dt><dd>{selected.telemetryState}</dd></div>
           <div className="topology-related-records"><dt>Related records</dt><dd>{[...selected.relatedEngineeringLogs, ...selected.relatedArchitectureDecisions].length ? [...selected.relatedEngineeringLogs, ...selected.relatedArchitectureDecisions].map((record) => <a key={record.href} href={record.href}>{record.label} <span aria-hidden>→</span></a>) : "No related record published"}</dd></div>
         </dl>
       </section>

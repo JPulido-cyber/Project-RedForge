@@ -8,7 +8,7 @@ export interface LabTopologyRecord {
 
 export interface LabTopologyNode {
   id: string;
-  name: string;
+  hostname: string;
   type: LabTopologyNodeType;
   platform: string;
   status: LabTopologyStatus;
@@ -16,7 +16,7 @@ export interface LabTopologyNode {
   roles: readonly string[];
   services: readonly string[];
   securityTooling: readonly string[];
-  telemetryState?: string;
+  telemetryState: string;
   relatedEngineeringLogs: readonly LabTopologyRecord[];
   relatedArchitectureDecisions: readonly LabTopologyRecord[];
   parentId?: string;

@@ -9,13 +9,14 @@ export const enterpriseHomeLabTopology = {
   updatedAt: "2026-07-26",
   nodes: [
     {
-      id: "vmware-workstation", name: "VMware Workstation", type: "virtualization", platform: "VMware Workstation", status: "operational",
+      id: "vmware-workstation", hostname: "RF-VMHOST01", type: "virtualization", platform: "VMware Workstation", status: "operational",
       purpose: "Provides the verified virtualization boundary for the current Windows lab systems.",
       roles: ["Virtualization platform", "Lab workload host"], services: ["Virtual machine execution"], securityTooling: [],
+      telemetryState: "Host telemetry is outside the current verified telemetry scope.",
       relatedEngineeringLogs: [eng011], relatedArchitectureDecisions: [],
     },
     {
-      id: "rf-dc01", name: "RF-DC01", type: "server", platform: "Windows Server 2025", status: "operational",
+      id: "rf-dc01", hostname: "RF-DC01", type: "server", platform: "Windows Server 2025", status: "operational",
       purpose: "Provides the verified identity, domain, and internal name-resolution services.",
       roles: ["Domain controller", "Identity service", "DNS service"], services: ["Active Directory Domain Services", "DNS", "Domain services"],
       securityTooling: ["Splunk Universal Forwarder"], telemetryState: "Windows security telemetry is received and searchable in Splunk Enterprise.",
@@ -23,23 +24,25 @@ export const enterpriseHomeLabTopology = {
       relatedArchitectureDecisions: [], parentId: "vmware-workstation",
     },
     {
-      id: "rf-win11-01", name: "RF-WIN11-01", type: "endpoint", platform: "Windows 11", status: "operational",
+      id: "rf-win11-01", hostname: "RF-WIN11-01", type: "endpoint", platform: "Windows 11", status: "operational",
       purpose: "Provides the verified domain-joined Windows endpoint used for telemetry validation.",
       roles: ["Domain-joined client", "Validation endpoint"], services: ["Domain membership"],
       securityTooling: ["Microsoft Sysmon", "Splunk Universal Forwarder"], telemetryState: "Sysmon telemetry is received and searchable in Splunk Enterprise.",
       relatedEngineeringLogs: [eng010, eng011], relatedArchitectureDecisions: [], parentId: "vmware-workstation",
     },
     {
-      id: "splunk-enterprise", name: "Splunk Enterprise", type: "telemetry-platform", platform: "Splunk Enterprise", status: "operational",
+      id: "splunk-enterprise", hostname: "RF-SPLUNK01", type: "telemetry-platform", platform: "Splunk Enterprise", status: "operational",
       purpose: "Centralizes verified telemetry from RF-DC01 and RF-WIN11-01 for search and investigation.",
       roles: ["Centralized telemetry", "Security investigation"], services: ["Telemetry ingestion", "Indexing", "SPL retrieval"],
       securityTooling: ["Splunk Enterprise"], telemetryState: "Centralized ingestion and initial threat-hunting retrieval are verified.",
       relatedEngineeringLogs: [eng010, eng011], relatedArchitectureDecisions: [],
     },
     {
-      id: "network-segmentation", name: "Network Segmentation Layer", type: "planned-capability", platform: "Technology not selected", status: "planned",
+      id: "network-segmentation", hostname: "RF-NETWORK-01", type: "planned-capability", platform: "Network Segmentation (planned)", status: "planned",
       purpose: "Future capability for defining trust boundaries and controlled lab traffic flows.",
-      roles: ["Future network segmentation"], services: [], securityTooling: [], relatedEngineeringLogs: [eng011], relatedArchitectureDecisions: [],
+      roles: ["Planned trust-boundary enforcement"], services: ["No operational services"], securityTooling: [],
+      telemetryState: "No operational telemetry; this capability remains planned.",
+      relatedEngineeringLogs: [eng011], relatedArchitectureDecisions: [],
     },
   ],
   connections: [
