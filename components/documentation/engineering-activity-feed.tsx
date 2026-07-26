@@ -10,7 +10,7 @@ export function EngineeringActivityFeed() {
     .slice(0, 4);
 
   return (
-    <Section className="engineering-activity" aria-labelledby="engineering-activity-title">
+    <Section className="engineering-activity" id="engineering-activity" aria-labelledby="engineering-activity-title">
       <div className="engineering-activity-heading">
         <div><p className="technical-eyebrow">Latest engineering activity</p><h2 id="engineering-activity-title">Evidence-backed updates</h2></div>
         <Link href={{ pathname: "/documentation" }}>View documentation <span aria-hidden>→</span></Link>

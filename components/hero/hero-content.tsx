@@ -10,12 +10,13 @@ export function HeroContent() {
         <span>THE GROUND UP</span>
       </h1>
       <p className="hero-description">
-        Project RedForge is a hands-on cybersecurity lab and portfolio that
-        simulates a real-world enterprise environment. I engineer the
-        infrastructure, secure it, monitor it, and continuously evolve it.
+        Project RedForge is a living cybersecurity engineering platform
+        documenting the design, implementation, validation, and evolution of an
+        enterprise lab. Every system, decision, and result is grounded in
+        reviewed engineering evidence.
       </p>
       <HeroActions />
-      <a className="scroll-indicator" href="#operations">
+      <a className="scroll-indicator" href="#engineering-activity">
         <span className="mouse-icon" aria-hidden>
           <span />
         </span>

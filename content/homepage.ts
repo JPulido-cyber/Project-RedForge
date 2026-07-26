@@ -33,7 +33,7 @@ export const homepageContent = {
     { icon: "server", value: "1", label: "SYSTEM DEPLOYED" },
     { icon: "shield", value: "5", label: "SECURITY GROUPS" },
     { icon: "forest", value: "1", label: "ACTIVE DIRECTORY FOREST" },
-    { icon: "document", value: "2", label: "ENGINEERING LOGS" },
+    { icon: "document", value: "12", label: "ENGINEERING LOGS" },
     { icon: "directory", value: "1", label: "DOMAIN CONTROLLER" },
   ] satisfies readonly MetricItem[],
   projects: [
