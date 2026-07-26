@@ -1,4 +1,5 @@
 export interface TechnicalFocusGroup {
+  icon: string;
   title: string;
   purpose: string;
   disciplines: readonly string[];
@@ -22,24 +23,26 @@ export const aboutContent = {
     statement: ["Build.", "Understand.", "Secure.", "Assess."],
   },
   journey: {
-    title: "From leadership to engineering",
+    eyebrow: "Leadership to engineering",
+    title: "How I got here",
     paragraphs: [
-      "My transition into cybersecurity builds on a military career shaped by accountability, preparation, and leadership under pressure. Those habits now guide how I approach technical work: understand the mission, reduce assumptions, validate the result, and document what others need to reproduce it.",
-      "RedForge turns that transition into visible engineering practice. Instead of presenting a list of tools, the platform records how systems are designed, established, secured, monitored, tested, and improved over time.",
+      "My transition into cybersecurity was shaped by a career of accountability, preparation, and leadership under pressure. Those habits now guide how I approach technical work: understand the mission, reduce assumptions, validate the result, and document what others need to reproduce.",
     ],
   },
   path: {
-    title: "Why this path",
+    eyebrow: "Why this path",
+    title: "Why offensive security",
     paragraphs: [
       "Offensive security is most effective when it begins with operational understanding. Assessing an enterprise environment requires more than familiarity with tools; it requires knowing how identity, infrastructure, networking, administration, and defensive visibility are designed to work together.",
-      "Building enterprise environments is therefore intentional preparation. It develops the context needed to identify meaningful weaknesses, understand their operational impact, communicate defensible findings, and recommend improvements that work within real systems.",
+      "Building the environment is deliberate preparation for assessing it. Breadth is being developed in service of focused offensive depth—not as an end in itself.",
     ],
   },
   philosophy: {
+    eyebrow: "Engineering philosophy",
     title: "Engineering philosophy",
+    displayTitle: "How I approach the work",
     paragraphs: [
-      "Strong offensive work begins with understanding how enterprise systems are intended to function. Learning to build, operate, secure, monitor, and recover those systems makes assessment findings more accurate, practical, and defensible.",
-      "The work should also be evidence-based and repeatable. RedForge records objectives, decisions, implementation, validation, challenges, lessons, and next steps so progress can be reviewed instead of merely claimed.",
+      "Evidence-based, repeatable engineering creates the operational context required for credible assessment.",
     ],
     principles: [
       "Understand systems before assessing them.",
@@ -50,21 +53,25 @@ export const aboutContent = {
   },
   focus: [
     {
+      icon: "▤",
       title: "Enterprise foundations",
       purpose: "Understand enterprise infrastructure and dependencies before assessment.",
       disciplines: ["Windows", "Linux", "Networking", "Virtualization", "Active Directory", "DNS", "Group Policy"],
     },
     {
+      icon: "◎",
       title: "Visibility & detection",
       purpose: "Understand what defenders can observe, investigate, and validate.",
       disciplines: ["Splunk", "Sysmon", "Windows Logging", "Telemetry", "Threat Hunting", "Detection Engineering"],
     },
     {
+      icon: "⌘",
       title: "Automation & tooling",
       purpose: "Create repeatable engineering, analysis, and offensive workflows.",
       disciplines: ["Python", "PowerShell", "Git", "Automation"],
     },
     {
+      icon: "◇",
       title: "Modern enterprise",
       purpose: "Understand modern enterprise identity, infrastructure, and cloud visibility.",
       disciplines: ["Cloud", "IAM", "Cloud Logging", "Microsoft Entra ID — Future"],

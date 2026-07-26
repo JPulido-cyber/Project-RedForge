@@ -4,13 +4,8 @@ export function OperatorCard() {
   const { profile } = aboutContent;
   return (
     <aside className="operator-identity" aria-labelledby="professional-profile-name">
-      <div className="operator-emblem">
-        <span className="emblem-project">PROJECT</span>
-        <strong>RF</strong>
-        <span className="emblem-name">REDFORGE</span>
-      </div>
-      <p className="operator-designation">Professional snapshot</p>
-      <h2 id="professional-profile-name">{profile.name}</h2>
+      <span className="operator-profile-mark" aria-hidden>RF</span>
+      <h1 id="professional-profile-name">{profile.name}</h1>
       <p className="operator-role">{profile.identity}</p>
       <div className="identity-divider" />
       <dl className="operator-profile-details">
