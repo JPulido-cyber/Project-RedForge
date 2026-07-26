@@ -315,6 +315,20 @@
   justify-content: space-between;
 }
 
+.documentation-category {
+  padding-bottom: 13px;
+  border-bottom: 1px solid var(--rf-color-forge-line);
+}
+
+.documentation-category:last-of-type { border-bottom: 0; }
+
+.documentation-category > p {
+  margin-top: 7px;
+  color: var(--rf-color-forge-steel);
+  font-size: 0.68rem;
+  line-height: 1.5;
+}
+
 .documentation-rail small {
   min-width: 24px;
   padding: 2px 6px;
