@@ -2,6 +2,7 @@ export {};
 export * from "./architecture-evidence";
 export * from "./configuration-snippet";
 export * from "./documentation-report";
+export * from "./documentation-index";
 export * from "./engineering-activity-feed";
 export * from "./evidence-renderer";
 export * from "./evidence-status-badge";
