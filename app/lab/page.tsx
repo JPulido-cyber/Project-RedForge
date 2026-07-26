@@ -2,40 +2,79 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { EnterpriseLabTopology } from "@/components/lab";
+import { LabIcon } from "@/components/lab/lab-icon";
 import { PlatformShell, Section } from "@/components/layout";
-import { enterpriseHomeLabTopology } from "@/content/lab";
-import { projects } from "@/content/projects";
+import { enterpriseCapabilities, enterpriseHomeLabTopology, enterpriseRoadmap } from "@/content/lab";
 
 export const metadata: Metadata = {
   title: "Lab Environment",
   description: "The evidence-backed operational Enterprise Home Lab topology and status-governed roadmap.",
 };
 
-const lab = projects.find((project) => project.slug === "enterprise-home-lab")!;
-
 export default function LabPage() {
-  const completed = lab.timeline.filter((event) => event.status === "complete");
-  const next = lab.timeline.find((event) => event.status !== "complete");
   return (
     <PlatformShell>
-      <Section className="lab-heading">
-        <div><p className="technical-eyebrow">Lab environment</p><h1>Enterprise Home Lab</h1><p>{lab.subtitle}</p></div>
-        <span className="evidence-chip">Verified topology</span>
-      </Section>
-      <Section className="lab-workspace">
-        <div className="architecture-canvas forged-panel">
-          <EnterpriseLabTopology topology={enterpriseHomeLabTopology} />
+      <Section className="lab-introduction">
+        <div>
+          <p className="technical-eyebrow">Lab environment</p>
+          <h1>Enterprise Environment</h1>
+          <div className="lab-introduction-copy">
+            <p>This environment is intentionally engineered to replicate the identity, infrastructure, telemetry, and operational workflows encountered during enterprise offensive security assessments.</p>
+            <p>Each implemented system is validated, documented, and connected to engineering records.</p>
+            <p>Future capabilities remain visible but are clearly distinguished from verified infrastructure.</p>
+          </div>
         </div>
-        <aside className="lab-rail">
-          <div className="forged-panel"><p className="technical-eyebrow">Engineering status</p><strong>{lab.phase}</strong><span>Lifecycle: {lab.status}</span><span>Latest verified update: {lab.updatedAt}</span></div>
-          <div className="forged-panel"><p className="technical-eyebrow">Verified milestone</p>{completed.map((event) => <span key={event.title}>{event.title}</span>)}</div>
-          <div className="forged-panel"><p className="technical-eyebrow">Next milestone</p><strong>{next?.title}</strong><span>{next?.description}</span></div>
-          <Link className="command-action" href="/projects/enterprise-home-lab">Open engineering report <span aria-hidden>→</span></Link>
+        <aside className="lab-verification" aria-label="Environment verification">
+          <strong><span aria-hidden /> Verified environment</strong>
+          <dl>
+            <div><dt>Status</dt><dd>Operational</dd></div>
+            <div><dt>Last validated</dt><dd>{enterpriseHomeLabTopology.updatedAt}</dd></div>
+            <div><dt>Telemetry</dt><dd>Active</dd></div>
+          </dl>
         </aside>
       </Section>
-      <Section className="lab-inventory">
-        <p className="technical-eyebrow">Technology inventory</p>
-        <div className="inventory-grid">{lab.technologies.map((technology) => <article className="forged-panel" key={technology.name}><span>{technology.category}</span><strong>{technology.name}</strong><p>{technology.description}</p></article>)}</div>
+
+      <Section className="lab-purpose-strip" aria-label="Environment purpose">
+        <article><LabIcon name="target" /><div><strong>Purpose</strong><p>Offensive security development through enterprise replication.</p></div></article>
+        <article><LabIcon name="shield" /><div><strong>Approach</strong><p>Build <span>•</span> Validate <span>•</span> Document<br />Assess <span>•</span> Improve</p></div></article>
+        <article><LabIcon name="grid" /><div><strong>Focus areas</strong><p>Identity <span>•</span> Infrastructure <span>•</span> Telemetry<br />Detection <span>•</span> Recovery</p></div></article>
+        <article><LabIcon name="calendar" /><div><strong>Updated</strong><p>{enterpriseHomeLabTopology.updatedAt}</p></div></article>
+      </Section>
+
+      <Section className="lab-topology-section">
+        <EnterpriseLabTopology topology={enterpriseHomeLabTopology} />
+      </Section>
+
+      <Section className="lab-capabilities" aria-labelledby="capabilities-title">
+        <div className="lab-section-heading"><p className="technical-eyebrow" id="capabilities-title">Enterprise capability groups</p><p>Organized view of environment capabilities and their operational purpose.</p></div>
+        <div className="lab-capability-grid">
+          {enterpriseCapabilities.map((capability) => (
+            <article key={capability.title}>
+              <LabIcon name={capability.icon} />
+              <h2>{capability.title}</h2>
+              <p>{capability.description}</p>
+              <span>Capability group <span aria-hidden>→</span></span>
+            </article>
+          ))}
+        </div>
+      </Section>
+
+      <Section className="lab-roadmap" aria-labelledby="roadmap-title">
+        <div className="lab-section-heading"><p className="technical-eyebrow" id="roadmap-title">Enterprise capability roadmap</p><p>Planned capabilities and future phases of environment evolution.</p></div>
+        <ol>
+          {enterpriseRoadmap.map((item) => (
+            <li key={item.phase} data-status={item.status}>
+              <div className="roadmap-node" />
+              <span>{item.phase}</span><h2>{item.title}</h2><strong>{item.status.replace("-", " ")}</strong>
+              <ul>{item.items.map((entry) => <li key={entry}>{entry}</li>)}</ul>
+            </li>
+          ))}
+        </ol>
+      </Section>
+
+      <Section className="lab-records-cta">
+        <div><LabIcon name="search" /><div><strong>Engineering records</strong><p>All systems and capabilities are documented, validated, and linked to engineering records.<br />This environment is continuously improved through testing, assessment, and operational feedback.</p></div></div>
+        <Link className="command-action" href="/documentation">View engineering records <span aria-hidden>→</span></Link>
       </Section>
     </PlatformShell>
   );
