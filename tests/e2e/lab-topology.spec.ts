@@ -8,6 +8,16 @@ test("lab renders the approved enterprise architecture sequence from structured 
   for (const system of ["rf-dc01", "rf-win11-01", "splunk-enterprise"]) {
     await expect(topology.locator(`[data-node-id="${system}"]`)).toBeVisible();
   }
+  for (const [id, hostname, platform] of [
+    ["vmware-workstation", "RF-VMHOST01", "VMware Workstation"],
+    ["rf-dc01", "RF-DC01", "Windows Server 2025"],
+    ["rf-win11-01", "RF-WIN11-01", "Windows 11"],
+    ["splunk-enterprise", "RF-SPLUNK01", "Splunk Enterprise"],
+  ] as const) {
+    const node = topology.locator(`[data-node-id="${id}"]`);
+    await expect(node.getByText(hostname, { exact: true })).toBeVisible();
+    await expect(node.getByText(platform, { exact: true })).toBeVisible();
+  }
   await expect(topology.getByText("Windows security telemetry", { exact: true })).toHaveCount(1);
   await expect(topology.getByText("Sysmon telemetry", { exact: true })).toHaveCount(1);
   await expect(page.getByText("Enterprise capability groups", { exact: true })).toBeVisible();
@@ -19,7 +29,7 @@ test("operational and planned lifecycle states remain separate", async ({ page }
   await page.goto("/lab");
   await expect(page.locator('[data-node-id="rf-dc01"]')).toHaveAttribute("data-status", "operational");
   const planned = page.getByRole("region", { name: "Planned capabilities" });
-  await expect(planned.getByRole("button", { name: /Network Segmentation Layer/ })).toHaveAttribute("data-status", "planned");
+  await expect(planned.getByRole("button", { name: /RF-NETWORK-01/ })).toHaveAttribute("data-status", "planned");
   await expect(page.getByLabel("Topology status legend").getByText("Not yet implemented")).toBeVisible();
 });
 
@@ -35,7 +45,26 @@ test("node details support pointer and keyboard interaction with visible focus",
   await expect(splunk).toBeFocused();
   expect(await splunk.evaluate((element) => getComputedStyle(element).outlineStyle)).not.toBe("none");
   await page.keyboard.press("Enter");
-  await expect(details.getByRole("heading", { name: "Splunk Enterprise" })).toBeVisible();
+  await expect(details.getByRole("heading", { name: "RF-SPLUNK01" })).toBeVisible();
+  await expect(details.getByText("Splunk Enterprise", { exact: true })).toBeVisible();
+  for (const field of ["Purpose", "Roles", "Services", "Telemetry", "Related records"]) {
+    await expect(details.getByText(field, { exact: true })).toBeVisible();
+  }
+});
+
+test("selection focuses nodes and briefly identifies directly related paths", async ({ page }) => {
+  await page.goto("/lab");
+  const selected = page.locator('[data-node-id="rf-dc01"]');
+  const inactive = page.locator('[data-node-id="rf-win11-01"]');
+  await expect(selected).toHaveAttribute("aria-pressed", "true");
+  await expect(inactive).toHaveAttribute("data-inactive", "true");
+  expect(Number.parseFloat(await inactive.evaluate((element) => getComputedStyle(element).opacity))).toBeLessThan(1);
+
+  await inactive.click();
+  const activePath = page.locator('.telemetry-route[data-active="true"]');
+  await expect(activePath).toBeAttached();
+  expect(await activePath.evaluate((element) => getComputedStyle(element).animationDuration)).toBe("0.25s");
+  await expect(inactive).toHaveCSS("opacity", "1");
 });
 
 test("lab topology is responsive and does not publish sensitive configuration", async ({ page }) => {
@@ -45,6 +74,8 @@ test("lab topology is responsive and does not publish sensitive configuration", 
   expect(body).not.toMatch(/\b(?:\d{1,3}\.){3}\d{1,3}\b/);
   expect(body).not.toContain("corp.redforge.test");
   expect(body).not.toContain("adm.jpulido");
+  expect(body).not.toContain("None recorded");
+  expect(body).not.toContain("No telemetry claim recorded");
   const widths = await page.evaluate(() => ({ client: document.documentElement.clientWidth, scroll: document.documentElement.scrollWidth }));
   expect(widths.scroll).toBeLessThanOrEqual(widths.client);
 });
