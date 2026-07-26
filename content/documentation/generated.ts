@@ -1648,5 +1648,148 @@ export const generatedDocumentationEntries = [
         "Unreviewed screenshots and private configuration values"
       ]
     }
+  },
+  {
+    "slug": "eng-011-data-driven-enterprise-home-lab-topology",
+    "title": "ENG-011 — Data-Driven Enterprise Home Lab Topology",
+    "summary": "Replaced the static Lab Environment topology presentation with a typed, interactive, evidence-backed system model that distinguishes verified operational infrastructure from planned capabilities.",
+    "category": "Engineering Log",
+    "status": "Implemented",
+    "publishingState": "published",
+    "date": "2026-07-26",
+    "updatedAt": "2026-07-26",
+    "objective": "Replace the static Lab Environment topology presentation with a scalable, data-driven system that accurately represents verified RedForge infrastructure, preserves planned-state separation, supports accessible system inspection, and links public infrastructure claims to reviewed engineering records.",
+    "engineeringSummary": [
+      "The Lab Environment route previously displayed a static target-state architecture diagram. That artifact remained useful within the Enterprise Home Lab engineering report, but it did not reflect the narrower set of systems and relationships verified through current engineering work.",
+      "ENG-010 established centralized Splunk telemetry across RF-DC01 and RF-WIN11-01. The public lab experience therefore required a model capable of representing verified systems, services, telemetry relationships, lifecycle state, and related documentation without exposing sensitive configuration or implying that planned infrastructure was operational.",
+      "Project RedForge now presents a scalable, evidence-backed Enterprise Home Lab topology generated from typed content. Users can inspect verified systems and relationships, follow related engineering records, and clearly distinguish planned capabilities from operational infrastructure without exposing sensitive lab configuration."
+    ],
+    "technicalDecisions": [
+      {
+        "title": "Model topology nodes and connections as typed content",
+        "rationale": "The topology is represented through stable node and connection records rather than hardcoded visual markup. Each node declares its platform, lifecycle status, purpose, roles, services, security tooling, telemetry state, and related records. Each connection independently declares its endpoints, relationship type, lifecycle state, label, and description."
+      },
+      {
+        "title": "Separate operational and planned topology regions",
+        "rationale": "Only VMware Workstation, RF-DC01, RF-WIN11-01, Splunk Enterprise, and their verified relationships appear in the operational topology. Future network segmentation is shown in a separate planned-capabilities region and is explicitly identified as intent rather than implementation evidence."
+      },
+      {
+        "title": "Keep interactivity within a focused client boundary",
+        "rationale": "The Lab page remains a server component while the topology inspector is a focused client component. This preserves static generation and limits client-side JavaScript to node selection and detail presentation."
+      },
+      {
+        "title": "Preserve the target-state project report",
+        "rationale": "The existing target-state diagrams remain available within the Enterprise Home Lab project report. The Lab Environment route now serves a different purpose: presenting current verified topology without breaking the project route or its historical architecture artifacts."
+      }
+    ],
+    "lessonsLearned": [
+      "Operational architecture and target-state architecture require separate presentation contexts.",
+      "Typed connections make infrastructure relationships testable without relying on visual layout.",
+      "Lifecycle state must be attached to both nodes and connections.",
+      "Native interactive controls provide reliable keyboard behavior with minimal client-side complexity.",
+      "Engineering record links improve traceability without embedding sensitive evidence in the topology.",
+      "Planned vendor selections should remain generic until a reviewed engineering decision exists."
+    ],
+    "evidence": [
+      {
+        "id": "eng-011-validation",
+        "title": "ENG-011 validation record",
+        "description": "Reviewed validation statements from the verified engineering log. Sensitive operational values and unreviewed assets are not published.",
+        "kind": "validation",
+        "status": "verified",
+        "checklist": [
+          {
+            "label": "Content synchronization completed successfully and generated the ENG-011 public record.",
+            "state": "passed"
+          },
+          {
+            "label": "Public-content safety scanning completed without sensitive configuration findings.",
+            "state": "passed"
+          },
+          {
+            "label": "ESLint completed with zero warnings.",
+            "state": "passed"
+          },
+          {
+            "label": "Strict TypeScript validation completed successfully.",
+            "state": "passed"
+          },
+          {
+            "label": "Next.js production build completed successfully.",
+            "state": "passed"
+          },
+          {
+            "label": "Storybook production build completed successfully.",
+            "state": "passed"
+          },
+          {
+            "label": "Relevant Playwright tests passed in desktop Chromium and the Pixel 7 mobile project.",
+            "state": "passed"
+          },
+          {
+            "label": "Existing Enterprise Home Lab, server establishment, and ENG-010 routes remained available.",
+            "state": "passed"
+          },
+          {
+            "label": "The operational topology contained only verified systems and relationships.",
+            "state": "passed"
+          },
+          {
+            "label": "The planned capability remained visibly and semantically separate from operational infrastructure.",
+            "state": "passed"
+          },
+          {
+            "label": "Keyboard activation and visible focus were verified for system controls.",
+            "state": "passed"
+          },
+          {
+            "label": "Mobile rendering completed without horizontal overflow.",
+            "state": "passed"
+          }
+        ]
+      },
+      {
+        "id": "eng-011-source-record",
+        "title": "Sanitized engineering record",
+        "description": "Documentation evidence identifying the reviewed source record. Sensitive configuration values and personal metadata are intentionally excluded.",
+        "kind": "configuration",
+        "status": "reviewed",
+        "language": "yaml",
+        "content": "record: ENG-011\ntitle: Data-Driven Enterprise Home Lab Topology\nstatus: verified\nproject: Project RedForge\nevidenceStatus: documented"
+      },
+      {
+        "id": "eng-011-screenshots",
+        "title": "Supporting engineering evidence",
+        "description": "Supporting source evidence is referenced by the engineering log but remains outside the public asset pipeline until security, privacy, and provenance review is complete.",
+        "kind": "screenshot",
+        "status": "pending"
+      }
+    ],
+    "nextSteps": [
+      "Add future nodes and relationships only after their engineering records complete validation.",
+      "Expand the topology model when verified network segmentation and trust boundaries exist.",
+      "Add reviewed evidence assets through the established security and privacy publishing workflow.",
+      "Continue linking infrastructure changes to their originating Engineering Logs and applicable ADRs.",
+      "Evaluate diagram export only when it can be generated from the same structured topology source."
+    ],
+    "projectSlug": "enterprise-home-lab",
+    "tags": [
+      "Engineering",
+      "architecture",
+      "documentation",
+      "enterprise-home-lab",
+      "topology",
+      "accessibility",
+      "telemetry"
+    ],
+    "source": {
+      "label": "ENG-011 — Data-Driven Enterprise Home Lab Topology",
+      "reviewed": true,
+      "redactions": [
+        "Author identity",
+        "Internal domain and IPv4 addressing",
+        "Unreviewed screenshots and private configuration values"
+      ]
+    }
   }
 ] as const satisfies readonly DocumentationEntry[];
