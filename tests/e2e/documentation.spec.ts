@@ -9,11 +9,48 @@ test("documentation index publishes reviewed engineering records by category", a
   await expect(page.getByRole("heading", { name: "Milestone 001 — Enterprise Blueprint Complete" })).toBeVisible();
   const taxonomy = page.locator(".documentation-rail");
   await expect(taxonomy.getByText(/^Engineering Logs\s*11$/)).toBeVisible();
-  await expect(taxonomy.getByText(/^Architecture Decisions\s*5$/)).toBeVisible();
+  await expect(taxonomy.getByText(/^Architecture Decision Records\s*5$/)).toBeVisible();
   await expect(taxonomy.getByText(/^Milestones\s*1$/)).toBeVisible();
   for (const deferred of ["Build Guide", "Standard Operating Procedure", "Troubleshooting Note", "Lesson Learned", "Validation Record"]) {
     await expect(taxonomy.getByText(deferred, { exact: true })).toHaveCount(0);
   }
+});
+
+test("record-type controls expose purpose and linkable filtered views", async ({ page }) => {
+  await page.goto("/documentation");
+  const filters = page.getByRole("navigation", { name: "Filter documentation by record type" });
+
+  await expect(filters.getByText(/complete implementation record for a single engineering effort/i)).toBeVisible();
+  await expect(filters.getByText(/which alternatives were considered/i)).toBeVisible();
+  await expect(filters.getByText(/major achievements spanning multiple Engineering Logs/i)).toBeVisible();
+
+  await filters.getByRole("link", { name: /Engineering Logs 11/i }).click();
+  await expect(page).toHaveURL(/\/documentation\?type=engineering-logs$/);
+  await expect(page.locator(".documentation-card")).toHaveCount(11);
+  await expect(page.locator(".documentation-card .technical-eyebrow").first()).toHaveText("Engineering Log");
+
+  await page.goto("/documentation?type=architecture-decisions");
+  await expect(filters.getByRole("link", { name: /Architecture Decision Records 5/i })).toHaveAttribute("aria-current", "page");
+  await expect(page.locator(".documentation-card")).toHaveCount(5);
+  await expect(page.locator(".documentation-card .technical-eyebrow").first()).toHaveText("Architecture Decision Record");
+
+  await filters.getByRole("link", { name: /Milestones 1/i }).click();
+  await expect(page).toHaveURL(/\/documentation\?type=milestones$/);
+  await expect(page.locator(".documentation-card")).toHaveCount(1);
+  await expect(page.locator(".documentation-card .technical-eyebrow")).toHaveText("Milestone Log");
+
+  await filters.getByRole("link", { name: /All records 17/i }).click();
+  await expect(page).toHaveURL(/\/documentation$/);
+  await expect(page.locator(".documentation-card")).toHaveCount(17);
+});
+
+test("record-type filters retain keyboard focus visibility", async ({ page }) => {
+  await page.goto("/documentation");
+  const filter = page.getByRole("link", { name: /Engineering Logs 11/i });
+  await filter.focus();
+  await expect(filter).toBeFocused();
+  const outline = await filter.evaluate((element) => getComputedStyle(element).outlineStyle);
+  expect(outline).not.toBe("none");
 });
 
 test("server establishment report exposes the required engineering sections", async ({ page }) => {
