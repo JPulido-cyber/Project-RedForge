@@ -331,5 +331,144 @@ export const generatedDocumentationEntries = [
         "Decider names omitted from generated public content"
       ]
     }
+  },
+  {
+    "slug": "eng-010-centralized-telemetry-pipeline-deployment",
+    "title": "ENG-010 — Centralized Telemetry Pipeline Deployment",
+    "summary": "Successfully deployed and validated a centralized telemetry pipeline using Sysmon, Splunk Enterprise, and the Splunk Universal Forwarder, establishing centralized endpoint visibility across the RedForge laboratory environment.",
+    "category": "Engineering Log",
+    "status": "Implemented",
+    "publishingState": "published",
+    "date": "2026-07-26",
+    "updatedAt": "2026-07-26",
+    "objective": "Establish a centralized telemetry pipeline capable of collecting high-fidelity Windows security events from multiple managed systems while providing a reliable foundation for future threat hunting, detection engineering, and security operations. Primary objectives included: Deploy Microsoft Sysmon across RedForge Windows systems. Configure centralized log forwarding using the Splunk Universal Forwarder. Establish Splunk Enterprise as the centralized telemetry platform. Validate successful endpoint telemetry ingestion. Troubleshoot and resolve telemetry collection failures. Confirm operational visibility through controlled endpoint activity. Prepare the laboratory for future security investigations. Establish a reusable telemetry architecture for continued platform expansion.",
+    "engineeringSummary": [
+      "Following completion of the foundational RedForge infrastructure, the laboratory required centralized visibility into endpoint activity before additional security engineering work could begin.",
+      "Although Windows provides native event logging, default telemetry alone does not provide the level of operational visibility required for process creation monitoring, network connection analysis, DNS investigations, registry monitoring, and endpoint activity reconstruction.",
+      "To address this requirement, Microsoft Sysmon was deployed across managed Windows systems to enhance endpoint telemetry while the Splunk Universal Forwarder provided centralized event forwarding into Splunk Enterprise.",
+      "Successful implementation of this architecture established the operational telemetry foundation required for future threat hunting and detection engineering throughout Project RedForge.",
+      "Project RedForge successfully established a centralized telemetry capability spanning multiple managed Windows systems.",
+      "The completed telemetry pipeline provides reliable endpoint visibility through Microsoft Sysmon, centralized event collection through the Splunk Universal Forwarder, and centralized analysis through Splunk Enterprise.",
+      "Completion of this milestone establishes the operational monitoring capability required to support future threat hunting, detection engineering, adversary simulation, incident response, and continued security engineering throughout Project RedForge."
+    ],
+    "technicalDecisions": [
+      {
+        "title": "Standardize Endpoint Instrumentation Using Microsoft Sysmon",
+        "rationale": "Microsoft Sysmon was selected as the standard endpoint instrumentation platform to provide enhanced Windows security telemetry beyond the capabilities offered through native operating system logging. Deploying a consistent endpoint monitoring solution across managed systems establishes standardized telemetry suitable for future investigations while reducing inconsistencies between endpoints."
+      },
+      {
+        "title": "Centralize Security Telemetry Within Splunk Enterprise",
+        "rationale": "Rather than relying on individual endpoint investigation, Project RedForge adopted centralized log aggregation through Splunk Enterprise. Centralized telemetry improves investigative efficiency by enabling security events from multiple systems to be searched, correlated, and analyzed from a single operational platform."
+      },
+      {
+        "title": "Validate Through Controlled Endpoint Activity",
+        "rationale": "Telemetry validation was performed by intentionally generating known Windows activity rather than assuming successful deployment based solely on software installation. Executing administrative commands and successfully locating their associated telemetry within Splunk confirmed the integrity of the complete telemetry pipeline."
+      },
+      {
+        "title": "Troubleshoot Before Rebuilding",
+        "rationale": "During deployment, endpoint telemetry collection issues were investigated through structured troubleshooting rather than reinstalling software components. Validating service configuration, event channels, forwarder configuration, and permissions allowed the underlying issue to be identified and corrected while preserving the existing deployment. ---# Centralized Telemetry Pipeline Deployment Deployment activities focused on establishing a complete telemetry pipeline capable of collecting endpoint security events from multiple managed Windows systems and centralizing them within Splunk Enterprise. Microsoft Sysmon was deployed to provide enhanced endpoint visibility while the Splunk Universal Forwarder was configured to securely transmit telemetry to the centralized logging platform. During validation, standard Windows event logs were successfully collected from both RF-DC01 and RF-WIN11-01. However, Sysmon Operational events generated by RF-WIN11-01 failed to appear within Splunk despite confirming that Sysmon was properly installed and actively generating telemetry. Structured troubleshooting isolated the issue to insufficient permissions preventing the Splunk Universal Forwarder from subscribing to the Sysmon Operational event channel. Reconfiguring the forwarding service to operate under the Local System account restored access to the event channel and immediately enabled successful telemetry collection. Following remediation, centralized telemetry was successfully received from all managed systems, completing the deployment of the RedForge telemetry pipeline."
+      }
+    ],
+    "lessonsLearned": [
+      "Successful software deployment does not guarantee successful telemetry collection.",
+      "Endpoint permissions directly affect event subscription and telemetry visibility.",
+      "Structured troubleshooting is more effective than unnecessary software reinstallation.",
+      "Controlled validation activities provide confidence in telemetry integrity.",
+      "Centralized telemetry significantly improves investigative capabilities.",
+      "End-to-end verification should be considered a required component of telemetry deployment.",
+      "Reliable telemetry provides the operational foundation for future security engineering activities."
+    ],
+    "evidence": [
+      {
+        "id": "eng-010-validation",
+        "title": "Centralized telemetry validation record",
+        "description": "Reviewed engineering-log evidence records end-to-end collection and retrieval from both managed Windows systems. No event counts, internal addressing, or screenshots are published.",
+        "kind": "validation",
+        "status": "verified",
+        "checklist": [
+          {
+            "label": "RF-DC01 successfully forwarded Windows security telemetry.",
+            "state": "passed"
+          },
+          {
+            "label": "RF-WIN11-01 successfully forwarded Windows security telemetry.",
+            "state": "passed"
+          },
+          {
+            "label": "Sysmon Operational events were successfully ingested following remediation.",
+            "state": "passed"
+          },
+          {
+            "label": "Process Creation events were searchable within Splunk.",
+            "state": "passed"
+          },
+          {
+            "label": "Network Connection events were successfully collected.",
+            "state": "passed"
+          },
+          {
+            "label": "DNS Query events were successfully collected.",
+            "state": "passed"
+          },
+          {
+            "label": "Registry Modification events were successfully collected.",
+            "state": "passed"
+          },
+          {
+            "label": "File Creation events were successfully collected.",
+            "state": "passed"
+          },
+          {
+            "label": "Controlled endpoint activity was successfully located through custom SPL searches.",
+            "state": "passed"
+          },
+          {
+            "label": "The telemetry pipeline successfully supported end-to-end operational validation.",
+            "state": "passed"
+          }
+        ]
+      },
+      {
+        "id": "eng-010-pipeline-configuration",
+        "title": "Sanitized telemetry pipeline record",
+        "description": "Documentation evidence of the implemented telemetry path. Sensitive configuration values are intentionally excluded.",
+        "kind": "configuration",
+        "status": "reviewed",
+        "language": "yaml",
+        "content": "record: ENG-010\nendpointInstrumentation: Microsoft Sysmon\nforwarder: Splunk Universal Forwarder\nanalysisPlatform: Splunk Enterprise\nmanagedSources:\n  - RF-DC01\n  - RF-WIN11-01\nvalidation: Controlled endpoint activity retrieved with SPL"
+      },
+      {
+        "id": "eng-010-screenshots",
+        "title": "Telemetry validation screenshots",
+        "description": "Supporting screenshots are documented in the private engineering record but are not published until asset-level security and privacy review is complete.",
+        "kind": "screenshot",
+        "status": "pending"
+      }
+    ],
+    "nextSteps": [
+      "Develop foundational threat hunting workflows using centralized telemetry.",
+      "Create reusable SPL searches for common investigative scenarios.",
+      "Expand telemetry collection through additional endpoint instrumentation.",
+      "Develop operational dashboards within Splunk Enterprise.",
+      "Introduce controlled adversary simulations to validate detection capabilities.",
+      "Continue expanding Project RedForge operational documentation."
+    ],
+    "projectSlug": "enterprise-home-lab",
+    "tags": [
+      "Telemetry",
+      "Splunk",
+      "Sysmon",
+      "Windows",
+      "active-directory"
+    ],
+    "source": {
+      "label": "ENG-010 — Centralized Telemetry Pipeline Deployment",
+      "reviewed": true,
+      "redactions": [
+        "Author identity",
+        "Internal domain and IPv4 addressing",
+        "Unreviewed screenshots and private configuration values"
+      ]
+    }
   }
 ] as const satisfies readonly DocumentationEntry[];

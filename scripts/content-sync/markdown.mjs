@@ -23,6 +23,17 @@ function parseSections(markdown) {
     "consequences",
     "implementation",
     "related records",
+    "objective",
+    "background",
+    "engineering philosophy",
+    "engineering decisions",
+    "work completed",
+    "validation",
+    "challenges",
+    "lessons learned",
+    "evidence",
+    "result",
+    "next steps",
   ]);
 
   for (const line of markdown.replace(/\r\n?/g, "\n").split("\n")) {

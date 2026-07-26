@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { mapAdrDocument } from "./content-sync/adapters/adr.mjs";
+import { mapEngineeringLogDocument } from "./content-sync/adapters/engineering-log.mjs";
 import { resolveVaultPath } from "./content-sync/config.mjs";
 import { discoverDocuments } from "./content-sync/discovery.mjs";
 import { renderGeneratedModule } from "./content-sync/generate.mjs";
@@ -9,7 +10,10 @@ import { readMarkdownDocument } from "./content-sync/markdown.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const outputPath = path.join(root, "content", "documentation", "generated.ts");
-const adapters = new Map([["adr", mapAdrDocument]]);
+const adapters = new Map([
+  ["adr", mapAdrDocument],
+  ["engineering-log", mapEngineeringLogDocument],
+]);
 
 async function synchronize() {
   const vaultPath = resolveVaultPath({ cwd: root });
@@ -38,7 +42,13 @@ async function synchronize() {
   const currentOutput = fs.existsSync(outputPath) ? fs.readFileSync(outputPath, "utf8") : "";
   if (nextOutput !== currentOutput) fs.writeFileSync(outputPath, nextOutput, "utf8");
 
-  console.log(`Synchronized ${entries.length} Architecture Decision Records.`);
+  const counts = mapped.reduce((summary, record) => {
+    const category = record.entry.category;
+    summary.set(category, (summary.get(category) ?? 0) + 1);
+    return summary;
+  }, new Map());
+  console.log(`Synchronized ${entries.length} documentation records.`);
+  for (const [category, count] of counts) console.log(`- ${category}: ${count}`);
   console.log("Generated content/documentation/generated.ts");
   console.log("Validation passed.");
 }
@@ -47,4 +57,3 @@ synchronize().catch((error) => {
   console.error(`Content synchronization failed: ${error instanceof Error ? error.message : String(error)}`);
   process.exitCode = 1;
 });
-

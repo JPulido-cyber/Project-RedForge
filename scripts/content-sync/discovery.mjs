@@ -7,6 +7,11 @@ const supportedSources = [
     directory: path.join("Enterprise Home Lab", "Architecture Decisions"),
     pattern: /^ADR-\d+.*\.md(?:\.md)?$/i,
   },
+  {
+    type: "engineering-log",
+    directory: path.join("Enterprise Home Lab", "Engineering Logs"),
+    pattern: /^ENG-010(?:\s|—|-).*\.md(?:\.md)?$/i,
+  },
 ];
 
 function assertWithinVault(vaultPath, candidatePath) {
@@ -41,4 +46,3 @@ export function discoverDocuments(vaultPath) {
 
   return documents;
 }
-
