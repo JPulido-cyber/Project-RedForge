@@ -333,6 +333,76 @@ export const generatedDocumentationEntries = [
     }
   },
   {
+    "slug": "adr-006-adoption-of-an-evidence-first-engineering-documentation-model",
+    "title": "ADR-006 — Adoption of an Evidence-First Engineering Documentation Model",
+    "summary": "Project RedForge adopted an evidence-first engineering documentation model to ensure every engineering implementation is supported by architecture decisions, validation, evidence, lessons learned, and traceable engineering records.",
+    "category": "Architecture Decision Record",
+    "status": "Complete",
+    "publishingState": "published",
+    "date": "2026-07-26",
+    "updatedAt": "2026-07-26",
+    "objective": "As Project RedForge evolved from a traditional cybersecurity portfolio into a comprehensive enterprise engineering platform, documentation requirements expanded significantly.",
+    "engineeringSummary": [
+      "As Project RedForge evolved from a traditional cybersecurity portfolio into a comprehensive enterprise engineering platform, documentation requirements expanded significantly.",
+      "Engineering implementations increasingly required architectural context, implementation records, validation evidence, operational history, and long-term traceability.",
+      "Traditional project documentation often focuses primarily on completed work while providing limited insight into why engineering decisions were made, how implementations were validated, or how future engineers can understand the evolution of the platform.",
+      "To support long-term maintainability, repeatability, and technical transparency, Project RedForge required a standardized documentation methodology that treats documentation as a core engineering artifact rather than a byproduct of development.",
+      "Project RedForge adopted a standardized engineering documentation workflow centered around evidence and traceability.",
+      "Major engineering implementations are now documented through Engineering Records (ENG), supported by Architecture Decision Records (ADR), validated through structured verification activities, and linked to Milestone records documenting significant project achievements.",
+      "Each implementation includes supporting evidence, lessons learned, related records, and validation results, ensuring engineering knowledge remains organized and accessible throughout the continued evolution of Project RedForge.",
+      "This documentation model now serves as the official engineering methodology for all future infrastructure, security, automation, and platform development."
+    ],
+    "technicalDecisions": [
+      {
+        "title": "Adoption of an Evidence-First Engineering Documentation Model",
+        "rationale": "Project RedForge will adopt an evidence-first engineering documentation model. Every significant engineering implementation will be supported by structured documentation that captures architectural decisions, implementation details, validation activities, supporting evidence, lessons learned, and related engineering records. Documentation will become an integrated component of the engineering lifecycle rather than a separate activity completed after implementation. Engineering decisions should remain understandable long after the implementation has been completed. By documenting not only what was built, but also why decisions were made, how implementations were validated, and what evidence supports successful operation, Project RedForge creates a permanent engineering knowledge base capable of supporting future expansion and long-term maintenance. This approach provides several engineering advantages: Improved technical traceability. Consistent engineering documentation. Repeatable implementation workflows. Stronger validation practices. Better long-term maintainability. Improved knowledge transfer. Increased engineering transparency. Clear relationships between architectural decisions and implementation activities. Stronger professional documentation standards. As the engineering platform continues to expand, an evidence-first documentation model ensures completed work remains understandable, verifiable, and maintainable. Alternatives considered: Traditional Project Documentation; Maintaining simple implementation notes or project summaries was considered.; Although sufficient for smaller projects, this approach provides limited architectural context, weak traceability, and insufficient validation for long-term engineering initiatives.; Documentation After Implementation; Completing documentation only after engineering work was also evaluated.; While reducing initial documentation effort, this approach often results in incomplete records, inconsistent validation, and loss of valuable implementation knowledge.; Evidence-First Engineering Documentation; This approach integrates documentation directly into the engineering lifecycle by requiring architecture decisions, engineering records, validation, evidence, lessons learned, and related records for major implementations.; This methodology best supports Project RedForge's long-term engineering objectives and was therefore selected."
+      }
+    ],
+    "lessonsLearned": [
+      "Improved engineering traceability.",
+      "Consistent documentation standards.",
+      "Better implementation validation.",
+      "Stronger engineering evidence.",
+      "Improved maintainability.",
+      "Easier knowledge transfer.",
+      "Better project organization.",
+      "Increased long-term scalability.",
+      "Professional engineering documentation practices.",
+      "Requires additional documentation effort during implementation.",
+      "Engineering work cannot be considered complete until supporting documentation is finalized.",
+      "Documentation standards must be maintained consistently across all future engineering activities."
+    ],
+    "evidence": [
+      {
+        "id": "adr-006-decision-record",
+        "title": "ADR-006 reviewed decision record",
+        "description": "Reviewed documentation evidence of the architectural decision. This record does not claim deployment or technical validation evidence.",
+        "kind": "configuration",
+        "status": "reviewed",
+        "language": "yaml",
+        "content": "record: ADR-006\nstatus: Accepted\nproject: Project RedForge\ntags: documentation, engineering, architecture, evidence, knowledge-management\nrelatedRecords: ENG-012 — Engineering Platform Architecture Refinement, ADR-005 — Adoption of a Modular Component Architecture, MILESTONE-002 — Engineering Platform Approved, ENG-013 — Enterprise Active Directory Forest Deployment (Planned)"
+      }
+    ],
+    "nextSteps": [
+      "Maintain this decision as the governing architecture record and document material changes in a superseding ADR."
+    ],
+    "projectSlug": "enterprise-home-lab",
+    "tags": [
+      "Architecture",
+      "documentation",
+      "engineering",
+      "evidence",
+      "knowledge-management"
+    ],
+    "source": {
+      "label": "ADR-006 — Adoption of an Evidence-First Engineering Documentation Model",
+      "reviewed": true,
+      "redactions": [
+        "Decider names omitted from generated public content"
+      ]
+    }
+  },
+  {
     "slug": "eng-001-project-redforge-charter",
     "title": "ENG-001 — Project RedForge Charter",
     "summary": "Established the mission, scope, operating principles, and long-term direction for Project RedForge.",
@@ -1784,6 +1854,145 @@ export const generatedDocumentationEntries = [
     ],
     "source": {
       "label": "ENG-011 — Data-Driven Enterprise Home Lab Topology",
+      "reviewed": true,
+      "redactions": [
+        "Author identity",
+        "Internal domain and IPv4 addressing",
+        "Unreviewed screenshots and private configuration values"
+      ]
+    }
+  },
+  {
+    "slug": "eng-012-engineering-platform-architecture-refinement",
+    "title": "ENG-012 — Engineering Platform Architecture Refinement",
+    "summary": "Successfully refined and validated the Project RedForge engineering platform by standardizing information architecture, documentation workflows, navigation hierarchy, and evidence presentation, establishing a stable foundation for future infrastructure engineering and technical documentation.",
+    "category": "Engineering Log",
+    "status": "Implemented",
+    "publishingState": "published",
+    "date": "2026-07-26",
+    "updatedAt": "2026-07-26",
+    "objective": "Establish a stable, scalable engineering platform capable of documenting enterprise infrastructure implementations while maintaining a consistent user experience and evidence-first engineering workflow. Primary objectives included: Standardize information architecture across the platform. Improve documentation readability and navigation. Eliminate redundant content throughout the website. Establish consistent page hierarchy. Improve engineering evidence presentation. Integrate Engineering Records into project documentation. Integrate Architecture Decision Records into project documentation. Prepare the platform for long-term engineering growth. Complete platform refinement prior to infrastructure deployment.",
+    "engineeringSummary": [
+      "As Project RedForge expanded beyond a traditional cybersecurity portfolio into a full engineering platform, documentation requirements increased significantly.",
+      "Although the underlying application architecture remained stable, repeated feature additions created inconsistencies in page hierarchy, content organization, navigation flow, and engineering documentation.",
+      "Before beginning enterprise infrastructure deployment, the platform required architectural refinement to ensure future engineering work could be documented consistently without requiring continual interface redesign.",
+      "This effort represented the final platform refinement before transitioning development priorities toward enterprise infrastructure engineering.",
+      "Project RedForge successfully completed its engineering platform refinement and established a stable documentation environment capable of supporting long-term infrastructure engineering.",
+      "The completed platform now provides a consistent framework for documenting architecture decisions, engineering records, operational validation, security engineering, automation, and future enterprise infrastructure deployments.",
+      "Completion of this effort marks the transition from platform development to infrastructure engineering, with future growth driven by completed engineering work rather than continued interface redesign."
+    ],
+    "technicalDecisions": [
+      {
+        "title": "Standardize Platform Information Architecture",
+        "rationale": "Every major section of the platform was reorganized around a consistent documentation hierarchy. Users should immediately understand the purpose of each page without relearning navigation patterns or information layouts."
+      },
+      {
+        "title": "Adopt Evidence-First Documentation",
+        "rationale": "Projects were restructured to emphasize implementation evidence rather than descriptive summaries. Engineering Records, validation activities, and lessons learned now serve as the primary supporting documentation for completed engineering work."
+      },
+      {
+        "title": "Consolidate Professional Communication",
+        "rationale": "The Contact experience was simplified to prioritize professional communication rather than visual presentation. Primary contact methods were consolidated while reducing unnecessary interface complexity."
+      },
+      {
+        "title": "Freeze Platform Layout Prior to Infrastructure Development",
+        "rationale": "With the engineering platform reaching architectural maturity, future development efforts will prioritize infrastructure engineering, security engineering, automation, and operational validation. Future interface modifications will only occur when required to support new engineering capabilities or resolve verified usability issues."
+      }
+    ],
+    "lessonsLearned": [
+      "Documentation architecture directly affects engineering usability.",
+      "Information hierarchy is more valuable than additional interface features.",
+      "Evidence-first documentation strengthens engineering credibility.",
+      "Consistent documentation standards improve long-term maintainability.",
+      "Engineering Records should support every major implementation.",
+      "Platform stability enables faster engineering progress.",
+      "Future development should prioritize engineering work over interface redesign."
+    ],
+    "evidence": [
+      {
+        "id": "eng-012-validation",
+        "title": "ENG-012 validation record",
+        "description": "Reviewed validation statements from the verified engineering log. Sensitive operational values and unreviewed assets are not published.",
+        "kind": "validation",
+        "status": "verified",
+        "checklist": [
+          {
+            "label": "Consistent information hierarchy across all platform sections.",
+            "state": "passed"
+          },
+          {
+            "label": "Navigation flow successfully standardized.",
+            "state": "passed"
+          },
+          {
+            "label": "Engineering Records successfully integrated.",
+            "state": "passed"
+          },
+          {
+            "label": "Architecture Decision Records successfully integrated.",
+            "state": "passed"
+          },
+          {
+            "label": "Milestone documentation successfully integrated.",
+            "state": "passed"
+          },
+          {
+            "label": "Project documentation standardized.",
+            "state": "passed"
+          },
+          {
+            "label": "Engineering evidence presentation improved.",
+            "state": "passed"
+          },
+          {
+            "label": "Responsive layouts validated.",
+            "state": "passed"
+          },
+          {
+            "label": "Cross-page navigation verified.",
+            "state": "passed"
+          },
+          {
+            "label": "Platform approved for long-term engineering documentation.",
+            "state": "passed"
+          }
+        ]
+      },
+      {
+        "id": "eng-012-source-record",
+        "title": "Sanitized engineering record",
+        "description": "Documentation evidence identifying the reviewed source record. Sensitive configuration values and personal metadata are intentionally excluded.",
+        "kind": "configuration",
+        "status": "reviewed",
+        "language": "yaml",
+        "content": "record: ENG-012\ntitle: Engineering Platform Architecture Refinement\nstatus: verified\nproject: Project RedForge\nevidenceStatus: documented"
+      },
+      {
+        "id": "eng-012-screenshots",
+        "title": "Supporting engineering evidence",
+        "description": "Supporting source evidence is referenced by the engineering log but remains outside the public asset pipeline until security, privacy, and provenance review is complete.",
+        "kind": "screenshot",
+        "status": "pending"
+      }
+    ],
+    "nextSteps": [
+      "Deploy the Enterprise Active Directory Forest.",
+      "Document Active Directory implementation through Engineering Records.",
+      "Expand infrastructure documentation.",
+      "Begin Group Policy engineering.",
+      "Continue security engineering within the enterprise laboratory.",
+      "Produce evidence-driven engineering documentation for all future platform capabilities."
+    ],
+    "tags": [
+      "Engineering",
+      "platform",
+      "architecture",
+      "documentation",
+      "nextjs",
+      "ui"
+    ],
+    "source": {
+      "label": "ENG-012 — Engineering Platform Architecture Refinement",
       "reviewed": true,
       "redactions": [
         "Author identity",

@@ -8,8 +8,8 @@ test("documentation index publishes reviewed engineering records by category", a
   await expect(page.getByRole("heading", { name: "RF-DC01 Server Establishment Log" })).toBeVisible();
   await expect(page.getByRole("heading", { name: "Milestone 001 — Enterprise Blueprint Complete" })).toBeVisible();
   const taxonomy = page.locator(".documentation-rail");
-  await expect(taxonomy.getByText(/^Engineering Logs\s*12$/)).toBeVisible();
-  await expect(taxonomy.getByText(/^Architecture Decision Records\s*5$/)).toBeVisible();
+  await expect(taxonomy.getByText(/^Engineering Logs\s*13$/)).toBeVisible();
+  await expect(taxonomy.getByText(/^Architecture Decision Records\s*6$/)).toBeVisible();
   await expect(taxonomy.getByText(/^Milestones\s*1$/)).toBeVisible();
   for (const deferred of ["Build Guide", "Standard Operating Procedure", "Troubleshooting Note", "Lesson Learned", "Validation Record"]) {
     await expect(taxonomy.getByText(deferred, { exact: true })).toHaveCount(0);
@@ -24,14 +24,14 @@ test("record-type controls expose purpose and linkable filtered views", async ({
   await expect(filters.getByText(/which alternatives were considered/i)).toBeVisible();
   await expect(filters.getByText(/major achievements spanning multiple Engineering Logs/i)).toBeVisible();
 
-  await filters.getByRole("link", { name: /Engineering Logs 12/i }).click();
+  await filters.getByRole("link", { name: /Engineering Logs 13/i }).click();
   await expect(page).toHaveURL(/\/documentation\?type=engineering-logs$/);
-  await expect(page.locator(".documentation-card")).toHaveCount(12);
+  await expect(page.locator(".documentation-card")).toHaveCount(13);
   await expect(page.locator(".documentation-card .technical-eyebrow").first()).toHaveText("Engineering Log");
 
   await page.goto("/documentation?type=architecture-decisions");
-  await expect(filters.getByRole("link", { name: /Architecture Decision Records 5/i })).toHaveAttribute("aria-current", "page");
-  await expect(page.locator(".documentation-card")).toHaveCount(5);
+  await expect(filters.getByRole("link", { name: /Architecture Decision Records 6/i })).toHaveAttribute("aria-current", "page");
+  await expect(page.locator(".documentation-card")).toHaveCount(6);
   await expect(page.locator(".documentation-card .technical-eyebrow").first()).toHaveText("Architecture Decision Record");
 
   await filters.getByRole("link", { name: /Milestones 1/i }).click();
@@ -39,14 +39,14 @@ test("record-type controls expose purpose and linkable filtered views", async ({
   await expect(page.locator(".documentation-card")).toHaveCount(1);
   await expect(page.locator(".documentation-card .technical-eyebrow")).toHaveText("Milestone Log");
 
-  await filters.getByRole("link", { name: /All records 18/i }).click();
+  await filters.getByRole("link", { name: /All records 20/i }).click();
   await expect(page).toHaveURL(/\/documentation$/);
-  await expect(page.locator(".documentation-card")).toHaveCount(18);
+  await expect(page.locator(".documentation-card")).toHaveCount(20);
 });
 
 test("record-type filters retain keyboard focus visibility", async ({ page }) => {
   await page.goto("/documentation");
-  const filter = page.getByRole("link", { name: /Engineering Logs 12/i });
+  const filter = page.getByRole("link", { name: /Engineering Logs 13/i });
   await filter.focus();
   await expect(filter).toBeFocused();
   const outline = await filter.evaluate((element) => getComputedStyle(element).outlineStyle);
@@ -71,6 +71,7 @@ test("synchronized ADR records appear and preserve reviewed punctuation", async 
     ["adr-003-selection-of-next-js-as-the-application-framework", "ADR-003 — Selection of Next.js as the Application Framework"],
     ["adr-004-adoption-of-cloud-deployment-through-vercel", "ADR-004 — Adoption of Cloud Deployment Through Vercel"],
     ["adr-005-adoption-of-a-modular-component-architecture", "ADR-005 — Adoption of a Modular Component Architecture"],
+    ["adr-006-adoption-of-an-evidence-first-engineering-documentation-model", "ADR-006 — Adoption of an Evidence-First Engineering Documentation Model"],
   ] as const;
 
   await page.goto("/documentation");
@@ -114,20 +115,20 @@ test("verified Engineering Logs scale through stable synchronized routes", async
   await expect(page.getByRole("heading", { level: 1, name: "RF-DC01 Server Establishment Log" })).toBeVisible();
 });
 
-test("homepage activity feed links to published reports", async ({ page }) => {
+test("homepage activity feed links to the latest published report", async ({ page }) => {
   await page.goto("/");
   const feed = page.getByRole("region", { name: "Evidence-backed updates" });
   await expect(feed.getByRole("heading", { name: "Evidence-backed updates" })).toBeVisible();
-  await feed.getByRole("link", { name: /ENG-010.*Centralized Telemetry Pipeline Deployment/i }).click();
-  await expect(page).toHaveURL(/\/documentation\/eng-010-centralized-telemetry-pipeline-deployment$/);
+  await feed.getByRole("link", { name: /ENG-012.*Engineering Platform Architecture Refinement/i }).click();
+  await expect(page).toHaveURL(/\/documentation\/eng-012-engineering-platform-architecture-refinement$/);
 });
 
 test("lab reflects verified identity progress without exposing addressing", async ({ page }) => {
   await page.goto("/lab");
-  await expect(page.getByText("Windows Server 2025 — Implemented", { exact: true })).toBeVisible();
-  await expect(page.getByText("Active Directory Domain Services — Implemented", { exact: true })).toBeVisible();
-  await expect(page.getByText("Microsoft Sysmon — Implemented", { exact: true })).toBeVisible();
-  await expect(page.getByText("Splunk Enterprise — Implemented", { exact: true })).toBeVisible();
+  await expect(page.getByRole("button", { name: "RF-DC01 Windows Server 2025 Operational" })).toBeVisible();
+  await expect(page.getByText("Active Directory Domain Services", { exact: true })).toBeVisible();
+  await expect(page.getByText("Sysmon", { exact: true })).toBeVisible();
+  await expect(page.getByRole("button", { name: "RF-SPLUNK01 Splunk Enterprise Operational" })).toBeVisible();
   const body = await page.locator("body").innerText();
   expect(body).not.toMatch(/\b(?:\d{1,3}\.){3}\d{1,3}\b/);
 });
