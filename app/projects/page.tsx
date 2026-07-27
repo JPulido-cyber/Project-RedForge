@@ -36,6 +36,7 @@ export default function ProjectsPage() {
                 <h3>{project.title}</h3>
                 <p>{project.subtitle}</p>
                 <ProjectTags tags={project.technologies.slice(0, 4).map((technology) => technology.name.split(" — ")[0])} />
+                <div className="program-card-metadata"><span>Updated {project.updatedAt}</span><span>{project.engineeringRecords.length} records</span><span>{project.snapshot.validationStatus}</span></div>
                 <div className="program-card-footer"><span>{project.phase}</span><span aria-hidden>→</span></div>
               </Link>
             ))}

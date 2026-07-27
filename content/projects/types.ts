@@ -57,6 +57,30 @@ export interface LessonLearned {
   insight: string;
 }
 
+export interface ProjectSnapshot {
+  startDate: string;
+  operationalSystems: string;
+  validationStatus: string;
+}
+
+export interface ProjectValidationItem {
+  label: string;
+  status: "verified" | "pending" | "planned";
+}
+
+export interface EngineeringRecordReference {
+  id: string;
+  title: string;
+  href: string;
+}
+
+export interface ProjectRetrospective {
+  biggestChallenge: string;
+  solutionSelected: string;
+  tradeoffsConsidered: string;
+  futureImprovements: string;
+}
+
 export interface CertificationReference {
   name: string;
   issuer: string;
@@ -80,6 +104,10 @@ export interface Project {
   updatedAt: string;
   duration?: string;
   role: string;
+  snapshot: ProjectSnapshot;
+  validation: readonly ProjectValidationItem[];
+  engineeringRecords: readonly EngineeringRecordReference[];
+  retrospective?: ProjectRetrospective;
   objectives: readonly string[];
   overview: readonly string[];
   technologies: readonly Technology[];

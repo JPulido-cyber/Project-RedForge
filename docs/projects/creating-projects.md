@@ -19,12 +19,15 @@ registered projects and generates project metadata.
 ## Required fields
 
 - Identity: `slug`, `title`, `subtitle`, `summary`, `status`, `phase`
-- Governance: `updatedAt`, `role`, optional `duration`
+- Governance: `updatedAt`, `role`, optional `duration`, `snapshot`
 - Engineering: `objectives`, `overview`, `technologies`, `timeline`,
   `architecture`
-- Review: `challenges`, `lessonsLearned`, `futureRoadmap`
+- Review: `challenges`, `lessonsLearned`, optional `retrospective`,
+  `futureRoadmap`
 - Evidence: `gallery`, `videos`, `codeExamples`, `downloads`
-- Relationships: `certifications`, `relatedProjectSlugs`
+- Verification: `validation`
+- Relationships: `engineeringRecords`, `certifications`,
+  `relatedProjectSlugs`
 
 See `content/projects/types.ts` for the authoritative types.
 
@@ -49,8 +52,9 @@ Write in this order:
 4. Implementation timeline
 5. Challenges and resolutions
 6. Validation evidence and outcomes
-7. Lessons learned
-8. Future roadmap
+7. Related Engineering Records
+8. Lessons learned and retrospective
+9. Future roadmap
 
 Use direct technical language. Distinguish observed results from planned work.
 Prefer reproducible evidence over claims.
@@ -70,5 +74,10 @@ Prefer reproducible evidence over claims.
 - Alternative text must explain the engineering evidence shown.
 - Captions must state why the evidence matters.
 - Challenges must include both context and resolution.
+- Snapshot counts and validation labels must be traceable to current project
+  evidence.
+- Engineering Records must link to existing public documentation routes.
+- Validation items must use `verified`, `pending`, or `planned`; never convert
+  implementation into validation without evidence.
 - Code must be minimal, sanitized, and directly relevant.
 - Roadmap items must describe future work, not imply completed capability.

@@ -381,6 +381,20 @@
   margin: 0;
 }
 
+.program-card-metadata {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  color: #7f888a;
+  font-size: 0.62rem;
+}
+
+.program-card-metadata span + span::before {
+  margin-right: 12px;
+  color: var(--rf-color-forge-line-strong);
+  content: "•";
+}
+
 .program-card-footer {
   padding-top: 12px;
   border-top: 1px solid var(--rf-color-forge-line);

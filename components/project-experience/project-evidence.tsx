@@ -7,7 +7,7 @@ import { VideoSection } from "./video-section";
 
 export function ProjectEvidence({ project }: { project: Project }) {
   return (
-    <ProjectSection id="evidence" label="08 / Artifacts" title="Implementation Evidence">
+    <ProjectSection id="evidence" label="09 / Artifacts" title="Implementation Evidence">
       <ScreenshotsGallery images={project.gallery} />
       <VideoSection videos={project.videos} />
       <CodeExamples examples={project.codeExamples} />
