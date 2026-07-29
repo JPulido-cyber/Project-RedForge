@@ -1,38 +1,59 @@
-# RedForge
+# Project RedForge
 
-RedForge is an engineering platform built with the Next.js App Router, React,
-strict TypeScript, and Tailwind CSS.
+**A public cybersecurity engineering portfolio focused on enterprise-lab development, offensive-security learning, and evidence-based documentation.**
 
-## Repository map
+[Live Portfolio](https://projectredforge.com/) · [Engineering Documentation](./docs/README.md) · [Project Records](./content)
+
+## Why This Project Exists
+
+Project RedForge is where I turn cybersecurity study into reviewable work. The platform documents how projects are planned, built, tested, and improved so that a recruiter or technical reviewer can see both the result and the reasoning behind it.
+
+The goal is not to present a list of tools. It is to demonstrate:
+
+- Structured problem solving and technical documentation
+- Enterprise-lab design and implementation
+- Security-focused research and authorized testing
+- Repeatable workflows, change control, and lessons learned
+- Clear communication for both technical and nontechnical audiences
+
+## Current Evidence
+
+- **Enterprise Home Lab:** architecture, implementation records, and sanitized project reporting
+- **Engineering Records:** documented decisions, constraints, outcomes, and follow-up work
+- **Quality Controls:** linting, strict TypeScript validation, automated builds, Storybook, and Playwright tests
+- **Deployment:** container and platform deployment scaffolding with continuous-integration workflows
+- **Public Portfolio:** a recruiter-facing presentation of completed work and professional development
+
+> Security exercises and offensive techniques documented through this project are performed only in owned or explicitly authorized lab environments.
+
+## Technical Stack
+
+- Next.js App Router and React
+- TypeScript with strict validation
+- Tailwind CSS and a reusable design system
+- Docker and deployment configuration
+- GitHub Actions continuous integration
+- Storybook component development
+- Playwright end-to-end testing
+
+## Repository Map
 
 ```text
-.github/workflows/       Continuous integration
-.storybook/              Isolated component development
-app/                     Routes, layouts, metadata, and error boundaries
-components/
-  ui/                    Product-agnostic primitives
-  icons/                 Central SVG icon system
-  templates/             Reusable content-page structures
-  <feature>/             Domain-specific compositions
-config/                  Typed design configuration
-constants/               Routes, layout, motion, theme, and app metadata
-content/                 Structured authored content by domain
-data/                    Future retrieval and mapping logic
-deployment/              Platform-specific deployment guidance
-docs/                    Engineering and contribution documentation
-hooks/                   Shared client hooks
-lib/                     Framework-light utilities, motion, and SEO
-services/                Typed infrastructure ports; no backend implementation
-styles/                  Design tokens and global motion
-tests/e2e/               Playwright behavior contracts
-types/                   Shared application contracts
-public/                  Static assets
+.github/workflows/  Continuous integration
+app/                Routes, layouts, metadata, and error boundaries
+components/         UI primitives, templates, and domain components
+config/             Typed design configuration
+content/            Project reports and engineering records
+deployment/         Deployment guidance and scaffolding
+docs/               Architecture and contribution documentation
+lib/                Shared utilities, motion, and SEO
+public/             Static assets and published project artifacts
+scripts/            Documentation and project automation
+services/           Typed infrastructure ports
+tests/e2e/          Playwright behavior contracts
 ```
 
-See [the engineering documentation](./docs/README.md) for architecture, component,
-design-system, coding, naming, deployment, and contribution guidance.
-
-## Development
+## Run Locally
 
 ```bash
 npm ci
@@ -41,7 +62,7 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
-## Quality
+## Quality Checks
 
 ```bash
 npm run check
@@ -51,18 +72,27 @@ npx playwright install chromium
 npm run test:e2e
 ```
 
-`check` runs ESLint with zero warnings and strict TypeScript validation.
+`npm run check` runs ESLint with zero-warning enforcement and strict TypeScript validation.
 
-## Storybook
+## Documentation Standards
 
-```bash
-npm run storybook
-```
+Project records are written to show:
 
-Stories are grouped by foundation, UI category, feedback state, and page template.
+1. The problem or learning objective
+2. The environment and constraints
+3. The implementation approach
+4. Validation and evidence
+5. Findings, limitations, and lessons learned
+6. The next improvement to make
 
-## Design system
+Sensitive information, credentials, private identifiers, and operational data are excluded or sanitized before publication.
 
-`styles/tokens.css` is the semantic source of truth for color, typography,
-spacing, radii, shadows, and motion. Tailwind aliases expose those values to
-components. `config/design-tokens.ts` and `lib/motion` support code-driven uses.
+## Status
+
+Project RedForge is under active development. New lab evidence and security projects are published as they reach a reviewable state.
+
+## Contact
+
+- Portfolio: [projectredforge.com](https://projectredforge.com/)
+- LinkedIn: [Jose Pulido](https://www.linkedin.com/in/jose-pulido-5887723a5/)
+- GitHub: [JPulido-cyber](https://github.com/JPulido-cyber)
