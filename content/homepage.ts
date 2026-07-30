@@ -22,6 +22,7 @@ export interface ProjectItem {
 export interface EngineeringPrinciple {
   description: string;
   name: string;
+  phrase: string;
 }
 
 export const homepageContent = {
@@ -46,17 +47,20 @@ export const homepageContent = {
     {
       name: "Discipline.",
       description:
-        "Build from defined objectives, controlled scope, and repeatable engineering practice.",
+        "Every change follows a documented process before it becomes part of the enterprise.",
+      phrase: "Controlled. Reproducible.",
     },
     {
       name: "Precision.",
       description:
-        "Validate the implementation, preserve the evidence, and distinguish verified state from intent.",
+        "Every implementation is validated against its objective and preserved as evidence.",
+      phrase: "Measured. Defensible.",
     },
     {
       name: "Progress.",
       description:
-        "Turn each result, constraint, and lesson into the next deliberate engineering milestone.",
+        "Every result becomes the foundation for the next deliberate engineering milestone.",
+      phrase: "Iterative. Evidence-led.",
     },
   ] satisfies readonly EngineeringPrinciple[],
   projects: [

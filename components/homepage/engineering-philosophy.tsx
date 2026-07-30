@@ -18,6 +18,7 @@ export function EngineeringPhilosophy() {
             <div>
               <h3>{principle.name}</h3>
               <p>{principle.description}</p>
+              <small>{principle.phrase}</small>
             </div>
           </article>
         ))}

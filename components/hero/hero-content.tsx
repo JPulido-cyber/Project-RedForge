@@ -10,10 +10,10 @@ export function HeroContent() {
         <span>THE GROUND UP</span>
       </h1>
       <p className="hero-description">
-        I am engineering an enterprise environment to build the systems,
-        detection, and security knowledge required for Offensive Security.
-        Every implementation is documented, validated, and supported by
-        reviewed engineering evidence.
+        I am a cybersecurity engineer building an enterprise environment to
+        master the systems, detection, and security foundations behind Offensive
+        Security. Every implementation is documented, validated, and supported
+        by reviewed engineering evidence.
       </p>
       <HeroActions />
       <a className="scroll-indicator" href="#engineering-activity">
