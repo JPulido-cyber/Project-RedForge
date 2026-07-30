@@ -45,6 +45,15 @@ The shared header and footer brand tagline is “Discipline. Precision. Progress
 
 The existing world-map route flow, node pulse, scan, and reduced-motion handling
 remain intact. The hero occupies approximately 70% of the initial desktop
-viewport, the map remains its visual centerpiece, and Mission Control uses a
-reduced footprint. Mobile preserves content readability, hides the dense status
-overlay, and stacks metrics and principles without horizontal overflow.
+viewport, the map remains its visual centerpiece, and Mission Control remains
+subordinate to the map while retaining readable operational status.
+
+Three decorative HUD panels add the approved operational depth without exposing
+new claims or becoming homepage content. They contain no metrics, are hidden
+from assistive technology, and disappear below desktop width. Their motion is
+covered by the existing reduced-motion override.
+
+Large desktop typography and map sizing scale beyond the former fixed ceiling so
+the composition retains its hierarchy on high-resolution displays. Mobile
+preserves content readability, hides the dense status and telemetry overlays,
+and stacks metrics and principles without horizontal overflow.

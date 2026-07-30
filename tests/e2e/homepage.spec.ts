@@ -31,6 +31,9 @@ test("homepage presents the approved RedForge command-center narrative", async (
   await expect(page.locator(".network-status-panel")).toContainText(
     "MONITORING",
   );
+  await expect(page.locator(".hero-telemetry-panel")).toHaveCount(3);
+  await expect(page.locator(".metric-icon")).toHaveCount(6);
+  await expect(page.locator(".engineering-principle-icon")).toHaveCount(3);
   await expect(
     page.getByText("DISCIPLINE. PRECISION. PROGRESS.", { exact: true }),
   ).toHaveCount(2);
@@ -57,6 +60,7 @@ test("homepage leaves project discovery to dedicated routes", async ({ page }) =
 
 test("focused homepage remains overflow-free at desktop, tablet, and mobile widths", async ({ page }) => {
   for (const viewport of [
+    { width: 2560, height: 1440 },
     { width: 1440, height: 900 },
     { width: 820, height: 1180 },
     { width: 412, height: 915 },
