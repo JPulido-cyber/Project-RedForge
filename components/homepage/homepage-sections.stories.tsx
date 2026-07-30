@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 
-import { CurrentProjects } from "./current-projects";
 import { EngineeringPhilosophy } from "./engineering-philosophy";
 
 const meta = {
@@ -20,7 +19,3 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Philosophy: Story = {};
-
-export const Projects: Story = {
-  render: () => <CurrentProjects />,
-};

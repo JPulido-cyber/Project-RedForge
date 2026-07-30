@@ -10,18 +10,14 @@ export function HeroContent() {
         <span>THE GROUND UP</span>
       </h1>
       <p className="hero-description">
-        I am a cybersecurity engineer building an enterprise environment to
-        master the systems, detection, and security foundations behind Offensive
-        Security. Every implementation is documented, validated, and supported
-        by reviewed engineering evidence.
+        I am building a realistic enterprise environment to understand the
+        infrastructure, identity, monitoring, detection, and operational
+        workflows that modern offensive security professionals must understand.
+        Every implementation is documented, validated, and preserved as
+        engineering evidence throughout my progression toward Offensive
+        Cybersecurity.
       </p>
       <HeroActions />
-      <a className="scroll-indicator" href="#engineering-activity">
-        <span className="mouse-icon" aria-hidden>
-          <span />
-        </span>
-        EVERY SYSTEM. EVERY DECISION. EVERY MILESTONE. BACKED BY EVIDENCE.
-      </a>
     </div>
   );
 }

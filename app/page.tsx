@@ -1,7 +1,7 @@
 import { Footer } from "@/components/footer";
 import { EngineeringActivityFeed } from "@/components/documentation";
 import { Hero } from "@/components/hero";
-import { CurrentProjects, EngineeringPhilosophy } from "@/components/homepage";
+import { EngineeringPhilosophy } from "@/components/homepage";
 import { MetricsSection } from "@/components/metrics";
 import { Navbar } from "@/components/navigation";
 
@@ -13,7 +13,6 @@ export default function Home() {
         <Hero />
         <MetricsSection />
         <EngineeringPhilosophy />
-        <CurrentProjects />
         <EngineeringActivityFeed />
       </main>
       <Footer />

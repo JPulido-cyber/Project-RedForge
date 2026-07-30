@@ -8,7 +8,6 @@ export function EngineeringPhilosophy() {
       aria-labelledby="engineering-philosophy-title"
     >
       <div className="engineering-philosophy-heading">
-        <p className="technical-eyebrow">Engineering philosophy</p>
         <h2 id="engineering-philosophy-title">Discipline. Precision. Progress.</h2>
       </div>
       <div className="engineering-principles">
@@ -25,7 +24,8 @@ export function EngineeringPhilosophy() {
       </div>
       <p className="engineering-mission">
         <span>Mission:</span>
-        Engineer the Enterprise. <strong>Master the Adversary.</strong>
+        Engineer with Discipline.{" "}
+        <strong>Advance toward Offensive Cybersecurity.</strong>
       </p>
     </Section>
   );
