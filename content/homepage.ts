@@ -24,13 +24,6 @@ export interface EngineeringPrinciple {
   name: string;
 }
 
-export interface PlatformPathway {
-  description: string;
-  href: string;
-  label: string;
-  title: string;
-}
-
 export const homepageContent = {
   navigation: [
     { label: "HOME", href: "/" },
@@ -47,6 +40,7 @@ export const homepageContent = {
     { icon: "document", value: "14", label: "ENGINEERING LOGS" },
     { icon: "shield", value: "6", label: "ARCHITECTURE DECISIONS" },
     { icon: "directory", value: "4", label: "MILESTONES" },
+    { icon: "document", value: "15", label: "PUBLISHED EVIDENCE ASSETS" },
   ] satisfies readonly MetricItem[],
   principles: [
     {
@@ -65,29 +59,6 @@ export const homepageContent = {
         "Turn each result, constraint, and lesson into the next deliberate engineering milestone.",
     },
   ] satisfies readonly EngineeringPrinciple[],
-  pathways: [
-    {
-      label: "Current projects",
-      title: "Review the engineering program",
-      description:
-        "See the systems, lifecycle state, validation, and evidence connected to each active project.",
-      href: "/projects",
-    },
-    {
-      label: "Documentation",
-      title: "Follow the engineering record",
-      description:
-        "Read the Engineering Logs, Architecture Decision Records, and Milestones behind the platform.",
-      href: "/documentation",
-    },
-    {
-      label: "Technical deep dive",
-      title: "Explore the verified enterprise",
-      description:
-        "Inspect the operational topology, implemented services, telemetry relationships, and planned capabilities.",
-      href: "/lab",
-    },
-  ] satisfies readonly PlatformPathway[],
   projects: [
     {
       number: "01",

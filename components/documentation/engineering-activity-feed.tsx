@@ -22,10 +22,6 @@ export function EngineeringActivityFeed() {
         <div>
           <p className="technical-eyebrow">Latest engineering activity</p>
           <h2 id="engineering-activity-title">Evidence-backed updates</h2>
-          <p className="engineering-activity-intro">
-            A concise record of what changed, what was validated, and where the
-            enterprise is progressing next.
-          </p>
         </div>
         <Link href={{ pathname: "/documentation" }}>
           View all engineering records <span aria-hidden>→</span>
@@ -43,7 +39,6 @@ export function EngineeringActivityFeed() {
               <time dateTime={entry.date}>{entry.date}</time>
             </div>
             <h3>{entry.title}</h3>
-            <p>{entry.summary}</p>
             <footer>
               <span>{entry.status}</span>
               <span>Read report →</span>

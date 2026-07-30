@@ -10,18 +10,17 @@ export function HeroContent() {
         <span>THE GROUND UP</span>
       </h1>
       <p className="hero-description">
-        I am engineering a documented enterprise environment to understand how
-        infrastructure, identity, and telemetry behave under real operational
-        constraints. Project RedForge turns that work into reviewed evidence as
-        I build the systems knowledge required for a long-term specialization in
-        Offensive Security.
+        I am engineering an enterprise environment to build the systems,
+        detection, and security knowledge required for Offensive Security.
+        Every implementation is documented, validated, and supported by
+        reviewed engineering evidence.
       </p>
       <HeroActions />
       <a className="scroll-indicator" href="#engineering-activity">
         <span className="mouse-icon" aria-hidden>
           <span />
         </span>
-        SCROLL TO EXPLORE
+        EVERY SYSTEM. EVERY DECISION. EVERY MILESTONE. BACKED BY EVIDENCE.
       </a>
     </div>
   );

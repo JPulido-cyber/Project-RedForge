@@ -9,13 +9,7 @@ export function EngineeringPhilosophy() {
     >
       <div className="engineering-philosophy-heading">
         <p className="technical-eyebrow">Engineering philosophy</p>
-        <h2 id="engineering-philosophy-title">
-          Discipline. Precision. Progress.
-        </h2>
-        <p>
-          The operating principles behind every implementation, validation,
-          and engineering record in Project RedForge.
-        </p>
+        <h2 id="engineering-philosophy-title">Discipline. Precision. Progress.</h2>
       </div>
       <div className="engineering-principles">
         {homepageContent.principles.map((principle, index) => (
@@ -29,7 +23,7 @@ export function EngineeringPhilosophy() {
         ))}
       </div>
       <p className="engineering-mission">
-        <span>Mission</span>
+        <span>Mission:</span>
         Engineer the Enterprise. <strong>Master the Adversary.</strong>
       </p>
     </Section>
