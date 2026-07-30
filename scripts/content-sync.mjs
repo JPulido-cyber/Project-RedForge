@@ -3,6 +3,7 @@ import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { mapAdrDocument } from "./content-sync/adapters/adr.mjs";
 import { mapEngineeringLogDocument } from "./content-sync/adapters/engineering-log.mjs";
+import { mapMilestoneDocument } from "./content-sync/adapters/milestone.mjs";
 import { resolveVaultPath } from "./content-sync/config.mjs";
 import { discoverDocuments } from "./content-sync/discovery.mjs";
 import { renderGeneratedModule } from "./content-sync/generate.mjs";
@@ -13,6 +14,7 @@ const outputPath = path.join(root, "content", "documentation", "generated.ts");
 const adapters = new Map([
   ["adr", mapAdrDocument],
   ["engineering-log", mapEngineeringLogDocument],
+  ["milestone", mapMilestoneDocument],
 ]);
 
 async function synchronize() {

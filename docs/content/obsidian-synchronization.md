@@ -42,9 +42,10 @@ The synchronization allowlist currently processes:
 ```text
 Enterprise Home Lab/Architecture Decisions/ADR-*.md*
 Enterprise Home Lab/Engineering Logs/ENG-NNN*.md*
+Enterprise Home Lab/Milestones/Milestone-NNN*.md*
 ```
 
-ADR records use the reusable ADR adapter. Verified `ENG-NNN` records use the Engineering Log adapter and form the primary public engineering history. Files that do not declare `status: verified` fail synchronization rather than being published. The command does not recursively scan the vault. Daily logs, personal notes, career material, credentials, and unrelated folders are outside the approved discovery boundary.
+ADR records use the reusable ADR adapter. Verified `ENG-NNN` records use the Engineering Log adapter and form the primary public engineering history. Reviewed milestone records use a compatibility adapter that supports the established milestone formats while emitting one strict public model. Engineering Logs that do not declare `status: verified` fail synchronization rather than being published. The command does not recursively scan the vault. Daily logs, personal notes, career material, credentials, and unrelated folders are outside the approved discovery boundary.
 
 ## Generated-file policy
 
@@ -56,8 +57,9 @@ ADR records use the reusable ADR adapter. Verified `ENG-NNN` records use the Eng
 - Decider names are omitted from generated public content.
 - Evidence represents the reviewed decision record only. It does not claim deployment or technical validation.
 - ENG validation evidence represents assertions in each verified engineering record; private screenshots remain unpublished pending asset review.
-- Existing manual entries remain in `content/documentation/entries.ts` and are merged with generated entries.
-- Duplicate slugs are rejected when the combined registry initializes.
+- Milestone acceptance evidence is generated only from reviewed completion criteria and omits internal configuration values.
+- The legacy server-establishment route remains available for backward compatibility but is excluded from official ENG counts.
+- Duplicate slugs are rejected when either the official or route-compatible registry initializes.
 - Duplicate source IDs are rejected during synchronization.
 
 ADR-001 predates the current frontmatter template. Its local source modification date supplies its schema-required date. New records must include an explicit ISO `date` in YAML frontmatter.
@@ -98,7 +100,7 @@ At minimum, the adapter requires a title, summary, Decision, and Rationale. Run 
 
 The pipeline separates configuration, allowlisted discovery, Markdown parsing, adapters, generation, and validation under `scripts/content-sync/`.
 
-To add Engineering Logs, Milestones, Build Guides, SOPs, Lessons Learned, Validation Records, or Troubleshooting Notes:
+To add a future public record type:
 
 1. Add an exact approved directory and filename pattern in `discovery.mjs`.
 2. Add a focused adapter under `scripts/content-sync/adapters/`.
@@ -107,7 +109,7 @@ To add Engineering Logs, Milestones, Build Guides, SOPs, Lessons Learned, Valida
 5. Add fixtures and tests for missing fields, unsafe content, duplicate identifiers, and deterministic output.
 6. Do not broaden discovery to the entire vault.
 
-Engineering Logs now has a dedicated adapter for the verified `ENG-NNN` convention. The adapter remains independent of the directory name if the knowledge-base structure changes.
+Engineering Logs and Milestones have dedicated adapters for the established filename conventions. Each adapter remains independent of the public page components and emits the shared `DocumentationEntry` model.
 
 ## Publishing checklist
 

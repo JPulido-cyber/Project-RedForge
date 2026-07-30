@@ -12,6 +12,11 @@ const supportedSources = [
     directory: path.join("Enterprise Home Lab", "Engineering Logs"),
     pattern: /^ENG-\d{3}(?:\s|—|-).*\.md(?:\.md)?$/i,
   },
+  {
+    type: "milestone",
+    directory: path.join("Enterprise Home Lab", "Milestones"),
+    pattern: /^Milestone-\d{3}.*\.md(?:\.md)?$/i,
+  },
 ];
 
 function assertWithinVault(vaultPath, candidatePath) {

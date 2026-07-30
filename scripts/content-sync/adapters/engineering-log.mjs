@@ -7,6 +7,17 @@ function section(document, name) {
   return document.sections.get(name.toLowerCase()) ?? "";
 }
 
+function sanitizePublicText(value) {
+  return value.replace(
+    /\b(?:[a-z0-9-]+\.)+redforge\.test\b/gi,
+    "the internal RedForge test domain",
+  );
+}
+
+function sanitizeList(values) {
+  return values.map(sanitizePublicText);
+}
+
 function normalizeDate(value, sourceName) {
   if (value instanceof Date) return value.toISOString().slice(0, 10);
   const candidate = String(value ?? "").trim();
@@ -63,19 +74,26 @@ function uniqueTags(tags) {
 export function mapEngineeringLogDocument(document) {
   const id = String(document.frontmatter.id ?? "").trim().toUpperCase();
   const title = String(document.frontmatter.title ?? "").trim();
-  const summary = String(document.frontmatter.summary ?? "").trim();
+  const summary = sanitizePublicText(String(document.frontmatter.summary ?? "").trim());
   const date = normalizeDate(document.frontmatter.date, document.sourceName);
-  const objective = markdownToParagraphs(section(document, "Objective"));
-  const background = markdownToParagraphs(section(document, "Background"));
-  const result = markdownToParagraphs(section(document, "Result"));
-  const decisions = mapDecisions(section(document, "Engineering Decisions"));
-  const lessons = markdownToItems(section(document, "Lessons Learned"));
-  const validation = markdownToItems(section(document, "Validation"));
-  const nextSteps = markdownToItems(section(document, "Next Steps"));
+  const objective = sanitizeList(markdownToParagraphs(section(document, "Objective")));
+  const background = sanitizeList(markdownToParagraphs(section(document, "Background")));
+  const deployment = sanitizeList(markdownToParagraphs(
+    section(document, "Active Directory Deployment")
+    || section(document, "Splunk Enterprise Deployment"),
+  ));
+  const result = sanitizeList(markdownToParagraphs(section(document, "Result")));
+  const decisions = mapDecisions(section(document, "Engineering Decisions")).map((decision) => ({
+    title: sanitizePublicText(decision.title),
+    rationale: sanitizePublicText(decision.rationale),
+  }));
+  const lessons = sanitizeList(markdownToItems(section(document, "Lessons Learned")));
+  const validation = sanitizeList(markdownToItems(section(document, "Validation")));
+  const nextSteps = sanitizeList(markdownToItems(section(document, "Next Steps")));
   const tags = stringList(document.frontmatter.tags);
 
   if (!/^ENG-\d{3}$/.test(id)) throw new Error(`${document.sourceName}: engineering log id must use ENG-NNN.`);
-  if (!title || !summary || !objective.length || !background.length || !lessons.length || !validation.length || !nextSteps.length) {
+  if (!title || !summary || !objective.length || !(background.length || deployment.length) || !lessons.length || !validation.length || !nextSteps.length) {
     throw new Error(`${document.sourceName}: verified engineering log is missing required publishable sections.`);
   }
   if (String(document.frontmatter.status ?? "").toLowerCase() !== "verified") {
@@ -94,7 +112,7 @@ export function mapEngineeringLogDocument(document) {
       date,
       updatedAt: date,
       objective: objective.join(" "),
-      engineeringSummary: [...background, ...result],
+      engineeringSummary: [...background, ...deployment, ...result],
       technicalDecisions: decisions.length
         ? decisions
         : [{

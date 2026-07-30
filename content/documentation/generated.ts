@@ -380,7 +380,7 @@ export const generatedDocumentationEntries = [
         "kind": "configuration",
         "status": "reviewed",
         "language": "yaml",
-        "content": "record: ADR-006\nstatus: Accepted\nproject: Project RedForge\ntags: documentation, engineering, architecture, evidence, knowledge-management\nrelatedRecords: ENG-012 — Engineering Platform Architecture Refinement, ADR-005 — Adoption of a Modular Component Architecture, MILESTONE-002 — Engineering Platform Approved, ENG-013 — Enterprise Active Directory Forest Deployment (Planned)"
+        "content": "record: ADR-006\nstatus: Accepted\nproject: Project RedForge\ntags: documentation, engineering, architecture, evidence, knowledge-management\nrelatedRecords: ENG-012 — Engineering Platform Architecture Refinement, ADR-005 — Adoption of a Modular Component Architecture, MILESTONE-003 — Engineering Platform Foundation Complete, ENG-013 — Enterprise Active Directory Forest Deployment (Planned)"
       }
     ],
     "nextSteps": [
@@ -1993,6 +1993,680 @@ export const generatedDocumentationEntries = [
     ],
     "source": {
       "label": "ENG-012 — Engineering Platform Architecture Refinement",
+      "reviewed": true,
+      "redactions": [
+        "Author identity",
+        "Internal domain and IPv4 addressing",
+        "Unreviewed screenshots and private configuration values"
+      ]
+    }
+  },
+  {
+    "slug": "eng-013-enterprise-active-directory-forest-deployment",
+    "title": "ENG-013 — Enterprise Active Directory Forest Deployment",
+    "summary": "Successfully deployed the Project RedForge enterprise Active Directory forest by implementing centralized identity management, authentication, integrated DNS, Organizational Units, and administrative boundaries, establishing the foundational identity infrastructure required for future enterprise engineering.",
+    "category": "Engineering Log",
+    "status": "Implemented",
+    "publishingState": "published",
+    "date": "2026-07-30",
+    "updatedAt": "2026-07-30",
+    "objective": "Deploy a stable, scalable enterprise Active Directory environment capable of providing centralized identity services while establishing the foundation required for future enterprise infrastructure engineering. Primary objectives included: Deploy Active Directory Domain Services. Create the Project RedForge enterprise forest. Configure integrated DNS services. Establish centralized authentication. Design a scalable Organizational Unit hierarchy. Implement an enterprise administrative structure. Prepare the environment for Group Policy engineering. Validate enterprise identity services. Complete infrastructure deployment prior to security platform integration. ---",
+    "engineeringSummary": [
+      "Deployment focused on establishing a centralized enterprise identity platform capable of supporting future infrastructure engineering rather than simply promoting a Windows Server to a Domain Controller.",
+      "The Project RedForge enterprise forest was successfully deployed using the the internal RedForge test domain domain, providing centralized authentication, directory services, and integrated DNS throughout the laboratory environment.",
+      "A scalable Organizational Unit hierarchy was implemented to logically separate administrative accounts, users, groups, servers, service accounts, and workstations into clearly defined administrative boundaries.",
+      "Collectively, these engineering activities established the first operational enterprise service within Project RedForge and created the identity foundation required for future Group Policy engineering, enterprise endpoint management, centralized security monitoring, and additional enterprise services.",
+      "Project RedForge successfully completed deployment of its enterprise Active Directory forest and established the foundational identity infrastructure required to support long-term enterprise engineering.",
+      "The completed deployment provides centralized authentication, authorization, directory services, administrative delegation, and integrated DNS while establishing the operational identity platform required for Group Policy engineering, enterprise endpoint management, centralized security monitoring, and future infrastructure expansion.",
+      "Completion of this effort marks the successful deployment of the first operational enterprise service within Project RedForge, transitioning the laboratory from infrastructure preparation to centralized enterprise administration."
+    ],
+    "technicalDecisions": [
+      {
+        "title": "Enterprise Active Directory Forest Deployment",
+        "rationale": "Deploy a stable, scalable enterprise Active Directory environment capable of providing centralized identity services while establishing the foundation required for future enterprise infrastructure engineering. Primary objectives included: Deploy Active Directory Domain Services. Create the Project RedForge enterprise forest. Configure integrated DNS services. Establish centralized authentication. Design a scalable Organizational Unit hierarchy. Implement an enterprise administrative structure. Prepare the environment for Group Policy engineering. Validate enterprise identity services. Complete infrastructure deployment prior to security platform integration. ---"
+      }
+    ],
+    "lessonsLearned": [
+      "Identity infrastructure should be established before dependent enterprise services.",
+      "Organizational Unit design directly impacts long-term manageability.",
+      "Integrated DNS simplifies enterprise service discovery.",
+      "Administrative boundaries should be planned early in the engineering lifecycle.",
+      "Enterprise infrastructure benefits from incremental implementation and validation.",
+      "Documentation should evolve alongside infrastructure deployments.",
+      "Active Directory provides the operational foundation for future enterprise engineering."
+    ],
+    "evidence": [
+      {
+        "id": "eng-013-validation",
+        "title": "ENG-013 validation record",
+        "description": "Reviewed validation statements from the verified engineering log. Sensitive operational values and unreviewed assets are not published.",
+        "kind": "validation",
+        "status": "verified",
+        "checklist": [
+          {
+            "label": "Enterprise forest successfully deployed.",
+            "state": "passed"
+          },
+          {
+            "label": "Domain Controller operational.",
+            "state": "passed"
+          },
+          {
+            "label": "Domain authentication functioning correctly.",
+            "state": "passed"
+          },
+          {
+            "label": "Active Directory Domain Services operational.",
+            "state": "passed"
+          },
+          {
+            "label": "Integrated DNS functioning correctly.",
+            "state": "passed"
+          },
+          {
+            "label": "Organizational Unit hierarchy validated.",
+            "state": "passed"
+          },
+          {
+            "label": "Administrative structure verified.",
+            "state": "passed"
+          },
+          {
+            "label": "Enterprise domain operational.",
+            "state": "passed"
+          },
+          {
+            "label": "Repository documentation completed.",
+            "state": "passed"
+          },
+          {
+            "label": "Engineering evidence successfully captured.",
+            "state": "passed"
+          }
+        ]
+      },
+      {
+        "id": "eng-013-source-record",
+        "title": "Sanitized engineering record",
+        "description": "Documentation evidence identifying the reviewed source record. Sensitive configuration values and personal metadata are intentionally excluded.",
+        "kind": "configuration",
+        "status": "reviewed",
+        "language": "yaml",
+        "content": "record: ENG-013\ntitle: Enterprise Active Directory Forest Deployment\nstatus: verified\nproject: Project RedForge\nevidenceStatus: documented"
+      },
+      {
+        "id": "eng-013-screenshots",
+        "title": "Supporting engineering evidence",
+        "description": "Supporting source evidence is referenced by the engineering log but remains outside the public asset pipeline until security, privacy, and provenance review is complete.",
+        "kind": "screenshot",
+        "status": "pending"
+      }
+    ],
+    "nextSteps": [
+      "Deploy the Enterprise Splunk Security Monitoring Platform.",
+      "Configure Universal Forwarders throughout the enterprise environment.",
+      "Begin Group Policy engineering.",
+      "Expand enterprise infrastructure documentation.",
+      "Integrate additional enterprise endpoints into Active Directory.",
+      "Continue evidence-driven infrastructure engineering."
+    ],
+    "projectSlug": "enterprise-home-lab",
+    "tags": [
+      "Engineering",
+      "active-directory",
+      "windows-server",
+      "infrastructure",
+      "identity"
+    ],
+    "source": {
+      "label": "ENG-013 — Enterprise Active Directory Forest Deployment",
+      "reviewed": true,
+      "redactions": [
+        "Author identity",
+        "Internal domain and IPv4 addressing",
+        "Unreviewed screenshots and private configuration values"
+      ]
+    }
+  },
+  {
+    "slug": "eng-014-enterprise-security-monitoring-platform-deployment",
+    "title": "ENG-014 — Enterprise Security Monitoring Platform Deployment",
+    "summary": "Successfully deployed the Project RedForge Enterprise Security Monitoring Platform by implementing Splunk Enterprise, centralized log collection, Universal Forwarders, indexed data sources, dashboards, and security monitoring capabilities.",
+    "category": "Engineering Log",
+    "status": "Implemented",
+    "publishingState": "published",
+    "date": "2026-07-30",
+    "updatedAt": "2026-07-30",
+    "objective": "Deploy a scalable enterprise security monitoring platform capable of collecting, indexing, searching, and visualizing security telemetry generated throughout the Project RedForge environment. Primary objectives included: Deploy Splunk Enterprise. Configure centralized log collection. Deploy Universal Forwarders. Configure enterprise indexes. Establish searchable data sources. Validate event ingestion. Build operational dashboards. Prepare the platform for future detection engineering. Establish the monitoring foundation for enterprise security operations.",
+    "engineeringSummary": [
+      "Completion of Active Directory deployment established the centralized identity infrastructure required for enterprise administration.",
+      "With enterprise identity services operational, engineering efforts transitioned toward establishing centralized visibility into enterprise activity.",
+      "Enterprise environments rely on continuous monitoring to detect operational issues, authentication events, system failures, policy violations, and potential security incidents. Splunk Enterprise was selected as the primary SIEM platform due to its scalability, search capabilities, flexible data ingestion, and widespread adoption throughout enterprise security operations.",
+      "This deployment represents Project RedForge's transition from enterprise infrastructure engineering into enterprise security operations.",
+      "Deployment focused on establishing centralized enterprise visibility capable of supporting future security operations rather than simply installing SIEM software.",
+      "Splunk Enterprise was successfully deployed as the primary security monitoring platform, providing centralized event ingestion, indexing, search capabilities, dashboards, and enterprise log visibility.",
+      "Universal Forwarders were configured to transmit telemetry from enterprise systems into centralized indexes where events could be searched, analyzed, and validated through Splunk Search Processing Language (SPL).",
+      "Collectively, these engineering activities established the first enterprise security platform within Project RedForge and created the operational monitoring foundation required for future detection engineering, incident response, threat hunting, and enterprise attack simulation. ---",
+      "Project RedForge successfully completed deployment of its Enterprise Security Monitoring Platform through implementation of Splunk Enterprise as the centralized Security Information and Event Management solution.",
+      "The completed deployment provides centralized event collection, enterprise search capabilities, operational dashboards, indexed telemetry, and comprehensive visibility into enterprise activity while establishing the monitoring foundation required for detection engineering, threat hunting, incident response, and enterprise attack simulation.",
+      "Completion of this effort marks the successful deployment of the first enterprise security platform within Project RedForge, transitioning the laboratory from enterprise infrastructure engineering into enterprise security operations."
+    ],
+    "technicalDecisions": [
+      {
+        "title": "Centralize Enterprise Log Collection",
+        "rationale": "Security telemetry from enterprise systems was centralized within Splunk Enterprise to eliminate fragmented logging and provide a single authoritative platform for enterprise monitoring. Centralized log collection improves visibility, accelerates investigations, and establishes consistent security telemetry across the environment."
+      },
+      {
+        "title": "Deploy Universal Forwarders on Enterprise Systems",
+        "rationale": "Splunk Universal Forwarders were selected to securely collect and forward endpoint telemetry to the centralized Splunk server. This lightweight architecture minimizes endpoint resource utilization while ensuring consistent log collection throughout the enterprise."
+      },
+      {
+        "title": "Organize Data Through Dedicated Indexes",
+        "rationale": "Enterprise data sources were separated into dedicated indexes to improve search efficiency, simplify administration, and prepare the environment for future detection engineering. Separating authentication, endpoint, Windows, and infrastructure logs supports scalable enterprise growth while reducing operational complexity."
+      },
+      {
+        "title": "Build Monitoring Before Detection Engineering",
+        "rationale": "The initial deployment focused exclusively on establishing a reliable monitoring platform before implementing detection content. Future engineering efforts—including correlation searches, security detections, attack simulations, automated alerting, and threat hunting—will leverage the monitoring infrastructure established during this deployment."
+      }
+    ],
+    "lessonsLearned": [
+      "Security monitoring depends upon reliable telemetry rather than detection logic alone.",
+      "Centralized logging significantly improves enterprise visibility.",
+      "Universal Forwarders provide efficient and scalable endpoint telemetry collection.",
+      "Proper index design simplifies long-term administration and investigation.",
+      "Validation should occur immediately after every major configuration change.",
+      "Dashboards improve operational awareness while accelerating investigations.",
+      "Detection engineering should only begin after monitoring infrastructure has been fully validated."
+    ],
+    "evidence": [
+      {
+        "id": "eng-014-validation",
+        "title": "ENG-014 validation record",
+        "description": "Reviewed validation statements from the verified engineering log. Sensitive operational values and unreviewed assets are not published.",
+        "kind": "validation",
+        "status": "verified",
+        "checklist": [
+          {
+            "label": "Splunk Enterprise operational.",
+            "state": "passed"
+          },
+          {
+            "label": "Enterprise indexes successfully configured.",
+            "state": "passed"
+          },
+          {
+            "label": "Universal Forwarders communicating correctly.",
+            "state": "passed"
+          },
+          {
+            "label": "Event ingestion functioning as expected.",
+            "state": "passed"
+          },
+          {
+            "label": "Search Processing Language (SPL) queries returning valid results.",
+            "state": "passed"
+          },
+          {
+            "label": "Dashboards displaying enterprise telemetry.",
+            "state": "passed"
+          },
+          {
+            "label": "Windows event logging successfully centralized.",
+            "state": "passed"
+          },
+          {
+            "label": "Authentication events successfully indexed.",
+            "state": "passed"
+          },
+          {
+            "label": "Repository documentation completed.",
+            "state": "passed"
+          },
+          {
+            "label": "Engineering evidence successfully captured.",
+            "state": "passed"
+          }
+        ]
+      },
+      {
+        "id": "eng-014-source-record",
+        "title": "Sanitized engineering record",
+        "description": "Documentation evidence identifying the reviewed source record. Sensitive configuration values and personal metadata are intentionally excluded.",
+        "kind": "configuration",
+        "status": "reviewed",
+        "language": "yaml",
+        "content": "record: ENG-014\ntitle: Enterprise Security Monitoring Platform Deployment\nstatus: verified\nproject: Project RedForge\nevidenceStatus: documented"
+      },
+      {
+        "id": "eng-014-screenshots",
+        "title": "Supporting engineering evidence",
+        "description": "Supporting source evidence is referenced by the engineering log but remains outside the public asset pipeline until security, privacy, and provenance review is complete.",
+        "kind": "screenshot",
+        "status": "pending"
+      }
+    ],
+    "nextSteps": [
+      "Integrate additional enterprise endpoints into centralized monitoring.",
+      "Develop enterprise detection rules and correlation searches.",
+      "Engineer custom dashboards for security operations.",
+      "Simulate adversary activity to validate monitoring coverage.",
+      "Expand enterprise logging sources.",
+      "Continue evidence-driven security engineering."
+    ],
+    "projectSlug": "enterprise-home-lab",
+    "tags": [
+      "Engineering",
+      "splunk",
+      "siem",
+      "security-monitoring"
+    ],
+    "source": {
+      "label": "ENG-014 — Enterprise Security Monitoring Platform Deployment",
+      "reviewed": true,
+      "redactions": [
+        "Author identity",
+        "Internal domain and IPv4 addressing",
+        "Unreviewed screenshots and private configuration values"
+      ]
+    }
+  },
+  {
+    "slug": "milestone-001-enterprise-blueprint",
+    "title": "Milestone-001 — Enterprise Blueprint Complete",
+    "summary": "Phase 1 of Project RedForge focused on designing a complete enterprise architecture before beginning implementation.",
+    "category": "Milestone Log",
+    "status": "Complete",
+    "publishingState": "published",
+    "date": "2026-07-22",
+    "updatedAt": "2026-07-22",
+    "objective": "Enterprise Overview Project Roadmap VM Inventory Naming Standards File Services Design Build Roadmap Network Topology IP Address Plan DNS Design DHCP Design Domain Design Organizational Unit Structure Security Groups User & Account Strategy Group Policy Design Security Baseline Backup Strategy Disaster Recovery Monitoring Strategy Documentation Standards",
+    "engineeringSummary": [
+      "Phase 1 of Project RedForge focused on designing a complete enterprise architecture before beginning implementation.",
+      "Rather than immediately deploying virtual machines and infrastructure, the project prioritized planning, documentation, and engineering standards. This approach established a clear blueprint that defines how the environment will be built, secured, operated, and maintained.",
+      "The completion of this milestone marks the transition from architecture and planning to infrastructure deployment."
+    ],
+    "technicalDecisions": [
+      {
+        "title": "Program-level milestone acceptance",
+        "rationale": "Documentation before implementation Infrastructure before security Security before scale Role-Based Access Control (RBAC) Standardized documentation format Modular Group Policy design Centralized file services Enterprise-first architecture Quality review before implementation"
+      }
+    ],
+    "lessonsLearned": [
+      "Investing time in planning before implementation significantly reduced uncertainty and clarified system dependencies.",
+      "Consistent documentation standards improved organization and created a scalable knowledge base capable of supporting future growth.",
+      "Structured design reviews identified documentation gaps before implementation began, reinforcing the importance of peer review and quality assurance."
+    ],
+    "evidence": [
+      {
+        "id": "milestone-001-acceptance",
+        "title": "MILESTONE-001 completion criteria",
+        "description": "Reviewed program-level acceptance statements. Sensitive infrastructure values and unreviewed screenshots are excluded.",
+        "kind": "validation",
+        "status": "verified",
+        "checklist": [
+          {
+            "label": "Enterprise architecture documented",
+            "state": "passed"
+          },
+          {
+            "label": "Network architecture documented",
+            "state": "passed"
+          },
+          {
+            "label": "Active Directory design completed",
+            "state": "passed"
+          },
+          {
+            "label": "Operational procedures established",
+            "state": "passed"
+          },
+          {
+            "label": "Security baseline defined",
+            "state": "passed"
+          },
+          {
+            "label": "Documentation standards established",
+            "state": "passed"
+          },
+          {
+            "label": "Knowledge base organized and reviewed",
+            "state": "passed"
+          },
+          {
+            "label": "Phase approved for implementation",
+            "state": "passed"
+          }
+        ]
+      }
+    ],
+    "nextSteps": [
+      "Install Proxmox VE",
+      "Configure storage",
+      "Configure virtual networking",
+      "Create enterprise virtual machines",
+      "Deploy RF-DC01",
+      "Install Active Directory Domain Services",
+      "Configure DNS",
+      "Configure DHCP",
+      "Validate enterprise authentication"
+    ],
+    "projectSlug": "enterprise-home-lab",
+    "tags": [
+      "Milestone"
+    ],
+    "source": {
+      "label": "MILESTONE-001 — Enterprise Blueprint Complete",
+      "reviewed": true,
+      "redactions": [
+        "Author identity",
+        "Internal domain and IPv4 addressing",
+        "Unreviewed screenshots and private configuration values"
+      ]
+    }
+  },
+  {
+    "slug": "milestone-002-enterprise-identity-infrastructure",
+    "title": "Milestone-002 — Enterprise Identity Infrastructure",
+    "summary": "RedForge has completed its first major infrastructure milestone: the deployment of its core Microsoft identity environment.",
+    "category": "Milestone Log",
+    "status": "Complete",
+    "publishingState": "published",
+    "date": "2026-07-22",
+    "updatedAt": "2026-07-22",
+    "objective": "The first RedForge Windows Server. The first RedForge domain controller. A functional Active Directory forest. Centralized authentication. Internal DNS services. A scalable Organizational Unit structure. Separate privileged and standard user accounts. The initial Role-Based Access Control structure. A foundation for future domain-joined systems.",
+    "engineeringSummary": [
+      "RedForge has completed its first major infrastructure milestone: the deployment of its core Microsoft identity environment.",
+      "The the internal RedForge test domain Active Directory forest is operational, and RF-DC01 is functioning as the first domain controller and internal DNS server.",
+      "This milestone establishes the identity and authentication foundation required for future RedForge servers, workstations, policies, security controls, and enterprise services."
+    ],
+    "technicalDecisions": [
+      {
+        "title": "Program-level milestone acceptance",
+        "rationale": "Centralized Administration Identity, authentication, and access control will be centrally managed through Active Directory. Separation of Duties Administrative activity is separated from normal user activity through dedicated accounts. Role-Based Access Control Users will be assigned to groups representing organizational roles. Resource permissions will be granted to groups rather than directly to individual users. Scalability The Organizational Unit and security group structures were designed to support future servers, workstations, departments, policies, and administrative roles. Documentation First The environment was designed and documented before being expanded with additional servers and security services."
+      }
+    ],
+    "lessonsLearned": [
+      "Centralized Administration",
+      "Identity, authentication, and access control will be centrally managed through Active Directory.",
+      "Separation of Duties",
+      "Administrative activity is separated from normal user activity through dedicated accounts.",
+      "Role-Based Access Control",
+      "Users will be assigned to groups representing organizational roles. Resource permissions will be granted to groups rather than directly to individual users.",
+      "Scalability",
+      "The Organizational Unit and security group structures were designed to support future servers, workstations, departments, policies, and administrative roles.",
+      "Documentation First",
+      "The environment was designed and documented before being expanded with additional servers and security services."
+    ],
+    "evidence": [
+      {
+        "id": "milestone-002-acceptance",
+        "title": "MILESTONE-002 completion criteria",
+        "description": "Reviewed program-level acceptance statements. Sensitive infrastructure values and unreviewed screenshots are excluded.",
+        "kind": "validation",
+        "status": "verified",
+        "checklist": [
+          {
+            "label": "RF-DC01 must be operational.",
+            "state": "passed"
+          },
+          {
+            "label": "The server must use a static IP address.",
+            "state": "passed"
+          },
+          {
+            "label": "Active Directory Domain Services must be installed.",
+            "state": "passed"
+          },
+          {
+            "label": "DNS must be installed and operational.",
+            "state": "passed"
+          },
+          {
+            "label": "The the internal RedForge test domain forest must exist.",
+            "state": "passed"
+          },
+          {
+            "label": "Active Directory Users and Computers must open successfully.",
+            "state": "passed"
+          },
+          {
+            "label": "The required Organizational Units must exist.",
+            "state": "passed"
+          },
+          {
+            "label": "Administrative and standard user accounts must be separate.",
+            "state": "passed"
+          },
+          {
+            "label": "The initial RBAC groups must exist.",
+            "state": "passed"
+          },
+          {
+            "label": "Administrative group membership must be verified.",
+            "state": "passed"
+          },
+          {
+            "label": "The implementation must be documented through an engineering log.",
+            "state": "passed"
+          },
+          {
+            "label": "The milestone must include a Real-World Scenario.",
+            "state": "passed"
+          }
+        ]
+      }
+    ],
+    "nextSteps": [
+      "RF-SRV01 deployment",
+      "Domain membership",
+      "Domain authentication validation",
+      "SMB file shares",
+      "NTFS permissions",
+      "Group-based resource access",
+      "File services documentation"
+    ],
+    "projectSlug": "enterprise-home-lab",
+    "tags": [
+      "Milestone"
+    ],
+    "source": {
+      "label": "MILESTONE-002 — Enterprise Identity Infrastructure",
+      "reviewed": true,
+      "redactions": [
+        "Author identity",
+        "Internal domain and IPv4 addressing",
+        "Unreviewed screenshots and private configuration values"
+      ]
+    }
+  },
+  {
+    "slug": "milestone-003-engineering-platform-foundation-complete",
+    "title": "Milestone-003 — Engineering Platform Foundation Complete",
+    "summary": "Project RedForge completed the foundational engineering platform, establishing a standardized documentation environment, evidence-first engineering methodology, and a stable foundation for future enterprise infrastructure development.",
+    "category": "Milestone Log",
+    "status": "Complete",
+    "publishingState": "published",
+    "date": "2026-07-26",
+    "updatedAt": "2026-07-26",
+    "objective": "Project RedForge completed the foundational engineering platform, establishing a standardized documentation environment, evidence-first engineering methodology, and a stable foundation for future enterprise infrastructure development.",
+    "engineeringSummary": [
+      "Over multiple engineering iterations, the RedForge platform evolved from a traditional cybersecurity portfolio into a comprehensive engineering platform focused on implementation, validation, documentation, and long-term maintainability.",
+      "During this milestone, the platform's information architecture was standardized, documentation workflows were formalized, engineering records and architecture decisions were integrated, and an evidence-first documentation model was adopted.",
+      "The resulting platform provides a scalable framework capable of documenting enterprise infrastructure implementations while maintaining consistency, traceability, and professional engineering standards.",
+      "Completion of this milestone establishes the permanent engineering foundation for Project RedForge.",
+      "Future development efforts will primarily focus on enterprise infrastructure implementation, security operations, detection engineering, automation, and operational validation rather than platform refinement.",
+      "The engineering platform is now considered architecturally stable and capable of supporting continued technical growth through documented engineering work.",
+      "Project RedForge has successfully transitioned from platform development to engineering execution.",
+      "Future milestones will focus on measurable engineering capabilities such as Active Directory deployment, enterprise identity services, centralized telemetry, security monitoring, automation, and detection engineering."
+    ],
+    "technicalDecisions": [
+      {
+        "title": "Program-level milestone acceptance",
+        "rationale": "This milestone records the reviewed completion of Engineering Platform Foundation Complete and its program-level outcomes."
+      }
+    ],
+    "lessonsLearned": [
+      "Completion of this milestone establishes the permanent engineering foundation for Project RedForge.",
+      "Future development efforts will primarily focus on enterprise infrastructure implementation, security operations, detection engineering, automation, and operational validation rather than platform refinement.",
+      "The engineering platform is now considered architecturally stable and capable of supporting continued technical growth through documented engineering work.",
+      "Project RedForge has successfully transitioned from platform development to engineering execution.",
+      "Future milestones will focus on measurable engineering capabilities such as Active Directory deployment, enterprise identity services, centralized telemetry, security monitoring, automation, and detection engineering."
+    ],
+    "evidence": [
+      {
+        "id": "milestone-003-acceptance",
+        "title": "MILESTONE-003 completion criteria",
+        "description": "Reviewed program-level acceptance statements. Sensitive infrastructure values and unreviewed screenshots are excluded.",
+        "kind": "validation",
+        "status": "verified",
+        "checklist": [
+          {
+            "label": "Platform architecture finalized.",
+            "state": "passed"
+          },
+          {
+            "label": "Documentation standards established.",
+            "state": "passed"
+          },
+          {
+            "label": "Engineering workflows standardized.",
+            "state": "passed"
+          },
+          {
+            "label": "Evidence-first documentation implemented.",
+            "state": "passed"
+          },
+          {
+            "label": "Navigation and information hierarchy validated.",
+            "state": "passed"
+          },
+          {
+            "label": "Platform approved for continued engineering development.",
+            "state": "passed"
+          }
+        ]
+      }
+    ],
+    "nextSteps": [
+      "Continue the next approved phase through evidence-backed Engineering Logs and Architecture Decision Records."
+    ],
+    "projectSlug": "enterprise-home-lab",
+    "tags": [
+      "Milestone",
+      "milestone",
+      "platform",
+      "engineering",
+      "documentation"
+    ],
+    "source": {
+      "label": "MILESTONE-003 — Engineering Platform Foundation Complete",
+      "reviewed": true,
+      "redactions": [
+        "Author identity",
+        "Internal domain and IPv4 addressing",
+        "Unreviewed screenshots and private configuration values"
+      ]
+    }
+  },
+  {
+    "slug": "milestone-004-enterprise-identity-security-foundation-complete",
+    "title": "Milestone-004 — Enterprise Identity & Security Foundation Complete",
+    "summary": "Project RedForge successfully completed deployment of its foundational enterprise infrastructure through implementation of Active Directory, integrated DNS, centralized identity management, Splunk Enterprise, and enterprise security monitoring.",
+    "category": "Milestone Log",
+    "status": "Complete",
+    "publishingState": "published",
+    "date": "2026-07-30",
+    "updatedAt": "2026-07-30",
+    "objective": "Project RedForge successfully completed deployment of its foundational enterprise infrastructure through implementation of Active Directory, integrated DNS, centralized identity management, Splunk Enterprise, and enterprise security monitoring.",
+    "engineeringSummary": [
+      "Completion of this milestone represents the successful establishment of the enterprise foundation upon which all future Project RedForge engineering efforts will build.",
+      "With centralized identity services and enterprise monitoring fully operational, future work can focus on enterprise hardening, endpoint management, detection engineering, offensive security validation, automation, and incident response rather than foundational infrastructure deployment.",
+      "This milestone reflects the transition from building enterprise infrastructure to operating and securing an enterprise environment."
+    ],
+    "technicalDecisions": [
+      {
+        "title": "Program-level milestone acceptance",
+        "rationale": "This milestone records the reviewed completion of Enterprise Identity & Security Foundation Complete and its program-level outcomes."
+      }
+    ],
+    "lessonsLearned": [
+      "Completion of this milestone represents the successful establishment of the enterprise foundation upon which all future Project RedForge engineering efforts will build.",
+      "With centralized identity services and enterprise monitoring fully operational, future work can focus on enterprise hardening, endpoint management, detection engineering, offensive security validation, automation, and incident response rather than foundational infrastructure deployment.",
+      "This milestone reflects the transition from building enterprise infrastructure to operating and securing an enterprise environment."
+    ],
+    "evidence": [
+      {
+        "id": "milestone-004-acceptance",
+        "title": "MILESTONE-004 completion criteria",
+        "description": "Reviewed program-level acceptance statements. Sensitive infrastructure values and unreviewed screenshots are excluded.",
+        "kind": "validation",
+        "status": "verified",
+        "checklist": [
+          {
+            "label": "Deployed the Project RedForge Active Directory forest.",
+            "state": "passed"
+          },
+          {
+            "label": "Implemented integrated enterprise DNS.",
+            "state": "passed"
+          },
+          {
+            "label": "Established centralized authentication and identity management.",
+            "state": "passed"
+          },
+          {
+            "label": "Designed scalable Organizational Unit architecture.",
+            "state": "passed"
+          },
+          {
+            "label": "Deployed Splunk Enterprise.",
+            "state": "passed"
+          },
+          {
+            "label": "Configured centralized log collection.",
+            "state": "passed"
+          },
+          {
+            "label": "Deployed Universal Forwarders.",
+            "state": "passed"
+          },
+          {
+            "label": "Validated enterprise event ingestion.",
+            "state": "passed"
+          },
+          {
+            "label": "Created operational dashboards.",
+            "state": "passed"
+          },
+          {
+            "label": "Completed engineering documentation.",
+            "state": "passed"
+          },
+          {
+            "label": "Expanded GitHub technical documentation.",
+            "state": "passed"
+          },
+          {
+            "label": "Captured implementation evidence and validation artifacts.",
+            "state": "passed"
+          }
+        ]
+      }
+    ],
+    "nextSteps": [
+      "The next phase of Project RedForge will focus on expanding enterprise capabilities through continued documentation, endpoint integration, security hardening, Group Policy engineering, detection development, and offensive security validation.",
+      "Future milestones will document the evolution of Project RedForge from a foundational enterprise environment into a mature enterprise security laboratory capable of demonstrating defensive and offensive cybersecurity operations."
+    ],
+    "projectSlug": "enterprise-home-lab",
+    "tags": [
+      "Milestone",
+      "milestone",
+      "active-directory",
+      "splunk",
+      "enterprise"
+    ],
+    "source": {
+      "label": "MILESTONE-004 — Enterprise Identity & Security Foundation Complete",
       "reviewed": true,
       "redactions": [
         "Author identity",

@@ -4,7 +4,7 @@ Project RedForge treats documentation as engineering evidence. Obsidian is an au
 
 ## Publishing path
 
-1. **Obsidian draft** — write the engineering log, milestone log, ADR, guide, SOP, troubleshooting note, lesson, or validation record.
+1. **Obsidian draft** — write the Engineering Log, Architecture Decision Record, or Milestone.
 2. **Technical review** — confirm the procedure, decision, status language, dependencies, and links against the work actually performed.
 3. **Security and privacy review** — remove credentials, tokens, private addresses, administrative URLs, device identifiers, personal data, sensitive military information, and unnecessary operational detail.
 4. **Evidence review** — ensure screenshots and measurements have provenance. Mark missing proof as `Evidence Pending`; never replace it with representative content.
@@ -31,4 +31,4 @@ Allowed categories, lifecycle states, publishing states, and evidence states are
 
 ## Current synchronization boundary
 
-The website never watches or reads the vault at runtime. Local synchronization currently imports the allowlisted ADR collection and verified `ENG-NNN` records. Generated TypeScript is committed so Vercel builds exclusively from repository content. Milestones remain backward-compatible manual records until their source format and adapter receive a separate review. All other notes remain private until their directories, filename patterns, adapters, and review requirements are explicitly approved.
+The website never watches or reads the vault at runtime. Local synchronization imports the allowlisted ADR collection, verified `ENG-NNN` records, and reviewed `Milestone-NNN` records. Generated TypeScript is committed so Vercel builds exclusively from repository content. All other notes remain private until their directories, filename patterns, adapters, and review requirements are explicitly approved.

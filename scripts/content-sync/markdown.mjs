@@ -34,13 +34,31 @@ function parseSections(markdown) {
     "evidence",
     "result",
     "next steps",
+    "executive summary",
+    "summary",
+    "overview",
+    "objectives",
+    "objectives achieved",
+    "active directory deployment",
+    "splunk enterprise deployment",
+    "major achievements",
+    "major accomplishments",
+    "key engineering decisions",
+    "design principles",
+    "deliverables",
+    "significance",
+    "success criteria",
+    "standard",
+    "outcome",
+    "next phase",
+    "next milestone",
   ]);
 
   for (const line of markdown.replace(/\r\n?/g, "\n").split("\n")) {
     const heading = line.match(/^(#{1,6})\s+(.+?)\s*$/);
     if (heading) {
       const level = heading[1].length;
-      const name = cleanInlineMarkdown(heading[2]).toLowerCase();
+      const name = cleanInlineMarkdown(heading[2]).toLowerCase().replace(/^\d+\.\s*/, "");
       if (recognizedSections.has(name)) {
         activeSection = name;
         activeLevel = level;

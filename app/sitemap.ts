@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 import { applicationMetadata } from "@/constants";
-import { documentationEntries } from "@/content/documentation";
+import { documentationRouteEntries } from "@/content/documentation";
 import { projects } from "@/content/projects";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -22,7 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: project.status === "active" ? 0.8 : 0.5,
     })),
-    ...documentationEntries.map((entry) => ({
+    ...documentationRouteEntries.map((entry) => ({
       url: `${applicationMetadata.siteUrl}/documentation/${entry.slug}`,
       lastModified: entry.updatedAt,
       changeFrequency: "monthly" as const,

@@ -5,6 +5,7 @@ const unsafeContentPatterns = [
   { label: "IPv4 address", pattern: /\b(?:\d{1,3}\.){3}\d{1,3}\b/ },
   { label: "credential assignment", pattern: /\b(?:password|passwd|token|api[_-]?key|secret)\s*[:=]\s*\S+/i },
   { label: "private administrative URL", pattern: /https?:\/\/(?:localhost|127\.0\.0\.1|10\.|172\.(?:1[6-9]|2\d|3[01])\.|192\.168\.)/i },
+  { label: "internal RedForge test domain", pattern: /\b(?:[a-z0-9-]+\.)+redforge\.test\b/i },
 ] as const;
 
 export function assertValidDocumentationEntries(entries: readonly DocumentationEntry[]) {

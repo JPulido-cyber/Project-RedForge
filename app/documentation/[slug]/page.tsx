@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 
 import { DocumentationReport } from "@/components/documentation";
 import { PlatformShell } from "@/components/layout";
-import { documentationEntries, getDocumentationEntry } from "@/content/documentation";
+import { documentationRouteEntries, getDocumentationEntry } from "@/content/documentation";
 
 export const dynamicParams = false;
 
@@ -12,7 +12,7 @@ interface DocumentationPageProps {
 }
 
 export function generateStaticParams() {
-  return documentationEntries.map(({ slug }) => ({ slug }));
+  return documentationRouteEntries.map(({ slug }) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: DocumentationPageProps): Promise<Metadata> {

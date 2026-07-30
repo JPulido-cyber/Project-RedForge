@@ -5,12 +5,12 @@ test("documentation index publishes reviewed engineering records by category", a
   await expect(page.getByRole("heading", { name: "Knowledge. Documented. Shared." })).toBeVisible();
   await expect(page.getByText("Engineering Log", { exact: true }).first()).toBeVisible();
   await expect(page.getByText("Milestone Log", { exact: true }).first()).toBeVisible();
-  await expect(page.getByRole("heading", { name: "RF-DC01 Server Establishment Log" })).toBeVisible();
-  await expect(page.getByRole("heading", { name: "Milestone 001 — Enterprise Blueprint Complete" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "ENG-014 — Enterprise Security Monitoring Platform Deployment" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Milestone-004 — Enterprise Identity & Security Foundation Complete" })).toBeVisible();
   const taxonomy = page.locator(".documentation-rail");
-  await expect(taxonomy.getByText(/^Engineering Logs\s*13$/)).toBeVisible();
+  await expect(taxonomy.getByText(/^Engineering Logs\s*14$/)).toBeVisible();
   await expect(taxonomy.getByText(/^Architecture Decision Records\s*6$/)).toBeVisible();
-  await expect(taxonomy.getByText(/^Milestones\s*1$/)).toBeVisible();
+  await expect(taxonomy.getByText(/^Milestones\s*4$/)).toBeVisible();
   for (const deferred of ["Build Guide", "Standard Operating Procedure", "Troubleshooting Note", "Lesson Learned", "Validation Record"]) {
     await expect(taxonomy.getByText(deferred, { exact: true })).toHaveCount(0);
   }
@@ -24,9 +24,9 @@ test("record-type controls expose purpose and linkable filtered views", async ({
   await expect(filters.getByText(/which alternatives were considered/i)).toBeVisible();
   await expect(filters.getByText(/major achievements spanning multiple Engineering Logs/i)).toBeVisible();
 
-  await filters.getByRole("link", { name: /Engineering Logs 13/i }).click();
+  await filters.getByRole("link", { name: /Engineering Logs 14/i }).click();
   await expect(page).toHaveURL(/\/documentation\?type=engineering-logs$/);
-  await expect(page.locator(".documentation-card")).toHaveCount(13);
+  await expect(page.locator(".documentation-card")).toHaveCount(14);
   await expect(page.locator(".documentation-card .technical-eyebrow").first()).toHaveText("Engineering Log");
 
   await page.goto("/documentation?type=architecture-decisions");
@@ -34,19 +34,24 @@ test("record-type controls expose purpose and linkable filtered views", async ({
   await expect(page.locator(".documentation-card")).toHaveCount(6);
   await expect(page.locator(".documentation-card .technical-eyebrow").first()).toHaveText("Architecture Decision Record");
 
-  await filters.getByRole("link", { name: /Milestones 1/i }).click();
+  await filters.getByRole("link", { name: /Milestones 4/i }).click();
   await expect(page).toHaveURL(/\/documentation\?type=milestones$/);
-  await expect(page.locator(".documentation-card")).toHaveCount(1);
-  await expect(page.locator(".documentation-card .technical-eyebrow")).toHaveText("Milestone Log");
+  await expect(page.locator(".documentation-card")).toHaveCount(4);
+  await expect(page.locator(".documentation-card .technical-eyebrow")).toHaveText([
+    "Milestone Log",
+    "Milestone Log",
+    "Milestone Log",
+    "Milestone Log",
+  ]);
 
-  await filters.getByRole("link", { name: /All records 20/i }).click();
+  await filters.getByRole("link", { name: /All records 24/i }).click();
   await expect(page).toHaveURL(/\/documentation$/);
-  await expect(page.locator(".documentation-card")).toHaveCount(20);
+  await expect(page.locator(".documentation-card")).toHaveCount(24);
 });
 
 test("record-type filters retain keyboard focus visibility", async ({ page }) => {
   await page.goto("/documentation");
-  const filter = page.getByRole("link", { name: /Engineering Logs 13/i });
+  const filter = page.getByRole("link", { name: /Engineering Logs 14/i });
   await filter.focus();
   await expect(filter).toBeFocused();
   const outline = await filter.evaluate((element) => getComputedStyle(element).outlineStyle);
@@ -115,12 +120,26 @@ test("verified Engineering Logs scale through stable synchronized routes", async
   await expect(page.getByRole("heading", { level: 1, name: "RF-DC01 Server Establishment Log" })).toBeVisible();
 });
 
+test("current identity and monitoring records publish without sensitive configuration", async ({ page }) => {
+  for (const [slug, title] of [
+    ["eng-013-enterprise-active-directory-forest-deployment", "ENG-013 — Enterprise Active Directory Forest Deployment"],
+    ["eng-014-enterprise-security-monitoring-platform-deployment", "ENG-014 — Enterprise Security Monitoring Platform Deployment"],
+  ] as const) {
+    await page.goto(`/documentation/${slug}`);
+    await expect(page.getByRole("heading", { level: 1, name: title })).toBeVisible();
+    const body = await page.locator("body").innerText();
+    expect(body).not.toMatch(/\b(?:\d{1,3}\.){3}\d{1,3}\b/);
+    expect(body).not.toContain("corp.redforge.test");
+    expect(body).not.toContain("Jose Pulido");
+  }
+});
+
 test("homepage activity feed links to the latest published report", async ({ page }) => {
   await page.goto("/");
   const feed = page.getByRole("region", { name: "Evidence-backed updates" });
   await expect(feed.getByRole("heading", { name: "Evidence-backed updates" })).toBeVisible();
-  await feed.getByRole("link", { name: /ENG-012.*Engineering Platform Architecture Refinement/i }).click();
-  await expect(page).toHaveURL(/\/documentation\/eng-012-engineering-platform-architecture-refinement$/);
+  await feed.getByRole("link", { name: /ENG-014.*Enterprise Security Monitoring Platform Deployment/i }).click();
+  await expect(page).toHaveURL(/\/documentation\/eng-014-enterprise-security-monitoring-platform-deployment$/);
 });
 
 test("lab reflects verified identity progress without exposing addressing", async ({ page }) => {

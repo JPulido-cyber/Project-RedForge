@@ -152,13 +152,18 @@ export const manualDocumentationEntries = [
   },
 ] as const satisfies readonly DocumentationEntry[];
 
-export const documentationEntries = [
-  ...manualDocumentationEntries,
-  ...generatedDocumentationEntries,
+export const documentationEntries = generatedDocumentationEntries;
+export const legacyDocumentationEntries = manualDocumentationEntries.filter(
+  (entry) => entry.slug === "server-establishment-log",
+);
+export const documentationRouteEntries = [
+  ...documentationEntries,
+  ...legacyDocumentationEntries,
 ] as const satisfies readonly DocumentationEntry[];
 
 export function getDocumentationEntry(slug: string) {
-  return documentationEntries.find((entry) => entry.slug === slug);
+  return documentationRouteEntries.find((entry) => entry.slug === slug);
 }
 
 assertValidDocumentationEntries(documentationEntries);
+assertValidDocumentationEntries(documentationRouteEntries);
