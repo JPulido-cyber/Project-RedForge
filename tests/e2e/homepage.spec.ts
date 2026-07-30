@@ -10,13 +10,28 @@ test("homepage presents RedForge and its latest engineering activity", async ({ 
       name: /building & defending an enterprise/i,
     }),
   ).toBeVisible();
-  await expect(page.getByText(/living cybersecurity engineering platform/i)).toBeVisible();
+  await expect(page.getByText(/long-term specialization in offensive security/i)).toBeVisible();
+  await expect(page.getByText("ENTERPRISE SECURITY ENGINEERING", { exact: true })).toBeVisible();
+  await expect(
+    page.getByRole("heading", {
+      name: "Discipline. Precision. Progress.",
+      exact: true,
+    }),
+  ).toBeVisible();
+  await expect(page.getByText(/engineer the enterprise/i)).toBeVisible();
+  await expect(page.getByText(/master the adversary/i)).toBeVisible();
+  await expect(page.locator(".network-status-panel")).toContainText(
+    "CENTRAL TELEMETRY",
+  );
   await expect(page.getByRole("region", { name: "Evidence-backed updates" })).toBeVisible();
   await expect(page.locator(".engineering-activity-card")).toHaveCount(4);
   await expect(page.getByText("14", { exact: true })).toBeVisible();
   await expect(page.getByText("ENGINEERING LOGS", { exact: true })).toBeVisible();
   await expect(page.getByText("4", { exact: true })).toBeVisible();
   await expect(page.getByText("MILESTONES", { exact: true })).toBeVisible();
+  await expect(
+    page.getByRole("region", { name: "From current state to technical depth" }),
+  ).toBeVisible();
   await expect(page.getByRole("link", { name: /scroll to explore/i })).toHaveAttribute("href", "#engineering-activity");
 });
 
@@ -43,6 +58,10 @@ test("focused homepage remains overflow-free at desktop, tablet, and mobile widt
     }));
     expect(widths.scroll).toBeLessThanOrEqual(widths.client);
     await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Discipline. Precision. Progress." })).toBeVisible();
     await expect(page.getByRole("region", { name: "Evidence-backed updates" })).toBeVisible();
+    await expect(
+      page.getByRole("region", { name: "From current state to technical depth" }),
+    ).toBeVisible();
   }
 });
