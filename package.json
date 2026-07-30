@@ -11,9 +11,10 @@
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",
     "content:sync": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/content-sync.mjs",
+    "evidence:validate": "node scripts/validate-evidence.mjs",
     "lint": "eslint . --max-warnings=0",
     "typecheck": "tsc --noEmit",
-    "check": "npm run lint && npm run typecheck",
+    "check": "npm run evidence:validate && npm run lint && npm run typecheck",
     "test": "npm run test:e2e"
   },
   "dependencies": {

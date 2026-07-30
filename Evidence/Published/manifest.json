@@ -1,0 +1,127 @@
+{
+  "version": 1,
+  "reviewedAt": "2026-07-30",
+  "policy": "Every website image must match its canonical Reviewed copy byte-for-byte.",
+  "assets": [
+    {
+      "id": "ad-forest-and-domain",
+      "status": "APPROVED",
+      "reviewed": "Evidence/Reviewed/active-directory/forest-and-domain.png",
+      "website": "public/evidence/active-directory/forest-and-domain.png",
+      "source": "home-lab/active-directory/screenshots/Screenshot 2026-07-30 093506.png",
+      "sha256": "5A685A17FD0830FF73C532F2CFF4D43F9E592C4414B331B381263C30B867D930"
+    },
+    {
+      "id": "ad-domain-functional-level",
+      "status": "APPROVED",
+      "reviewed": "Evidence/Reviewed/active-directory/domain-functional-level.png",
+      "website": "public/evidence/active-directory/domain-functional-level.png",
+      "source": "home-lab/active-directory/screenshots/Screenshot 2026-07-30 093628.png",
+      "sha256": "7F66E32CC1ED6751E0C9DC52FAF99F325910FE090ACB969384E30E4163F19901"
+    },
+    {
+      "id": "ad-splunk-computer-account",
+      "status": "APPROVED",
+      "reviewed": "Evidence/Reviewed/active-directory/splunk-computer-account.png",
+      "website": "public/evidence/active-directory/splunk-computer-account.png",
+      "source": "home-lab/active-directory/screenshots/Screenshot 2026-07-30 093806.png",
+      "sha256": "4DBDA6ACD13BD1D88257200863A5F3056CA23568AEF0BFEC1211855DF6D5F44C"
+    },
+    {
+      "id": "ad-organizational-unit-structure",
+      "status": "APPROVED",
+      "reviewed": "Evidence/Reviewed/active-directory/organizational-unit-structure.png",
+      "website": "public/evidence/active-directory/organizational-unit-structure.png",
+      "source": "home-lab/active-directory/screenshots/Screenshot 2026-07-30 093900.png",
+      "sha256": "3F08798ADE0B720BC0100A4F64CBDEEA9F62DB682CE5077FD7E1E472BB48DE84"
+    },
+    {
+      "id": "ad-administrative-ou-structure",
+      "status": "APPROVED",
+      "reviewed": "Evidence/Reviewed/active-directory/administrative-ou-structure.png",
+      "website": "public/evidence/active-directory/administrative-ou-structure.png",
+      "source": "home-lab/active-directory/screenshots/Screenshot 2026-07-30 093949.png",
+      "sha256": "2B7FB4CC051CADC57C2E33F18B4CAE6DF0AE128C01B70ED451DA18035E32198B"
+    },
+    {
+      "id": "ad-workstation-computer-account",
+      "status": "APPROVED",
+      "reviewed": "Evidence/Reviewed/active-directory/workstation-computer-account.png",
+      "website": "public/evidence/active-directory/workstation-computer-account.png",
+      "source": "home-lab/active-directory/screenshots/Screenshot 2026-07-30 094027.png",
+      "sha256": "A5166BCFA71E11FBC5E4D14DD6868B206DEC0EC0155D6E1E4F78BE019F9A8EC4"
+    },
+    {
+      "id": "ad-group-policy-objects",
+      "status": "APPROVED",
+      "reviewed": "Evidence/Reviewed/active-directory/group-policy-objects.png",
+      "website": "public/evidence/active-directory/group-policy-objects.png",
+      "source": "home-lab/active-directory/screenshots/Screenshot 2026-07-30 094451.png",
+      "sha256": "5AE743CEDD1A8F1677877ABF72F71E5024554E4E12FC5851E9F80841109BB000"
+    },
+    {
+      "id": "ad-workstation-group-policy",
+      "status": "APPROVED",
+      "reviewed": "Evidence/Reviewed/active-directory/workstation-group-policy.png",
+      "website": "public/evidence/active-directory/workstation-group-policy.png",
+      "source": "home-lab/active-directory/screenshots/Screenshot 2026-07-30 094705.png",
+      "sha256": "E45B7AD8AAFA562AECFF1E91DA90EDF1D4EA0A5432A46236F245C0549C4F2D91"
+    },
+    {
+      "id": "ad-integrated-dns-records",
+      "status": "APPROVED",
+      "reviewed": "Evidence/Reviewed/active-directory/integrated-dns-records.png",
+      "website": "public/evidence/active-directory/integrated-dns-records.png",
+      "source": "home-lab/active-directory/screenshots/Screenshot 2026-07-30 094935.png",
+      "sha256": "46935E1F535F9C619E4933F1E0E92FDB1E733E0B9F53B76A36AB685503328BA2"
+    },
+    {
+      "id": "splunk-enterprise-home",
+      "status": "APPROVED",
+      "reviewed": "Evidence/Reviewed/security-monitoring/splunk-enterprise-home.png",
+      "website": "public/evidence/security-monitoring/splunk-enterprise-home.png",
+      "source": "home-lab/splunk/screenshots/homepage.png",
+      "sha256": "5292A2D692EC11E3FEFAE540480817ABD5DE2806B66B7D2DC30455221574D581"
+    },
+    {
+      "id": "splunk-enterprise-indexes",
+      "status": "APPROVED",
+      "reviewed": "Evidence/Reviewed/security-monitoring/enterprise-indexes.png",
+      "website": "public/evidence/security-monitoring/enterprise-indexes.png",
+      "source": "home-lab/splunk/screenshots/Splunk Indexes.png",
+      "sha256": "BF06D2C767F9CAE5A721AC1E149E5B97368E12ACDFBC6963FC620E926F39250F"
+    },
+    {
+      "id": "splunk-data-inputs",
+      "status": "APPROVED",
+      "reviewed": "Evidence/Reviewed/security-monitoring/data-inputs.png",
+      "website": "public/evidence/security-monitoring/data-inputs.png",
+      "source": "home-lab/splunk/screenshots/splunk-data-inputs.png",
+      "sha256": "7DFAA882B1B6D04B27383618608FCA9EF7BA74895EDCED629541E470748C67B6"
+    },
+    {
+      "id": "splunk-forwarding-receiver",
+      "status": "APPROVED",
+      "reviewed": "Evidence/Reviewed/security-monitoring/forwarding-receiver.png",
+      "website": "public/evidence/security-monitoring/forwarding-receiver.png",
+      "source": "home-lab/splunk/screenshots/splunk-forwarding-receiving.png",
+      "sha256": "D4EC24F52F33894A0B0BEB373AC4D16D459343670A052077C41DD8DF054A5457"
+    },
+    {
+      "id": "splunk-indexed-event-search",
+      "status": "APPROVED",
+      "reviewed": "Evidence/Reviewed/security-monitoring/indexed-event-search.png",
+      "website": "public/evidence/security-monitoring/indexed-event-search.png",
+      "source": "home-lab/splunk/screenshots/splunk-searches.png",
+      "sha256": "3DA514A93907D25C1B4DEB1AC35F2A4F1ED13F0FA3D8AB1129BED12DB8C1D198"
+    },
+    {
+      "id": "splunk-sysmon-process-search",
+      "status": "APPROVED",
+      "reviewed": "Evidence/Reviewed/security-monitoring/sysmon-process-search.png",
+      "website": "public/evidence/security-monitoring/sysmon-process-search.png",
+      "source": "home-lab/splunk/screenshots/splunk-sysmon-process-search.png",
+      "sha256": "2BDA10BFA5AA44D02B233D42AAB780CE9EE254501F81F48F5643A25CAF5D8BA2"
+    }
+  ]
+}

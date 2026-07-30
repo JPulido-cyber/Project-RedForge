@@ -27,6 +27,10 @@ storybook-static/
 .DS_Store
 *.pem
 
+# Evidence intake is private until an asset has completed review.
+/Evidence/Raw/*
+!/Evidence/Raw/README.md
+
 # debug
 npm-debug.log*
 yarn-debug.log*
