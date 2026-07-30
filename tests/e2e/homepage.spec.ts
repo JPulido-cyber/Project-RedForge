@@ -11,7 +11,7 @@ test("homepage presents RedForge and its latest engineering activity", async ({ 
     }),
   ).toBeVisible();
   await expect(
-    page.getByText(/knowledge required for offensive security/i),
+    page.getByText(/foundations behind offensive security/i),
   ).toBeVisible();
   await expect(page.getByText("ENTERPRISE SECURITY ENGINEERING", { exact: true })).toBeVisible();
   await expect(
@@ -27,6 +27,10 @@ test("homepage presents RedForge and its latest engineering activity", async ({ 
   );
   await expect(page.getByRole("region", { name: "Evidence-backed updates" })).toBeVisible();
   await expect(page.locator(".engineering-activity-card")).toHaveCount(4);
+  await expect(
+    page.getByRole("region", { name: "Verified engineering platforms" }),
+  ).toBeVisible();
+  await expect(page.locator(".current-project-card")).toHaveCount(3);
   await expect(page.getByText("14", { exact: true })).toBeVisible();
   await expect(page.getByText("ENGINEERING LOGS", { exact: true })).toBeVisible();
   await expect(page.getByText("4", { exact: true })).toBeVisible();
@@ -38,12 +42,13 @@ test("homepage presents RedForge and its latest engineering activity", async ({ 
   ).toHaveAttribute("href", "#engineering-activity");
 });
 
-test("homepage omits content owned by dedicated routes", async ({ page }) => {
+test("homepage keeps dedicated-route content concise", async ({ page }) => {
   await page.goto("/");
 
   await expect(page.getByText("CURRENT OPERATION", { exact: true })).toHaveCount(0);
   await expect(page.getByRole("heading", { name: "Featured Projects", exact: true })).toHaveCount(0);
   await expect(page.locator(".featured-projects, .projects-section, .operator-section")).toHaveCount(0);
+  await expect(page.locator(".current-project-card p")).toHaveCount(3);
   await expect(page.getByRole("navigation", { name: "Primary navigation" })).toBeVisible();
 });
 
@@ -62,6 +67,9 @@ test("focused homepage remains overflow-free at desktop, tablet, and mobile widt
     expect(widths.scroll).toBeLessThanOrEqual(widths.client);
     await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
     await expect(page.getByRole("heading", { name: "Discipline. Precision. Progress." })).toBeVisible();
+    await expect(
+      page.getByRole("region", { name: "Verified engineering platforms" }),
+    ).toBeVisible();
     await expect(page.getByRole("region", { name: "Evidence-backed updates" })).toBeVisible();
   }
 });

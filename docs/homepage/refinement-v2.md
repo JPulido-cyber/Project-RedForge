@@ -14,12 +14,14 @@ platform narrative through compact, reusable presentation components.
    enterprise state.
 3. Engineering Philosophy presents Discipline, Precision, and Progress as three
    compact operating principles with one mission signature.
-4. Latest Engineering Activity presents the four most recent synchronized public
+4. Current Projects answers what has been built through three compact,
+   canonical project records without restoring the old featured-card section.
+5. Latest Engineering Activity presents the four most recent synchronized public
    records as a compact horizontal feed without report summaries.
 
-The v2.1 approved reference intentionally removes the separate platform-pathway
-section. Projects, Documentation, and the Lab remain primary navigation
-destinations instead of becoming duplicated homepage focal points.
+The v3.0 direction restores a concise Current Projects rail before activity while
+keeping the separate platform-pathway and oversized featured-project sections
+removed. Project details remain owned by the Projects experience.
 
 ## Truthfulness and data ownership
 
