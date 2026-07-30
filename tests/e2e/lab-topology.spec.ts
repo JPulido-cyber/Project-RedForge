@@ -20,6 +20,9 @@ test("lab renders the approved enterprise architecture sequence from structured 
   }
   await expect(topology.getByText("Windows security telemetry", { exact: true })).toHaveCount(1);
   await expect(topology.getByText("Sysmon telemetry", { exact: true })).toHaveCount(1);
+  await expect(page.getByText("Reviewed implementation evidence", { exact: true })).toBeVisible();
+  await expect(page.getByRole("img", { name: /organizational unit hierarchy/i })).toBeVisible();
+  await expect(page.getByRole("img", { name: /validated Sysmon process-event search/i })).toBeVisible();
   await expect(page.getByText("Enterprise capability groups", { exact: true })).toBeVisible();
   await expect(page.getByText("Enterprise capability roadmap", { exact: true })).toBeVisible();
   await expect(page.getByRole("link", { name: /view engineering records/i })).toHaveAttribute("href", "/documentation");

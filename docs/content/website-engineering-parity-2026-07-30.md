@@ -23,9 +23,11 @@ All three adapters emit the existing typed `DocumentationEntry` model. Productio
 
 ## Evidence review
 
-Active Directory and Splunk screenshots in the engineering repository were reviewed as contact sheets. They contain internal domain, identity, addressing, or operational interface details and were not copied into the public website.
+All 19 Active Directory and Splunk screenshots in the engineering repository were reviewed individually. Fifteen captures contain legitimate engineering evidence without credentials, secrets, unrelated personal content, or unsafe browser state and now publish through the governed `Evidence/Reviewed` pipeline.
 
-The corresponding project galleries remain explicitly marked `EVIDENCE PENDING` until the owner approves redacted, provenance-reviewed assets. This preserves the distinction between verified implementation claims and publishable visual evidence.
+Two screenshots containing a real-name directory object remain withheld for owner decision. Two empty-container screenshots are replacement candidates. The complete 65-image repository review, concerns, and recommendations are recorded in `Evidence/review-report.md`.
+
+Project and documentation galleries label authentic captures as `Reviewed evidence`. Existing target-state SVGs remain labeled `Conceptual architecture`, preserving the distinction between verified implementation evidence and design intent.
 
 ## Lifecycle rules
 

@@ -5,7 +5,10 @@ test("project index presents living metadata and links to project detail", async
   const flagship = page.getByRole("link", { name: /enterprise home lab/i }).first();
   await expect(flagship.getByText("4 records", { exact: true })).toBeVisible();
   await expect(flagship.getByText("Foundation validated", { exact: true })).toBeVisible();
-  await flagship.click();
+  await Promise.all([
+    page.waitForURL(/\/projects\/enterprise-home-lab$/),
+    flagship.click(),
+  ]);
   await expect(page).toHaveURL(/\/projects\/enterprise-home-lab$/);
   await expect(page.getByRole("heading", { level: 1, name: "Enterprise Home Lab" })).toBeVisible();
   await expect(page.getByRole("navigation", { name: "Project sections" })).toBeVisible();
@@ -46,8 +49,10 @@ test("flagship report exposes snapshot, validation, evidence, records, and retro
 
   await expect(page.getByText(/enterprise identity & security foundation complete/i).first()).toBeVisible();
   await expect(page.getByRole("heading", { name: "Screenshot Gallery" })).toBeVisible();
-  await expect(page.getByRole("img", { name: /active directory evidence pending public redaction review/i })).toBeVisible();
-  await expect(page.getByRole("img", { name: /splunk enterprise evidence pending public redaction review/i })).toBeVisible();
+  await expect(page.getByRole("img", { name: /RedForge enterprise test forest/i })).toBeVisible();
+  await expect(page.getByRole("img", { name: /indexed Windows and Sysmon events/i })).toBeVisible();
+  await expect(page.getByText("Reviewed evidence", { exact: true }).first()).toBeVisible();
+  await expect(page.getByText("Conceptual architecture", { exact: true }).first()).toBeVisible();
   await expect(page.getByText("Biggest technical challenge", { exact: true })).toBeVisible();
   await expect(page.getByText("Tradeoffs considered", { exact: true })).toBeVisible();
 
@@ -65,4 +70,20 @@ test("flagship report exposes snapshot, validation, evidence, records, and retro
   const diagramResponse = await request.get("/projects/enterprise-home-lab/diagrams/network-topology.svg");
   expect(diagramResponse.ok()).toBeTruthy();
   expect(diagramResponse.headers()["content-type"]).toContain("image/svg+xml");
+
+  const evidenceResponse = await request.get("/evidence/security-monitoring/sysmon-process-search.png");
+  expect(evidenceResponse.ok()).toBeTruthy();
+  expect(evidenceResponse.headers()["content-type"]).toContain("image/png");
+});
+
+test("identity and monitoring project galleries use reviewed implementation evidence", async ({ page }) => {
+  await page.goto("/projects/active-directory-lab");
+  await expect(page.getByRole("img", { name: /organizational unit hierarchy/i })).toBeVisible();
+  await expect(page.getByRole("img", { name: /directory-integrated records/i })).toBeVisible();
+  await expect(page.getByText("Reviewed evidence", { exact: true })).toHaveCount(9);
+
+  await page.goto("/projects/splunk-detection-lab");
+  await expect(page.getByRole("img", { name: /RedForge indexes and indexed events/i })).toBeVisible();
+  await expect(page.getByRole("img", { name: /validated Sysmon process-event search/i })).toBeVisible();
+  await expect(page.getByText("Reviewed evidence", { exact: true })).toHaveCount(6);
 });

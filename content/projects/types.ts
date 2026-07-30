@@ -30,6 +30,8 @@ export interface GalleryImage {
   src?: string;
   alt: string;
   caption: string;
+  evidenceType?: "implementation" | "conceptual";
+  publicationStatus?: "reviewed" | "pending";
 }
 
 export interface VideoAsset {

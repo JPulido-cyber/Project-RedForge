@@ -565,9 +565,27 @@
 }
 
 .screenshot-grid figcaption {
+  display: grid;
+  gap: 8px;
   padding: 12px 2px;
   color: #828b8d;
   font-size: 0.72rem;
+}
+
+.gallery-evidence-label {
+  width: fit-content;
+  padding: 4px 7px;
+  border: 1px solid rgb(79 221 122 / 34%);
+  color: #6ee795;
+  font-family: var(--font-redforge-display), sans-serif;
+  font-size: 0.56rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.gallery-evidence-label.conceptual {
+  border-color: rgb(255 90 31 / 38%);
+  color: var(--rf-color-ember-bright);
 }
 
 .asset-list {

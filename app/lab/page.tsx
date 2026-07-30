@@ -4,6 +4,8 @@ import Link from "next/link";
 import { EnterpriseLabTopology } from "@/components/lab";
 import { LabIcon } from "@/components/lab/lab-icon";
 import { PlatformShell, Section } from "@/components/layout";
+import { ScreenshotsGallery } from "@/components/project-experience";
+import { enterpriseHomeLabEvidence } from "@/content/evidence";
 import { enterpriseCapabilities, enterpriseHomeLabTopology, enterpriseRoadmap } from "@/content/lab";
 
 export const metadata: Metadata = {
@@ -43,6 +45,14 @@ export default function LabPage() {
 
       <Section className="lab-topology-section">
         <EnterpriseLabTopology topology={enterpriseHomeLabTopology} />
+      </Section>
+
+      <Section className="lab-reviewed-evidence" aria-labelledby="lab-evidence-title">
+        <div className="lab-section-heading">
+          <p className="technical-eyebrow" id="lab-evidence-title">Reviewed implementation evidence</p>
+          <p>Authentic Active Directory, DNS, Group Policy, indexing, and telemetry evidence from the verified environment.</p>
+        </div>
+        <ScreenshotsGallery images={enterpriseHomeLabEvidence} />
       </Section>
 
       <Section className="lab-capabilities" aria-labelledby="capabilities-title">

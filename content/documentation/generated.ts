@@ -2095,11 +2095,40 @@ export const generatedDocumentationEntries = [
         "content": "record: ENG-013\ntitle: Enterprise Active Directory Forest Deployment\nstatus: verified\nproject: Project RedForge\nevidenceStatus: documented"
       },
       {
-        "id": "eng-013-screenshots",
-        "title": "Supporting engineering evidence",
-        "description": "Supporting source evidence is referenced by the engineering log but remains outside the public asset pipeline until security, privacy, and provenance review is complete.",
+        "id": "eng-013-forest",
+        "title": "Enterprise forest and domain",
+        "description": "Reviewed Active Directory Domains and Trusts evidence showing the operational RedForge enterprise forest.",
         "kind": "screenshot",
-        "status": "pending"
+        "status": "reviewed",
+        "src": "/evidence/active-directory/forest-and-domain.png",
+        "alt": "Active Directory Domains and Trusts showing the RedForge enterprise test forest"
+      },
+      {
+        "id": "eng-013-organizational-units",
+        "title": "Organizational Unit structure",
+        "description": "Reviewed directory evidence showing the implemented enterprise administrative hierarchy.",
+        "kind": "screenshot",
+        "status": "reviewed",
+        "src": "/evidence/active-directory/organizational-unit-structure.png",
+        "alt": "Active Directory Users and Computers showing the RedForge organizational unit hierarchy"
+      },
+      {
+        "id": "eng-013-group-policy",
+        "title": "Group Policy implementation",
+        "description": "Reviewed Group Policy Management evidence showing implemented baseline and workstation policies.",
+        "kind": "screenshot",
+        "status": "reviewed",
+        "src": "/evidence/active-directory/group-policy-objects.png",
+        "alt": "Group Policy Management showing the implemented RedForge policy objects"
+      },
+      {
+        "id": "eng-013-dns",
+        "title": "Directory-integrated DNS",
+        "description": "Reviewed DNS Manager evidence showing records for the operational enterprise systems.",
+        "kind": "screenshot",
+        "status": "reviewed",
+        "src": "/evidence/active-directory/integrated-dns-records.png",
+        "alt": "DNS Manager showing directory-integrated records for the RedForge test domain"
       }
     ],
     "nextSteps": [
@@ -2124,7 +2153,7 @@ export const generatedDocumentationEntries = [
       "redactions": [
         "Author identity",
         "Internal domain and IPv4 addressing",
-        "Unreviewed screenshots and private configuration values"
+        "Unapproved evidence assets and private configuration values"
       ]
     }
   },
@@ -2238,11 +2267,49 @@ export const generatedDocumentationEntries = [
         "content": "record: ENG-014\ntitle: Enterprise Security Monitoring Platform Deployment\nstatus: verified\nproject: Project RedForge\nevidenceStatus: documented"
       },
       {
-        "id": "eng-014-screenshots",
-        "title": "Supporting engineering evidence",
-        "description": "Supporting source evidence is referenced by the engineering log but remains outside the public asset pipeline until security, privacy, and provenance review is complete.",
+        "id": "eng-014-platform",
+        "title": "Splunk Enterprise platform",
+        "description": "Reviewed application evidence showing the operational Splunk Enterprise environment.",
         "kind": "screenshot",
-        "status": "pending"
+        "status": "reviewed",
+        "src": "/evidence/security-monitoring/splunk-enterprise-home.png",
+        "alt": "Splunk Enterprise home view showing installed enterprise applications"
+      },
+      {
+        "id": "eng-014-indexes",
+        "title": "Enterprise index inventory",
+        "description": "Reviewed index-management evidence showing purpose-built indexes and indexed event counts.",
+        "kind": "screenshot",
+        "status": "reviewed",
+        "src": "/evidence/security-monitoring/enterprise-indexes.png",
+        "alt": "Splunk Enterprise index management showing RedForge indexes and indexed events"
+      },
+      {
+        "id": "eng-014-inputs",
+        "title": "Telemetry data inputs",
+        "description": "Reviewed configuration evidence showing the telemetry inputs used by the monitoring platform.",
+        "kind": "screenshot",
+        "status": "reviewed",
+        "src": "/evidence/security-monitoring/data-inputs.png",
+        "alt": "Splunk Enterprise data input configuration for Windows and infrastructure telemetry"
+      },
+      {
+        "id": "eng-014-search",
+        "title": "Indexed Windows and Sysmon events",
+        "description": "Reviewed SPL evidence showing searchable Windows and Sysmon telemetry from RF-DC01.",
+        "kind": "screenshot",
+        "status": "reviewed",
+        "src": "/evidence/security-monitoring/indexed-event-search.png",
+        "alt": "Splunk Search and Reporting showing indexed Windows and Sysmon events from RF-DC01"
+      },
+      {
+        "id": "eng-014-sysmon",
+        "title": "Sysmon process telemetry",
+        "description": "Reviewed SPL evidence showing a validated Sysmon process-event search.",
+        "kind": "screenshot",
+        "status": "reviewed",
+        "src": "/evidence/security-monitoring/sysmon-process-search.png",
+        "alt": "Splunk Search and Reporting showing a validated Sysmon process-event search"
       }
     ],
     "nextSteps": [
@@ -2266,7 +2333,7 @@ export const generatedDocumentationEntries = [
       "redactions": [
         "Author identity",
         "Internal domain and IPv4 addressing",
-        "Unreviewed screenshots and private configuration values"
+        "Unapproved evidence assets and private configuration values"
       ]
     }
   },

@@ -23,9 +23,15 @@ test("record-type controls expose purpose and linkable filtered views", async ({
   await expect(filters.getByText(/complete implementation record for a single engineering effort/i)).toBeVisible();
   await expect(filters.getByText(/which alternatives were considered/i)).toBeVisible();
   await expect(filters.getByText(/major achievements spanning multiple Engineering Logs/i)).toBeVisible();
+  await expect(filters.getByRole("link", { name: /Engineering Logs 14/i })).toHaveAttribute("href", "/documentation?type=engineering-logs");
+  await expect(filters.getByRole("link", { name: /Architecture Decision Records 6/i })).toHaveAttribute("href", "/documentation?type=architecture-decisions");
+  await expect(filters.getByRole("link", { name: /Milestones 4/i })).toHaveAttribute("href", "/documentation?type=milestones");
+  await expect(filters.getByRole("link", { name: /All records 24/i })).toHaveAttribute("href", "/documentation");
 
-  await filters.getByRole("link", { name: /Engineering Logs 14/i }).click();
-  await expect(page).toHaveURL(/\/documentation\?type=engineering-logs$/);
+  await Promise.all([
+    page.waitForURL(/\/documentation\?type=engineering-logs$/),
+    filters.getByRole("link", { name: /Engineering Logs 14/i }).click(),
+  ]);
   await expect(page.locator(".documentation-card")).toHaveCount(14);
   await expect(page.locator(".documentation-card .technical-eyebrow").first()).toHaveText("Engineering Log");
 
@@ -34,8 +40,7 @@ test("record-type controls expose purpose and linkable filtered views", async ({
   await expect(page.locator(".documentation-card")).toHaveCount(6);
   await expect(page.locator(".documentation-card .technical-eyebrow").first()).toHaveText("Architecture Decision Record");
 
-  await filters.getByRole("link", { name: /Milestones 4/i }).click();
-  await expect(page).toHaveURL(/\/documentation\?type=milestones$/);
+  await page.goto("/documentation?type=milestones");
   await expect(page.locator(".documentation-card")).toHaveCount(4);
   await expect(page.locator(".documentation-card .technical-eyebrow")).toHaveText([
     "Milestone Log",
@@ -44,8 +49,7 @@ test("record-type controls expose purpose and linkable filtered views", async ({
     "Milestone Log",
   ]);
 
-  await filters.getByRole("link", { name: /All records 24/i }).click();
-  await expect(page).toHaveURL(/\/documentation$/);
+  await page.goto("/documentation");
   await expect(page.locator(".documentation-card")).toHaveCount(24);
 });
 
@@ -132,6 +136,18 @@ test("current identity and monitoring records publish without sensitive configur
     expect(body).not.toContain("corp.redforge.test");
     expect(body).not.toContain("Jose Pulido");
   }
+});
+
+test("current identity and monitoring records present reviewed screenshot evidence", async ({ page }) => {
+  await page.goto("/documentation/eng-013-enterprise-active-directory-forest-deployment");
+  await expect(page.getByRole("img", { name: /RedForge enterprise test forest/i })).toBeVisible();
+  await expect(page.getByRole("img", { name: /implemented RedForge policy objects/i })).toBeVisible();
+  await expect(page.getByText("Reviewed record", { exact: true })).toHaveCount(5);
+
+  await page.goto("/documentation/eng-014-enterprise-security-monitoring-platform-deployment");
+  await expect(page.getByRole("img", { name: /RedForge indexes and indexed events/i })).toBeVisible();
+  await expect(page.getByRole("img", { name: /validated Sysmon process-event search/i })).toBeVisible();
+  await expect(page.getByText("Reviewed record", { exact: true })).toHaveCount(6);
 });
 
 test("homepage activity feed links to the latest published report", async ({ page }) => {

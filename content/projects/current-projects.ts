@@ -1,4 +1,9 @@
 import type { Project, Technology } from "./types";
+import {
+  activeDirectoryEvidence,
+  enterpriseHomeLabEvidence,
+  securityMonitoringEvidence,
+} from "@/content/evidence";
 
 const foundationRecords = [
   { id: "ENG-012", title: "Engineering Platform Architecture Refinement", href: "/documentation/eng-012-engineering-platform-architecture-refinement" },
@@ -97,8 +102,14 @@ export function currentEnterpriseHomeLab(base: Project): Project {
       { title: "Evidence governs completion", insight: "A system is not represented as operational until its implementation and validation are documented in reviewed engineering records." },
     ],
     gallery: [
-      { alt: "Active Directory evidence pending public redaction review", caption: "EVIDENCE PENDING — Current Active Directory screenshots contain internal identity and domain details and remain outside the public asset pipeline." },
-      { alt: "Splunk Enterprise evidence pending public redaction review", caption: "EVIDENCE PENDING — Current Splunk screenshots contain operational identifiers and remain outside the public asset pipeline." },
+      ...enterpriseHomeLabEvidence,
+      ...base.gallery
+        .filter((image) => image.src)
+        .map((image) => ({
+          ...image,
+          evidenceType: "conceptual" as const,
+          publicationStatus: "reviewed" as const,
+        })),
     ],
     videos: [],
     codeExamples: [],
@@ -129,6 +140,7 @@ interface OperationalProjectInput {
   lessonsLearned: Project["lessonsLearned"];
   futureRoadmap: Project["futureRoadmap"];
   relatedProjectSlugs: Project["relatedProjectSlugs"];
+  gallery: Project["gallery"];
 }
 
 function operationalProject(input: OperationalProjectInput): Project {
@@ -155,7 +167,7 @@ function operationalProject(input: OperationalProjectInput): Project {
     architecture: input.architecture,
     challenges: [],
     lessonsLearned: input.lessonsLearned,
-    gallery: [{ alt: `${input.title} evidence pending public redaction review`, caption: "EVIDENCE PENDING — Reviewed source screenshots remain outside the public asset pipeline until security, privacy, and redaction approval." }],
+    gallery: input.gallery,
     videos: [],
     codeExamples: [],
     downloads: [],
@@ -215,6 +227,7 @@ export const enterpriseActiveDirectory = operationalProject({
     "FUTURE — Add identity resilience and recovery validation.",
   ],
   relatedProjectSlugs: ["enterprise-home-lab", "splunk-detection-lab"],
+  gallery: activeDirectoryEvidence,
 });
 
 export const enterpriseSecurityMonitoring = operationalProject({
@@ -270,4 +283,5 @@ export const enterpriseSecurityMonitoring = operationalProject({
     "FUTURE — Validate monitoring through authorized attack simulation.",
   ],
   relatedProjectSlugs: ["enterprise-home-lab", "active-directory-lab", "threat-hunting"],
+  gallery: securityMonitoringEvidence,
 });

@@ -2,6 +2,7 @@ import {
   markdownToItems,
   markdownToParagraphs,
 } from "../markdown.mjs";
+import { reviewedEvidenceByRecord } from "../evidence-assets.mjs";
 
 function section(document, name) {
   return document.sections.get(name.toLowerCase()) ?? "";
@@ -91,6 +92,7 @@ export function mapEngineeringLogDocument(document) {
   const validation = sanitizeList(markdownToItems(section(document, "Validation")));
   const nextSteps = sanitizeList(markdownToItems(section(document, "Next Steps")));
   const tags = stringList(document.frontmatter.tags);
+  const reviewedScreenshots = reviewedEvidenceByRecord.get(id) ?? [];
 
   if (!/^ENG-\d{3}$/.test(id)) throw new Error(`${document.sourceName}: engineering log id must use ENG-NNN.`);
   if (!title || !summary || !objective.length || !(background.length || deployment.length) || !lessons.length || !validation.length || !nextSteps.length) {
@@ -144,7 +146,8 @@ export function mapEngineeringLogDocument(document) {
             `evidenceStatus: ${String(document.frontmatter.evidence_status ?? "documented")}`,
           ].join("\n"),
         },
-        ...(section(document, "Evidence").toLowerCase().includes("screenshot") ? [{
+        ...reviewedScreenshots,
+        ...(!reviewedScreenshots.length && section(document, "Evidence").toLowerCase().includes("screenshot") ? [{
           id: `${id.toLowerCase()}-screenshots`,
           title: "Supporting engineering evidence",
           description: "Supporting source evidence is referenced by the engineering log but remains outside the public asset pipeline until security, privacy, and provenance review is complete.",
@@ -163,7 +166,9 @@ export function mapEngineeringLogDocument(document) {
         redactions: [
           "Author identity",
           "Internal domain and IPv4 addressing",
-          "Unreviewed screenshots and private configuration values",
+          ...(reviewedScreenshots.length
+            ? ["Unapproved evidence assets and private configuration values"]
+            : ["Unreviewed screenshots and private configuration values"]),
         ],
       },
     },

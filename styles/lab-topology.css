@@ -381,6 +381,16 @@
 .lab-records-cta p { margin-top: 5px; color: var(--rf-color-forge-muted); font-size: 0.7rem; line-height: 1.5; }
 .lab-records-cta .command-action { width: min(100%, 300px); }
 
+.lab-reviewed-evidence {
+  padding: 22px;
+  border: 1px solid var(--rf-color-forge-line-strong);
+  background: rgb(10 13 14 / 78%);
+}
+
+.lab-reviewed-evidence .project-subsection > h3 {
+  margin-top: 20px;
+}
+
 @media (max-width: 1180px) {
   .lab-purpose-strip { grid-template-columns: repeat(2, 1fr); }
   .lab-purpose-strip article:nth-child(3) { border-left: 0; border-top: 1px solid var(--rf-color-forge-line); }
@@ -420,6 +430,7 @@
   .lab-purpose-strip,
   .lab-topology-section,
   .lab-capabilities,
+  .lab-reviewed-evidence,
   .lab-roadmap,
   .lab-records-cta { width: min(100% - 28px, 1540px); }
   .lab-introduction h1 { font-size: clamp(2rem, 11vw, 3rem); }
