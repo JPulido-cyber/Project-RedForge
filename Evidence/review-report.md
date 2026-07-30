@@ -20,8 +20,8 @@ independent source decisions.
 | Status | Count | Publication decision |
 | --- | ---: | --- |
 | APPROVED | 56 | Safe in its documented context |
-| REDACTED | 2 | Withheld pending owner approval of minimal name redaction |
-| REPLACEMENT | 2 | Withheld; capture a stronger screenshot |
+| REDACTED | 0 | No redacted derivative is required for the approved publication set |
+| REPLACEMENT | 4 | Two resolved with reviewed substitutes; two require stronger future captures |
 | REMOVE | 5 | Unused framework starter assets; remove in a separate cleanup change |
 
 “Approved” does not make a conceptual diagram into implementation evidence.
@@ -126,8 +126,8 @@ redacted.
 | `active-directory/screenshots/Screenshot 2026-07-30 093900.png` | APPROVED | Organizational Unit structure; publish. |
 | `active-directory/screenshots/Screenshot 2026-07-30 093949.png` | APPROVED | Administrative OU structure; useful supporting evidence. |
 | `active-directory/screenshots/Screenshot 2026-07-30 094027.png` | APPROVED | RF-WIN11-01 directory computer object; publish. |
-| `active-directory/screenshots/Screenshot 2026-07-30 094107.png` | REDACTED | Displays the owner’s real name as a user object. Recommend masking only the object name, or owner approval to publish because the owner identity is already public. No modified copy was created silently. |
-| `active-directory/screenshots/Screenshot 2026-07-30 094132.png` | REDACTED | Displays the same real-name account in the administrative OU. Apply the same owner decision as the preceding image. |
+| `active-directory/screenshots/Screenshot 2026-07-30 094107.png` | REPLACEMENT | Displays the owner’s real name as a user object. The public Users/OU evidence slot uses the reviewed `organizational-unit-structure.png` capture instead. The authentic source remains preserved in `home-lab`; no engineering pixels were altered. |
+| `active-directory/screenshots/Screenshot 2026-07-30 094132.png` | REPLACEMENT | Displays the same real-name account in the administrative OU. The public administrative-boundary evidence slot uses the reviewed `administrative-ou-structure.png` capture instead. |
 | `active-directory/screenshots/Screenshot 2026-07-30 094140.png` | REPLACEMENT | Selected Groups container is empty. Capture a replacement showing the implemented role-based groups. |
 | `active-directory/screenshots/Screenshot 2026-07-30 094200.png` | REPLACEMENT | Selected Service Accounts container is empty. Capture a replacement after a safe, representative service account exists. |
 | `active-directory/screenshots/Screenshot 2026-07-30 094451.png` | APPROVED | Group Policy Objects and links; publish without suppressing legitimate policy evidence. |
@@ -149,12 +149,17 @@ The Splunk account label is the generic laboratory administrator role. No API
 tokens, session cookies, passwords, license keys, authentication secrets, or
 personal browser state are visible.
 
-## Owner decisions
+## Final publication decisions
 
-1. Decide whether the two named Active Directory user-object screenshots should
-   receive a minimal name-only mask or may be published because the operator’s
-   identity is already public.
+1. The two name-bearing Active Directory captures remain preserved in the
+   engineering repository but are not copied into the public pipeline. Existing
+   reviewed OU captures provide stronger representative evidence without
+   unnecessary personal identification.
 2. Capture replacement images for the empty Groups and Service Accounts views
    when those objects can be demonstrated accurately.
 3. Consider removing the five unused Next.js starter SVGs in a future cleanup
    change. They are not used or published as evidence.
+
+No published engineering screenshot contains the owner’s personal name,
+personal email address, browser profile, desktop notifications, license keys,
+API keys, authentication tokens, passwords, secrets, or private keys.

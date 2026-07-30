@@ -13,3 +13,4 @@ or workflow change.
 - [Contribution guide](./contributing.md)
 - [Website engineering parity — 2026-07-30](./content/website-engineering-parity-2026-07-30.md)
 - [Public evidence review](../Evidence/review-report.md)
+- [Portfolio review checklist](./PORTFOLIO-REVIEW.md)
