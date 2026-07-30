@@ -1,6 +1,8 @@
 import { Section } from "@/components/layout";
 import { homepageContent } from "@/content/homepage";
 
+import { PrincipleIcon } from "./principle-icon";
+
 export function EngineeringPhilosophy() {
   return (
     <Section
@@ -13,6 +15,7 @@ export function EngineeringPhilosophy() {
       <div className="engineering-principles">
         {homepageContent.principles.map((principle) => (
           <article className="engineering-principle" key={principle.name}>
+            <PrincipleIcon name={principle.name} />
             <div>
               <h3>{principle.name}</h3>
               <p>{principle.description}</p>
