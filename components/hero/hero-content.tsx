@@ -10,12 +10,16 @@ export function HeroContent() {
         <span>THE GROUND UP</span>
       </h1>
       <p className="hero-description">
-        I am building a realistic enterprise environment to understand the
-        infrastructure, identity, monitoring, detection, and operational
-        workflows that modern offensive security professionals must understand.
-        Every implementation is documented, validated, and preserved as
-        engineering evidence throughout my progression toward Offensive
-        Cybersecurity.
+        <span>
+          I build a realistic enterprise environment to understand the
+          infrastructure, identity, monitoring, detection, and operational
+          workflows that modern offensive security professionals must master.
+        </span>
+        <span>
+          Every implementation is documented, validated, and preserved as
+          engineering evidence throughout my progression toward Offensive
+          Cybersecurity.
+        </span>
       </p>
       <HeroActions />
     </div>

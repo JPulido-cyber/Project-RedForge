@@ -46,21 +46,18 @@ export const homepageContent = {
   principles: [
     {
       name: "Discipline.",
-      description:
-        "Every change follows a documented process before it becomes part of the enterprise.",
-      phrase: "Controlled. Reproducible.",
+      description: "Build deliberately.",
+      phrase: "Document everything.",
     },
     {
       name: "Precision.",
-      description:
-        "Every implementation is validated against its objective and preserved as evidence.",
-      phrase: "Measured. Defensible.",
+      description: "Validate relentlessly.",
+      phrase: "Evidence over assumption.",
     },
     {
       name: "Progress.",
-      description:
-        "Every result becomes the foundation for the next deliberate engineering milestone.",
-      phrase: "Iterative. Evidence-led.",
+      description: "Engineer continuously.",
+      phrase: "Every milestone moves forward.",
     },
   ] satisfies readonly EngineeringPrinciple[],
   projects: [

@@ -1,5 +1,4 @@
 import { Footer } from "@/components/footer";
-import { EngineeringActivityFeed } from "@/components/documentation";
 import { Hero } from "@/components/hero";
 import { EngineeringPhilosophy } from "@/components/homepage";
 import { MetricsSection } from "@/components/metrics";
@@ -13,9 +12,8 @@ export default function Home() {
         <Hero />
         <MetricsSection />
         <EngineeringPhilosophy />
-        <EngineeringActivityFeed />
       </main>
-      <Footer />
+      <Footer compact />
     </div>
   );
 }

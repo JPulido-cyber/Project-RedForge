@@ -11,9 +11,8 @@ export function EngineeringPhilosophy() {
         <h2 id="engineering-philosophy-title">Discipline. Precision. Progress.</h2>
       </div>
       <div className="engineering-principles">
-        {homepageContent.principles.map((principle, index) => (
+        {homepageContent.principles.map((principle) => (
           <article className="engineering-principle" key={principle.name}>
-            <span aria-hidden>{String(index + 1).padStart(2, "0")}</span>
             <div>
               <h3>{principle.name}</h3>
               <p>{principle.description}</p>
@@ -24,8 +23,8 @@ export function EngineeringPhilosophy() {
       </div>
       <p className="engineering-mission">
         <span>Mission:</span>
-        Engineer with Discipline.{" "}
-        <strong>Advance toward Offensive Cybersecurity.</strong>
+        Understand the Enterprise.{" "}
+        <strong>Outthink the Adversary.</strong>
       </p>
     </Section>
   );

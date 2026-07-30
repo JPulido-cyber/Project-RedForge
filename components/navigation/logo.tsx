@@ -13,7 +13,7 @@ export function Logo() {
       <span className="brand-copy">
         <small>PROJECT</small>
         <strong>REDFORGE</strong>
-        <em>BUILD. SECURE. DEFEND.</em>
+        <em>DISCIPLINE. PRECISION. PROGRESS.</em>
       </span>
     </Link>
   );
