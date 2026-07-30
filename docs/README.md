@@ -11,3 +11,4 @@ or workflow change.
 - [Naming conventions](./naming-conventions.md)
 - [Deployment guide](./deployment.md)
 - [Contribution guide](./contributing.md)
+- [Website engineering parity — 2026-07-30](./content/website-engineering-parity-2026-07-30.md)

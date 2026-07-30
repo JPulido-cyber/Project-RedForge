@@ -62,7 +62,7 @@ export function EnterpriseLabTopology({ topology }: { topology: LabTopology }) {
           <p>▣ Virtualization boundary</p>
           <NodeButton node={boundary} selected={selected.id === boundary.id} inactive={isInactive(boundary)} onSelect={setSelectedId} />
         </section>
-        <div key={`${selectedId}-host`} className="topology-connector host-connector" data-active={isRelated("vmware-hosts-dc", "vmware-hosts-win11") || undefined} aria-hidden />
+        <div key={`${selectedId}-host`} className="topology-connector host-connector" data-active={isRelated("hyperv-hosts-dc", "hyperv-hosts-win11") || undefined} aria-hidden />
         <div className="topology-node-row">
           <NodeButton node={dc} selected={selected.id === dc.id} inactive={isInactive(dc)} onSelect={setSelectedId} />
           <span key={`${selectedId}-identity`} className="route identity-route" data-active={isRelated("dc-identity-win11", "dc-dns-win11") || undefined} aria-label="Domain identity connection">→</span>

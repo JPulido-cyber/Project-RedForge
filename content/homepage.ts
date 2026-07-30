@@ -30,11 +30,11 @@ export const homepageContent = {
     { label: "CONTACT", href: "/contact" },
   ] satisfies readonly NavigationItem[],
   metrics: [
-    { icon: "server", value: "1", label: "SYSTEM DEPLOYED" },
-    { icon: "shield", value: "5", label: "SECURITY GROUPS" },
+    { icon: "server", value: "3", label: "OPERATIONAL SYSTEMS" },
     { icon: "forest", value: "1", label: "ACTIVE DIRECTORY FOREST" },
-    { icon: "document", value: "12", label: "ENGINEERING LOGS" },
-    { icon: "directory", value: "1", label: "DOMAIN CONTROLLER" },
+    { icon: "document", value: "14", label: "ENGINEERING LOGS" },
+    { icon: "shield", value: "6", label: "ARCHITECTURE DECISIONS" },
+    { icon: "directory", value: "4", label: "MILESTONES" },
   ] satisfies readonly MetricItem[],
   projects: [
     {
@@ -54,27 +54,27 @@ export const homepageContent = {
       description:
         "Building practical Python tools while developing programming, troubleshooting, and automation fundamentals.",
       tags: ["Python", "Automation", "Git"],
-      status: "active",
+      status: "planned",
       href: "/projects/python-automation",
     },
     {
       number: "03",
       icon: "AD",
-      title: "Active Directory Lab",
+      title: "Enterprise Active Directory",
       description:
-        "Deploying and securing a Windows domain with users, groups, policies, authentication, and administrative controls.",
-      tags: ["Windows Server", "Identity", "GPO"],
-      status: "planned",
+        "Operating centralized identity, integrated DNS, Organizational Units, users, groups, authentication, and administrative boundaries.",
+      tags: ["Windows Server", "Identity", "DNS"],
+      status: "operational",
       href: "/projects/active-directory-lab",
     },
     {
       number: "04",
       icon: "SIEM",
-      title: "Splunk Detection Lab",
+      title: "Enterprise Security Monitoring",
       description:
-        "Ingesting security data, building dashboards, investigating events, and developing detection and threat-hunting workflows.",
-      tags: ["Splunk", "SIEM", "Detection"],
-      status: "planned",
+        "Operating Splunk Enterprise, Universal Forwarders, centralized logging, indexed telemetry, SPL searches, and dashboards.",
+      tags: ["Splunk", "SIEM", "Monitoring"],
+      status: "operational",
       href: "/projects/splunk-detection-lab",
     },
     {

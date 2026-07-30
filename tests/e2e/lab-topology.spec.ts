@@ -9,7 +9,7 @@ test("lab renders the approved enterprise architecture sequence from structured 
     await expect(topology.locator(`[data-node-id="${system}"]`)).toBeVisible();
   }
   for (const [id, hostname, platform] of [
-    ["vmware-workstation", "RF-VMHOST01", "VMware Workstation"],
+    ["hyper-v", "RF-VMHOST01", "Microsoft Hyper-V"],
     ["rf-dc01", "RF-DC01", "Windows Server 2025"],
     ["rf-win11-01", "RF-WIN11-01", "Windows 11"],
     ["splunk-enterprise", "RF-SPLUNK01", "Splunk Enterprise"],
@@ -39,7 +39,7 @@ test("node details support pointer and keyboard interaction with visible focus",
   await win11.click();
   const details = page.getByRole("region", { name: "Selected topology node details" });
   await expect(details.getByRole("heading", { name: "RF-WIN11-01" })).toBeVisible();
-  await expect(details.getByText(/Sysmon telemetry is received and searchable/i)).toBeVisible();
+  await expect(details.getByText(/Sysmon.*received and searchable/i)).toBeVisible();
   const splunk = page.locator('[data-node-id="splunk-enterprise"]');
   await splunk.focus();
   await expect(splunk).toBeFocused();
@@ -80,8 +80,8 @@ test("lab topology is responsive and does not publish sensitive configuration", 
   expect(widths.scroll).toBeLessThanOrEqual(widths.client);
 });
 
-test("existing and new lab record routes remain available", async ({ request }) => {
-  for (const route of ["/projects/enterprise-home-lab", "/documentation/server-establishment-log", "/documentation/eng-010-centralized-telemetry-pipeline-deployment", "/documentation/eng-011-data-driven-enterprise-home-lab-topology"]) {
+test("existing and current lab record routes remain available", async ({ request }) => {
+  for (const route of ["/projects/enterprise-home-lab", "/documentation/server-establishment-log", "/documentation/eng-010-centralized-telemetry-pipeline-deployment", "/documentation/eng-011-data-driven-enterprise-home-lab-topology", "/documentation/eng-013-enterprise-active-directory-forest-deployment", "/documentation/eng-014-enterprise-security-monitoring-platform-deployment", "/documentation/milestone-004-enterprise-identity-security-foundation-complete"]) {
     expect((await request.get(route)).ok(), `${route} should resolve`).toBeTruthy();
   }
 });

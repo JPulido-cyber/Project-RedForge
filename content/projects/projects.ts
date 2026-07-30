@@ -1,4 +1,9 @@
 import type { Project } from "./types";
+import {
+  currentEnterpriseHomeLab,
+  enterpriseActiveDirectory,
+  enterpriseSecurityMonitoring,
+} from "./current-projects";
 
 const placeholderArchitecture = {
   summary: "PLANNED — Architecture documentation will be added as implementation milestones are completed.",
@@ -218,7 +223,7 @@ const enterpriseHomeLab: Project = {
   relatedProjectSlugs: ["active-directory-lab", "splunk-detection-lab", "network-engineering"],
 };
 
-export const projects = [
+const legacyProjects = [
   enterpriseHomeLab,
   plannedProject("active-directory-lab", "Active Directory Lab", "Identity, policy, authentication, and administrative controls.", [{ name: "Windows Server — Planned", category: "infrastructure" }]),
   plannedProject("splunk-detection-lab", "Splunk Detection Lab", "Telemetry ingestion, investigation, dashboards, and detection workflows.", [{ name: "Splunk telemetry foundation — Implemented", category: "observability", description: "Centralized Windows and Sysmon ingestion is operational; detection engineering remains planned." }]),
@@ -227,6 +232,15 @@ export const projects = [
   plannedProject("threat-hunting", "Threat Hunting", "Evidence-driven investigation and defensible analytical conclusions.", [{ name: "Splunk — Planned", category: "observability" }]),
   plannedProject("vulnerability-management", "Vulnerability Management", "Asset visibility, prioritization, remediation, and validation.", [{ name: "Nessus — Planned", category: "security" }]),
   plannedProject("network-engineering", "Network Engineering", "Routing, segmentation, services, and resilient network operations.", [{ name: "pfSense — Planned", category: "infrastructure" }]),
+] satisfies readonly Project[];
+
+export const projects = [
+  currentEnterpriseHomeLab(enterpriseHomeLab),
+  enterpriseActiveDirectory,
+  enterpriseSecurityMonitoring,
+  ...legacyProjects.filter((project) =>
+    !["enterprise-home-lab", "active-directory-lab", "splunk-detection-lab"].includes(project.slug),
+  ),
 ] satisfies readonly Project[];
 
 export type ProjectSlug = (typeof projects)[number]["slug"];

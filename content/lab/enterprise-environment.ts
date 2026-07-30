@@ -10,9 +10,8 @@ export const enterpriseCapabilities = [
 ] as const satisfies readonly { icon: LabIconName; title: string; description: string }[];
 
 export const enterpriseRoadmap = [
-  { phase: "Phase 1", title: "Foundation & Identity", status: "complete", items: ["Virtualization platform", "Domain controller", "Endpoint deployment", "Baseline telemetry"] },
-  { phase: "Phase 2", title: "Telemetry & Visibility", status: "complete", items: ["Centralized logging (Splunk)", "Sysmon deployment", "Log forwarding pipeline", "Telemetry validation"] },
-  { phase: "Phase 3", title: "Network & Segmentation", status: "planned", items: ["VLAN design", "Firewall evaluation", "Network segmentation", "Traffic-flow validation"] },
-  { phase: "Phase 4", title: "Assessment Platform", status: "planned", items: ["Offensive workstation", "Tooling and access control", "Lab trust boundaries", "Engagement workflows"] },
-  { phase: "Phase 5", title: "Advanced Operations", status: "future", items: ["Detection engineering", "Threat hunting", "Adversary simulation", "Reporting automation"] },
+  { phase: "Phase 5", title: "Endpoint & Policy Engineering", status: "planned", items: ["Endpoint expansion", "Group Policy engineering", "Security baselines", "Policy validation"] },
+  { phase: "Phase 6", title: "Detection & Threat Hunting", status: "planned", items: ["Detection engineering", "Correlation searches", "Threat-hunting workflows", "Coverage validation"] },
+  { phase: "Phase 7", title: "Attack Simulation & Purple Team", status: "future", items: ["Authorized attack simulation", "Detection validation", "Purple-team workflows", "Operational reporting"] },
+  { phase: "Phase 8", title: "Automation & Cloud Expansion", status: "future", items: ["Engineering automation", "Security orchestration", "Controlled cloud integration", "Hybrid visibility"] },
 ] as const;
