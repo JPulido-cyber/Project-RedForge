@@ -1,30 +1,37 @@
-# Homepage refinement — Version 2.0
+# Homepage refinement — Version 5.0
 
-## Decision
+## Approved composition
 
-The homepage remains a focused entry point rather than becoming a duplicate of
-the Projects, Documentation, or Lab experiences. Version 2.0 adds the missing
-platform narrative through compact, reusable presentation components.
+The homepage is a focused command-center entry point. The supplied Version 5.0
+reference is the implementation authority for its composition, hierarchy,
+spacing, density, and presentation.
 
-## Version 2.1 composition
+The final sequence is intentionally limited to:
 
-1. The hero identifies the work as enterprise security engineering and explains
-   the progression toward Offensive Security.
-2. The verified metrics strip and mission-control panel summarize the current
-   enterprise state.
-3. Engineering Philosophy presents Discipline, Precision, and Progress as three
-   compact operating principles with one mission signature.
-4. Latest Engineering Activity presents the four most recent synchronized public
-   records as a compact horizontal feed without report summaries.
+1. Navigation and dominant enterprise-security hero
+2. Verified metrics
+3. Discipline, Precision, and Progress
+4. The centered mission signature
+5. Compact footer
 
-The final v4.0 direction removes Current Projects and the explicit evidence
-strapline. Project discovery remains owned by Projects, Lab Environment, and the
-primary navigation. The homepage therefore contains only Navigation, Hero,
-Enterprise Metrics, the compact Philosophy transition, Latest Engineering
-Activity, and Footer.
+Projects, documentation previews, and engineering activity remain owned by
+their dedicated platform routes and are not duplicated on the homepage.
 
-The enterprise is presented as the training ground for progression toward
-Offensive Cybersecurity, not as the final destination.
+## Narrative
+
+The enterprise environment is presented as the training ground for progression
+toward Offensive Cybersecurity. The hero explains the purpose before describing
+Project RedForge and establishes that every implementation is documented,
+validated, and preserved as engineering evidence.
+
+The operating principles use the approved statements:
+
+- Discipline: Build deliberately. Document everything.
+- Precision: Validate relentlessly. Evidence over assumption.
+- Progress: Engineer continuously. Every milestone moves forward.
+
+The mission signature is “Understand the Enterprise. Outthink the Adversary.”
+The shared header and footer brand tagline is “Discipline. Precision. Progress.”
 
 ## Truthfulness and data ownership
 
@@ -37,6 +44,7 @@ Offensive Cybersecurity, not as the final destination.
 ## Responsive and motion behavior
 
 The existing world-map route flow, node pulse, scan, and reduced-motion handling
-remain intact. The map is larger and shifted toward the hero copy on desktop.
-Mobile preserves content readability, disables the dense status overlay, and
-stacks philosophy and activity content without horizontal overflow.
+remain intact. The hero occupies approximately 70% of the initial desktop
+viewport, the map remains its visual centerpiece, and Mission Control uses a
+reduced footprint. Mobile preserves content readability, hides the dense status
+overlay, and stacks metrics and principles without horizontal overflow.

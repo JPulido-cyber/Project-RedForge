@@ -1,6 +1,6 @@
 import { expect, test } from "@playwright/test";
 
-test("homepage presents RedForge and its latest engineering activity", async ({ page }) => {
+test("homepage presents the approved RedForge command-center narrative", async ({ page }) => {
   await page.goto("/");
 
   await expect(page).toHaveTitle(/RedForge/);
@@ -20,13 +20,21 @@ test("homepage presents RedForge and its latest engineering activity", async ({ 
       exact: true,
     }),
   ).toBeVisible();
-  await expect(page.getByText(/engineer with discipline/i)).toBeVisible();
-  await expect(page.getByText(/advance toward offensive cybersecurity/i)).toBeVisible();
+  await expect(page.getByText("Build deliberately.", { exact: true })).toBeVisible();
+  await expect(page.getByText("Document everything.", { exact: true })).toBeVisible();
+  await expect(page.getByText("Validate relentlessly.", { exact: true })).toBeVisible();
+  await expect(page.getByText("Evidence over assumption.", { exact: true })).toBeVisible();
+  await expect(page.getByText("Engineer continuously.", { exact: true })).toBeVisible();
+  await expect(page.getByText("Every milestone moves forward.", { exact: true })).toBeVisible();
+  await expect(page.getByText(/understand the enterprise/i)).toBeVisible();
+  await expect(page.getByText(/outthink the adversary/i)).toBeVisible();
   await expect(page.locator(".network-status-panel")).toContainText(
     "MONITORING",
   );
-  await expect(page.getByRole("region", { name: "Evidence-backed updates" })).toBeVisible();
-  await expect(page.locator(".engineering-activity-card")).toHaveCount(4);
+  await expect(
+    page.getByText("DISCIPLINE. PRECISION. PROGRESS.", { exact: true }),
+  ).toHaveCount(2);
+  await expect(page.locator(".engineering-activity")).toHaveCount(0);
   await expect(page.getByText("14", { exact: true })).toBeVisible();
   await expect(page.getByText("ENGINEERING LOGS", { exact: true })).toBeVisible();
   await expect(page.getByText("4", { exact: true })).toBeVisible();
@@ -42,6 +50,7 @@ test("homepage leaves project discovery to dedicated routes", async ({ page }) =
   await expect(page.getByRole("heading", { name: "Featured Projects", exact: true })).toHaveCount(0);
   await expect(page.locator(".featured-projects, .projects-section, .operator-section")).toHaveCount(0);
   await expect(page.locator(".current-projects, .current-project-card")).toHaveCount(0);
+  await expect(page.locator(".engineering-activity")).toHaveCount(0);
   await expect(page.getByText(/every system.*backed by evidence/i)).toHaveCount(0);
   await expect(page.getByRole("navigation", { name: "Primary navigation" })).toBeVisible();
 });
@@ -61,6 +70,6 @@ test("focused homepage remains overflow-free at desktop, tablet, and mobile widt
     expect(widths.scroll).toBeLessThanOrEqual(widths.client);
     await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
     await expect(page.getByRole("heading", { name: "Discipline. Precision. Progress." })).toBeVisible();
-    await expect(page.getByRole("region", { name: "Evidence-backed updates" })).toBeVisible();
+    await expect(page.getByText(/understand the enterprise/i)).toBeVisible();
   }
 });
