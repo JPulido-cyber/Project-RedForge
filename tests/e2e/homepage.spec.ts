@@ -31,7 +31,7 @@ test("homepage presents the approved RedForge command-center narrative", async (
   await expect(page.locator(".network-status-panel")).toContainText(
     "MONITORING",
   );
-  await expect(page.locator(".hero-telemetry-panel")).toHaveCount(3);
+  await expect(page.locator(".hero-telemetry-panel")).toHaveCount(0);
   await expect(page.locator(".metric-icon")).toHaveCount(6);
   await expect(page.locator(".engineering-principle-icon")).toHaveCount(3);
   await expect(

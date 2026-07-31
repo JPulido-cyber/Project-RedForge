@@ -84,9 +84,8 @@
   right: 3%;
   bottom: -32%;
   width: 62%;
-  background: radial-gradient(circle, rgb(255 70 8 / 13%), rgb(255 70 8 / 3%) 38%, transparent 68%);
-  filter: blur(44px);
-  animation: ambient-breathe 8s ease-in-out infinite alternate;
+  background: radial-gradient(circle, rgb(255 70 8 / 5%), rgb(255 70 8 / 1%) 38%, transparent 68%);
+  filter: blur(36px);
 }
 
 .hero-overlay {
@@ -201,7 +200,7 @@
   position: absolute;
   z-index: 7;
   inset: 10% 1% 7% 18%;
-  background: linear-gradient(180deg, transparent, rgb(255 112 40 / 12%) 48%, transparent 55%);
+  background: linear-gradient(180deg, transparent, rgb(255 112 40 / 4%) 48%, transparent 55%);
   mix-blend-mode: screen;
   pointer-events: none;
   content: "";
@@ -221,11 +220,11 @@
 .world-map-image {
   opacity: 1;
   filter:
-    saturate(1.34)
-    brightness(1.06)
-    contrast(1.2)
-    drop-shadow(0 0 34px rgb(255 67 9 / 28%))
-    drop-shadow(0 18px 42px rgb(0 0 0 / 34%));
+    saturate(1.12)
+    brightness(0.94)
+    contrast(1.22)
+    drop-shadow(0 0 12px rgb(255 67 9 / 10%))
+    drop-shadow(0 16px 34px rgb(0 0 0 / 30%));
 }
 
 .network-routes path {
@@ -236,151 +235,21 @@
 }
 
 .route-signal {
-  filter: drop-shadow(0 0 7px #ff6a18);
+  filter: drop-shadow(0 0 3px rgb(255 106 24 / 70%));
 }
 
 .network-node {
   width: 8px;
   height: 8px;
   box-shadow:
-    0 0 0 4px rgb(255 67 8 / 16%),
-    0 0 27px #ff4a08,
-    0 0 56px rgb(255 74 8 / 37%);
+    0 0 0 3px rgb(255 67 8 / 12%),
+    0 0 12px rgb(255 74 8 / 82%),
+    0 0 24px rgb(255 74 8 / 16%);
 }
 
 .map-glow {
-  opacity: 0.92;
-  animation: node-atmosphere 5s ease-in-out infinite alternate;
+  opacity: 0.34;
 }
-
-.hero-telemetry {
-  position: absolute;
-  inset: 0;
-  z-index: 8;
-  pointer-events: none;
-}
-
-.hero-telemetry-panel {
-  position: absolute;
-  width: 174px;
-  min-height: 92px;
-  padding: 13px 14px 11px;
-  border: 1px solid rgb(255 102 31 / 22%);
-  background:
-    linear-gradient(145deg, rgb(255 83 16 / 9%), transparent 52%),
-    rgb(5 7 8 / 86%);
-  box-shadow:
-    0 20px 46px rgb(0 0 0 / 36%),
-    inset 0 1px rgb(255 255 255 / 3%);
-  backdrop-filter: blur(10px);
-}
-
-.hero-telemetry-panel::before {
-  position: absolute;
-  top: 46%;
-  left: 100%;
-  width: 72px;
-  height: 9px;
-  background:
-    radial-gradient(circle at right center, rgb(255 118 51 / 68%) 0 2px, transparent 2.5px),
-    linear-gradient(90deg, rgb(255 103 38 / 24%), rgb(255 103 38 / 8%) 76%, transparent 77%) left center / 100% 1px no-repeat;
-  content: "";
-  opacity: 0.72;
-  transform-origin: left center;
-}
-
-.hero-telemetry-panel::after {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(105deg, transparent 36%, rgb(255 104 31 / 7%) 49%, transparent 62%);
-  content: "";
-  animation: telemetry-flicker 5.5s ease-in-out infinite;
-}
-
-.hero-telemetry-panel strong,
-.hero-telemetry-panel span {
-  position: relative;
-  z-index: 1;
-  display: block;
-  font-family: var(--font-redforge-display), sans-serif;
-}
-
-.hero-telemetry-panel strong {
-  color: var(--rf-color-ember-bright);
-  font-size: 0.47rem;
-  letter-spacing: 0.06em;
-}
-
-.hero-telemetry-panel span {
-  margin-top: 7px;
-  color: #b2b8ba;
-  font-size: 0.39rem;
-  letter-spacing: 0.08em;
-}
-
-.telemetry-panel-global {
-  top: 100px;
-  left: 50%;
-}
-
-.telemetry-panel-global::before { transform: rotate(7deg); }
-
-.telemetry-panel-intelligence {
-  top: 54%;
-  left: 50%;
-}
-
-.telemetry-panel-intelligence::before { transform: rotate(-6deg); }
-
-.telemetry-panel-network {
-  top: 70%;
-  left: 50%;
-}
-
-.telemetry-panel-network::before { transform: rotate(5deg); }
-
-.telemetry-wave {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  height: 31px;
-  margin-top: 7px;
-  overflow: visible;
-}
-
-.telemetry-wave path {
-  fill: none;
-  stroke: #ff5a1f;
-  stroke-width: 1.2;
-  vector-effect: non-scaling-stroke;
-  filter: drop-shadow(0 0 4px rgb(255 90 31 / 48%));
-  animation: telemetry-draw 4s linear infinite;
-  stroke-dasharray: 180;
-}
-
-.telemetry-bars {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  height: 36px;
-  align-items: end;
-  gap: 4px;
-  margin-top: 9px;
-  border-bottom: 1px solid rgb(255 90 31 / 18%);
-}
-
-.telemetry-bars i {
-  width: 5px;
-  height: 42%;
-  background: linear-gradient(#ff8b45, #c63409);
-  box-shadow: 0 0 8px rgb(255 78 16 / 20%);
-  animation: telemetry-bars 2.8s ease-in-out infinite alternate;
-}
-
-.telemetry-bars i:nth-child(2n) { height: 72%; animation-delay: -0.7s; }
-.telemetry-bars i:nth-child(3n) { height: 32%; animation-delay: -1.3s; }
-.telemetry-bars i:nth-child(4n) { height: 88%; animation-delay: -2s; }
-.telemetry-bars i:nth-child(5n) { height: 58%; animation-delay: -0.3s; }
 
 .home-page .network-status-panel {
   overflow: hidden;
@@ -1026,10 +895,6 @@
   from { opacity: 0; transform: translateY(16px); }
 }
 
-@keyframes ambient-breathe {
-  to { opacity: 0.72; transform: scale(1.06); }
-}
-
 @keyframes map-scan {
   0%, 15% { opacity: 0; transform: translateY(-45%); }
   32%, 58% { opacity: 0.8; }
@@ -1038,24 +903,6 @@
 
 @keyframes route-flow {
   to { stroke-dashoffset: -90; }
-}
-
-@keyframes node-atmosphere {
-  to { opacity: 0.68; transform: scale(1.12); }
-}
-
-@keyframes telemetry-draw {
-  to { stroke-dashoffset: -180; }
-}
-
-@keyframes telemetry-bars {
-  to { opacity: 0.7; transform: scaleY(0.72); }
-}
-
-@keyframes telemetry-flicker {
-  0%, 45%, 100% { opacity: 0; transform: translateX(-24%); }
-  52%, 58% { opacity: 0.8; }
-  66% { opacity: 0; transform: translateX(24%); }
 }
 
 @keyframes progress-arrive {
@@ -1083,21 +930,6 @@
     width: min(100vw, 2400px);
   }
 
-  .hero-telemetry-panel {
-    width: 196px;
-    min-height: 102px;
-    padding: 15px 16px 12px;
-  }
-
-  .hero-telemetry-panel strong { font-size: 0.53rem; }
-  .hero-telemetry-panel span { font-size: 0.44rem; }
-
-  .telemetry-panel-global,
-  .telemetry-panel-intelligence,
-  .telemetry-panel-network {
-    left: 44%;
-  }
-
   .home-page .network-status-panel {
     width: 242px;
   }
@@ -1115,7 +947,6 @@
 @media (max-width: 1120px) {
   .home-page .hero-content { width: min(55vw, 620px); }
   .home-page .world-map { right: -8vw; width: 112vw; }
-  .hero-telemetry { display: none; }
   .home-page .engineering-activity-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 

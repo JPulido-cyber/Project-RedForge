@@ -20,8 +20,8 @@ export function ConnectionLines() {
       aria-hidden
     >
       <defs>
-        <filter id="signal-glow" x="-300%" y="-300%" width="700%" height="700%">
-          <feGaussianBlur stdDeviation="3" result="blur" />
+        <filter id="signal-glow" x="-200%" y="-200%" width="500%" height="500%">
+          <feGaussianBlur stdDeviation="1.25" result="blur" />
           <feMerge>
             <feMergeNode in="blur" />
             <feMergeNode in="SourceGraphic" />

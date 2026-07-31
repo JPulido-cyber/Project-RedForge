@@ -4,7 +4,6 @@ import { WorldMap } from "@/components/world-map";
 import { HeroGlow } from "./hero-glow";
 import { HeroGrid } from "./hero-grid";
 import { HeroOverlay } from "./hero-overlay";
-import { HeroTelemetry } from "./hero-telemetry";
 
 export function HeroBackground() {
   return (
@@ -12,7 +11,6 @@ export function HeroBackground() {
       <HeroGrid />
       <HeroGlow />
       <WorldMap />
-      <HeroTelemetry />
       <HeroOverlay />
     </BackgroundLayer>
   );
