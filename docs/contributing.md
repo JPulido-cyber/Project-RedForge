@@ -10,3 +10,16 @@
 
 Do not mix homepage redesign work with platform infrastructure changes. Never
 commit generated output from `.next`, Storybook, Playwright, or coverage.
+
+## Design tickets
+
+Every design ticket must begin with this rule:
+
+> **Project RedForge is a cybersecurity engineering platform, not a portfolio.
+> Every design decision must reinforce technical credibility, operational
+> realism, and the long-term progression toward Offensive Cybersecurity. Favor
+> clarity over complexity, restraint over decoration, and engineering over
+> marketing.**
+
+Review visual changes against the [design philosophy](./design-philosophy.md)
+before implementation and again before approval.

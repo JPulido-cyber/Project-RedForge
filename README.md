@@ -1,8 +1,8 @@
 # Project RedForge
 
-**A public cybersecurity engineering portfolio focused on enterprise-lab development, offensive-security learning, and evidence-based documentation.**
+**A living cybersecurity engineering platform documenting progression toward Offensive Cybersecurity through enterprise implementation, validation, operation, and evidence.**
 
-[Live Portfolio](https://projectredforge.com/) · [Engineering Documentation](./docs/README.md) · [Project Records](./content)
+[Live Platform](https://projectredforge.com/) · [Engineering Documentation](./docs/README.md) · [Project Records](./content)
 
 ## Why This Project Exists
 
@@ -22,7 +22,7 @@ The goal is not to present a list of tools. It is to demonstrate:
 - **Engineering Records:** documented decisions, constraints, outcomes, and follow-up work
 - **Quality Controls:** linting, strict TypeScript validation, automated builds, Storybook, and Playwright tests
 - **Deployment:** container and platform deployment scaffolding with continuous-integration workflows
-- **Public Portfolio:** a recruiter-facing presentation of completed work and professional development
+- **Public Platform:** an evidence-first presentation of completed engineering work and professional development
 
 > Security exercises and offensive techniques documented through this project are performed only in owned or explicitly authorized lab environments.
 
@@ -93,6 +93,6 @@ Project RedForge is under active development. New lab evidence and security proj
 
 ## Contact
 
-- Portfolio: [projectredforge.com](https://projectredforge.com/)
+- Platform: [projectredforge.com](https://projectredforge.com/)
 - LinkedIn: [Jose Pulido](https://www.linkedin.com/in/jose-pulido-5887723a5/)
 - GitHub: [JPulido-cyber](https://github.com/JPulido-cyber)

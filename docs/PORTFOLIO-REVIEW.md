@@ -1,4 +1,4 @@
-# Project RedForge portfolio review checklist
+# Project RedForge public platform review checklist
 
 Use this checklist before publishing any new engineering evidence, project
 milestone, documentation record, or website release.

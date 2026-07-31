@@ -10,6 +10,8 @@
   a default is valid.
 - Never commit secrets or production identifiers.
 - Do not disable lint rules without documenting the reason at the narrowest scope.
+- Apply the [RedForge design philosophy](./design-philosophy.md) to every visual
+  change. Favor clarity, operational realism, and evidence over decorative UI.
 
 Before committing, run:
 
