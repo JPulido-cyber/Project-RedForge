@@ -5,7 +5,7 @@ export function HeroContent() {
     <div className="hero-content">
       <p className="hero-eyebrow">ENTERPRISE SECURITY ENGINEERING</p>
       <h1>
-        BUILDING &amp; DEFENDING
+        <span>BUILDING &amp; DEFENDING</span>
         <span>AN ENTERPRISE FROM</span>
         <span>THE GROUND UP</span>
       </h1>
