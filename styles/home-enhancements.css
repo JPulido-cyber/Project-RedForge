@@ -84,8 +84,8 @@
   right: 3%;
   bottom: -32%;
   width: 62%;
-  background: radial-gradient(circle, rgb(255 70 8 / 5%), rgb(255 70 8 / 1%) 38%, transparent 68%);
-  filter: blur(36px);
+  background: radial-gradient(circle, rgb(255 70 8 / 3%), transparent 62%);
+  filter: blur(28px);
 }
 
 .hero-overlay {
@@ -190,17 +190,17 @@
 }
 
 .home-page .world-map {
-  top: -2%;
-  right: 8%;
-  width: min(105vw, 1600px);
-  filter: drop-shadow(0 35px 65px rgb(0 0 0 / 44%));
+  top: 2%;
+  right: calc(-3% + 40px);
+  width: min(82vw, 1320px);
+  filter: drop-shadow(0 24px 44px rgb(0 0 0 / 38%));
 }
 
 .world-map::before {
   position: absolute;
   z-index: 7;
   inset: 10% 1% 7% 18%;
-  background: linear-gradient(180deg, transparent, rgb(255 112 40 / 4%) 48%, transparent 55%);
+  background: linear-gradient(180deg, transparent, rgb(255 112 40 / 2%) 48%, transparent 55%);
   mix-blend-mode: screen;
   pointer-events: none;
   content: "";
@@ -212,7 +212,7 @@
   position: absolute;
   z-index: 6;
   inset: 0;
-  background: radial-gradient(ellipse at 65% 45%, transparent 30%, rgb(0 0 0 / 12%) 62%, rgb(0 0 0 / 40%));
+  background: radial-gradient(ellipse at 65% 45%, transparent 34%, rgb(0 0 0 / 8%) 66%, rgb(0 0 0 / 30%));
   pointer-events: none;
   content: "";
 }
@@ -220,11 +220,11 @@
 .world-map-image {
   opacity: 1;
   filter:
-    saturate(1.12)
-    brightness(0.94)
-    contrast(1.22)
-    drop-shadow(0 0 12px rgb(255 67 9 / 10%))
-    drop-shadow(0 16px 34px rgb(0 0 0 / 30%));
+    saturate(1.04)
+    brightness(0.9)
+    contrast(1.28)
+    drop-shadow(0 0 6px rgb(255 67 9 / 6%))
+    drop-shadow(0 14px 28px rgb(0 0 0 / 28%));
 }
 
 .network-routes path {
@@ -248,7 +248,7 @@
 }
 
 .map-glow {
-  opacity: 0.34;
+  opacity: 0.18;
 }
 
 .home-page .network-status-panel {
@@ -265,7 +265,7 @@
 }
 
 .home-page .network-status-panel {
-  right: clamp(20px, 4.8vw, 76px);
+  right: clamp(8px, calc(4.8vw - 24px), 52px);
   bottom: 36px;
   width: 220px;
   padding: 8px 16px;
@@ -926,8 +926,8 @@
   }
 
   .home-page .world-map {
-    right: 1%;
-    width: min(100vw, 2400px);
+    right: calc(-3% + 40px);
+    width: min(82vw, 1320px);
   }
 
   .home-page .network-status-panel {
