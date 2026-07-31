@@ -57,3 +57,15 @@ Large desktop typography and map sizing scale beyond the former fixed ceiling so
 the composition retains its hierarchy on high-resolution displays. Mobile
 preserves content readability, hides the dense status and telemetry overlays,
 and stacks metrics and principles without horizontal overflow.
+
+## Version 1.1 polish constraints
+
+The final polish pass changes presentation only. Hero type receives additional
+line rhythm, telemetry panels use faint infrastructure anchors, Mission Control
+uses stronger glass separation, and the existing metric and philosophy elements
+receive clearer internal hierarchy. No sections, content, claims, routes, map
+dimensions, or component responsibilities were changed.
+
+Hover movement is limited to one pixel and all new visual transitions use the
+existing reduced-motion override. The intent is improved clarity and material
+depth without increasing visual complexity.
