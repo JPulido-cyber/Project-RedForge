@@ -14,7 +14,7 @@ export function WorldMap() {
         alt=""
         fill
         priority
-        sizes="(max-width: 760px) 132vw, 62vw"
+        sizes="(max-width: 1120px) 96vw, (min-width: 1800px) 1320px, 82vw"
       />
       <MapOverlay />
       <LocationMarkers />
