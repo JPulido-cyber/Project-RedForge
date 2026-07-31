@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import { WorldMap } from "./world-map";
 
 const meta = {
-  title: "Homepage/Enterprise Visualization/WorldMap",
+  title: "Homepage/World Map/WorldMap",
   component: WorldMap,
   parameters: { layout: "fullscreen" },
   decorators: [
@@ -18,4 +18,4 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const EnterpriseEnvironment: Story = {};
+export const NetworkTopology: Story = {};

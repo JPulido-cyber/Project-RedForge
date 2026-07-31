@@ -190,125 +190,69 @@
 }
 
 .home-page .world-map {
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  filter: none;
-  mask-image: radial-gradient(ellipse 96% 96% at 54% 48%, #000 64%, rgb(0 0 0 / 88%) 78%, transparent 100%);
+  top: 2%;
+  right: auto;
+  left: 50%;
+  width: min(82vw, 1320px);
+  margin-left: calc(min(82vw, 1320px) / -2);
+  filter: drop-shadow(0 24px 44px rgb(0 0 0 / 38%));
+  mask-image: radial-gradient(ellipse 83% 86% at 50% 48%, #000 58%, rgb(0 0 0 / 96%) 68%, rgb(0 0 0 / 58%) 84%, transparent 100%);
 }
 
 .world-map::before {
   position: absolute;
   z-index: 7;
-  inset: 0;
-  background:
-    radial-gradient(ellipse at 57% 39%, rgb(255 82 24 / 5%), transparent 18%),
-    radial-gradient(ellipse at 31% 42%, rgb(255 82 24 / 3%), transparent 17%),
-    radial-gradient(ellipse at 81% 50%, rgb(255 82 24 / 2%), transparent 19%);
+  inset: 10% 1% 7% 18%;
+  background: linear-gradient(180deg, transparent, rgb(255 112 40 / 2%) 48%, transparent 55%);
+  mix-blend-mode: screen;
   pointer-events: none;
   content: "";
+  animation: map-scan 7.5s 1.2s ease-in-out infinite;
+  mask-image: linear-gradient(90deg, transparent, black 18%, black 88%, transparent);
 }
 
 .world-map::after {
   position: absolute;
   z-index: 6;
   inset: 0;
-  background:
-    linear-gradient(90deg, rgb(3 4 5 / 54%), transparent 43%),
-    radial-gradient(ellipse at 55% 46%, transparent 42%, rgb(0 0 0 / 8%) 72%, rgb(0 0 0 / 32%));
+  background: radial-gradient(ellipse at 65% 45%, transparent 34%, rgb(0 0 0 / 8%) 66%, rgb(0 0 0 / 30%));
   pointer-events: none;
   content: "";
 }
 
-.enterprise-network-canvas {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  color: #ff6328;
-}
-
-.enterprise-network-grid {
-  opacity: 0.34;
-}
-
-.enterprise-land-framework {
-  fill: url(#network-land-fill);
-  stroke: rgb(152 168 174 / 29%);
-  stroke-width: 1;
-  vector-effect: non-scaling-stroke;
-}
-
-.enterprise-contours {
-  fill: none;
-  stroke: rgb(255 103 45 / 14%);
-  stroke-dasharray: 3 8;
-  stroke-width: 0.8;
-  vector-effect: non-scaling-stroke;
-}
-
-.enterprise-route {
-  fill: none;
-  stroke-linecap: round;
-  vector-effect: non-scaling-stroke;
-}
-
-.enterprise-route-core {
-  stroke: rgb(255 99 40 / 62%);
-  stroke-width: 1.2;
-}
-
-.enterprise-route-secondary {
-  stroke: rgb(255 114 58 / 34%);
-  stroke-dasharray: 5 7;
-  stroke-width: 0.9;
-}
-
-.enterprise-route-local {
-  stroke: rgb(171 186 191 / 29%);
-  stroke-width: 0.8;
-}
-
-.enterprise-route-signal {
-  fill: #ffc39e;
-  stroke: #ff5a1f;
-  stroke-width: 0.7;
-}
-
-.enterprise-node-ring {
-  fill: none;
-  stroke: rgb(255 105 48 / 34%);
-  stroke-width: 0.8;
-  vector-effect: non-scaling-stroke;
-}
-
-.enterprise-node-core {
-  fill: #ff6a2a;
-  stroke: rgb(255 220 194 / 72%);
-  stroke-width: 0.7;
-  vector-effect: non-scaling-stroke;
-}
-
-.enterprise-node-edge {
-  opacity: 0.58;
-}
-
-.enterprise-node-secondary {
-  opacity: 0.84;
-}
-
-.enterprise-node-primary {
+.world-map-image {
   opacity: 1;
+  mask-image: none;
+  filter:
+    saturate(1.04)
+    brightness(0.9)
+    contrast(1.28)
+    drop-shadow(0 0 6px rgb(255 67 9 / 6%))
+    drop-shadow(0 14px 28px rgb(0 0 0 / 28%));
 }
 
-.enterprise-node:nth-child(n + 14):nth-child(-n + 21) .enterprise-node-core {
-  fill: #ff7a38;
-  stroke: #fff0e6;
+.network-routes path {
+  stroke: rgb(255 111 53 / 61%);
+  stroke-width: 1.3;
+  stroke-dasharray: 4 5;
+  animation: route-flow 11s linear infinite;
 }
 
-.enterprise-node:nth-child(n + 14):nth-child(-n + 21) .enterprise-node-ring {
-  stroke: rgb(255 122 56 / 52%);
+.route-signal {
+  filter: drop-shadow(0 0 3px rgb(255 106 24 / 70%));
+}
+
+.network-node {
+  width: 8px;
+  height: 8px;
+  box-shadow:
+    0 0 0 3px rgb(255 67 8 / 12%),
+    0 0 12px rgb(255 74 8 / 82%),
+    0 0 24px rgb(255 74 8 / 16%);
+}
+
+.map-glow {
+  opacity: 0.18;
 }
 
 .home-page .network-status-panel {
@@ -955,6 +899,16 @@
   from { opacity: 0; transform: translateY(16px); }
 }
 
+@keyframes map-scan {
+  0%, 15% { opacity: 0; transform: translateY(-45%); }
+  32%, 58% { opacity: 0.8; }
+  80%, 100% { opacity: 0; transform: translateY(48%); }
+}
+
+@keyframes route-flow {
+  to { stroke-dashoffset: -90; }
+}
+
 @keyframes progress-arrive {
   from { transform: scaleX(0); }
 }
@@ -976,10 +930,10 @@
   }
 
   .home-page .world-map {
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    margin: 0;
+    right: auto;
+    left: 50%;
+    width: min(82vw, 1320px);
+    margin-left: calc(min(82vw, 1320px) / -2);
   }
 
   .home-page .network-status-panel {
@@ -998,13 +952,13 @@
 
 @media (max-width: 1120px) {
   .home-page .hero-content { width: min(55vw, 620px); }
-  .home-page .world-map { inset: 0; width: 100%; height: 100%; margin: 0; }
+  .home-page .world-map { right: auto; left: 50%; width: 96vw; margin-left: -48vw; }
   .home-page .engineering-activity-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 880px) {
   .home-page .hero-content { width: min(65vw, 600px); }
-  .home-page .world-map { inset: 0; }
+  .home-page .world-map { right: auto; left: 50%; }
   .operator-dashboard { grid-template-columns: 1fr; }
   .engineering-principles { grid-template-columns: 1fr; }
 }
@@ -1013,7 +967,7 @@
   .home-page .hero { height: auto; min-height: 820px; padding-top: 112px; }
   .home-page .hero-content { width: 100%; }
   .home-page .hero-content h1 { max-width: 570px; font-size: clamp(2.35rem, 9.5vw, 3.3rem); }
-  .home-page .world-map { inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0.52; }
+  .home-page .world-map { top: 30px; right: auto; left: 50%; width: 96vw; margin-left: -48vw; opacity: 0.52; }
   .home-page .hero-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .metric { min-height: 84px; }
   .featured-preview,
@@ -1035,7 +989,7 @@
   .home-page .hero { min-height: 790px; }
   .home-page .hero-content h1 { font-size: clamp(2.05rem, 9vw, 2.65rem); line-height: 1.12; }
   .home-page .hero-description { font-size: 0.82rem; }
-  .home-page .world-map { inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0.38; }
+  .home-page .world-map { top: 70px; right: auto; left: 50%; width: 96vw; margin-left: -48vw; opacity: 0.38; }
   .operation-grid,
   .dossier-grid { grid-template-columns: 1fr; }
   .home-page .engineering-activity-grid { grid-template-columns: 1fr; }
